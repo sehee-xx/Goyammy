@@ -1,0 +1,92 @@
+import { useMutation, useQuery } from "@apollo/client";
+import { Modal } from "antd";
+import { useRouter } from "next/router";
+import ItemDetailUI from "./ItemDetail.presenter";
+import {
+  CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING,
+  DELETE_USEDITEM,
+  FETCH_USEDITEM,
+  FETCH_USER_LOGGED_IN,
+  TOGGLE_USEDITEM_PICK,
+} from "./ItemDetail.queries";
+
+export default function ItemDetail() {
+  const router = useRouter();
+
+  const [deleteUseditem] = useMutation(DELETE_USEDITEM);
+
+  const [toggleUseditemPick] = useMutation(TOGGLE_USEDITEM_PICK);
+
+  const [createPointTransactionOfBuyingAndSelling] = useMutation(
+    CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING
+  );
+
+  const { data, refetch } = useQuery(FETCH_USEDITEM, {
+    variables: { useditemId: router.query.useditemId },
+  });
+
+  const { data: userData } = useQuery(FETCH_USER_LOGGED_IN);
+
+  const createDate = data?.fetchUseditem.createdAt
+    .slice(0, 10)
+    .replace(/-/gi, ".");
+
+  const onClickGoToList = () => {
+    router.push("/markets");
+  };
+
+  const onClickDeleteButton = () => {
+    deleteUseditem({
+      variables: { useditemId: router.query.useditemId },
+    });
+    Modal.success({
+      content: "😼 상품이 삭제되었습니다 😼",
+      onOk() {
+        router.push("/markets");
+      },
+    });
+  };
+
+  const onClickUpdateButton = () => {
+    router.push(`/markets/${router.query.useditemId}/edit`);
+  };
+
+  const onClickPick = async () => {
+    try {
+      await toggleUseditemPick({
+        variables: { useditemId: router.query.useditemId },
+      });
+      refetch();
+    } catch (error: any) {
+      Modal.error({ content: error.message });
+    }
+  };
+
+  const onClickBuy = async () => {
+    try {
+      await createPointTransactionOfBuyingAndSelling({
+        variables: { useritemId: router.query.useditemId },
+      });
+      Modal.success({
+        content: "😻 결제 성공! 😻",
+        onOk() {
+          refetch();
+        },
+      });
+    } catch (error: any) {
+      Modal.error({ content: "😹 결제 실패 😹" });
+    }
+  };
+  return (
+    <ItemDetailUI
+      data={data}
+      createDate={createDate}
+      onClickGoToList={onClickGoToList}
+      userData={userData}
+      onClickDeleteButton={onClickDeleteButton}
+      onClickUpdateButton={onClickUpdateButton}
+      onClickPick={onClickPick}
+      onClickBuy={onClickBuy}
+    />
+  );
+}
