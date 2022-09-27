@@ -7,4 +7,10 @@ export const FETCH_USER_LOGGED_IN = gql`
       name
     }
   }
-`
+`;
+
+export const LOGOUT_USER = gql`
+  mutation logoutUser {
+    logoutUser
+  }
+`;
