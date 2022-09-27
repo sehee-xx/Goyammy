@@ -61,7 +61,7 @@ export const Footer = styled.div`
   display: flex;
   flex-direction: row;
 `;
-export const Label = styled.label`
+export const Question = styled.label`
   color: #8b4513;
   padding: 0px 5px;
 `;

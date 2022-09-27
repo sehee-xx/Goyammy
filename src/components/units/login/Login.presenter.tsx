@@ -26,7 +26,7 @@ export default function LoginUI(props: ILoginUIProps) {
           <Button01 isActive={props.formState.isValid} title="LOGIN"></Button01>
         </S.Body>
         <S.Footer>
-          <S.Label>아직 계정이 없으신가요?</S.Label>
+          <S.Question>아직 계정이 없으신가요?</S.Question>
           <S.Signup onClick={props.onClickMoveToSignup}>회원가입</S.Signup>
         </S.Footer>
       </S.Main>

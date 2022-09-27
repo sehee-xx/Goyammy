@@ -48,7 +48,7 @@ export default function SignupUI(props: ISignupUIProps) {
           ></Button01>
         </S.Body>
         <S.Footer>
-          <S.Qustion>이미 아이디가 있으신가요?</S.Qustion>
+          <S.Question>이미 아이디가 있으신가요?</S.Question>
           <S.Login onClick={props.onClickMoveToLogin}>로그인</S.Login>
         </S.Footer>
       </S.Main>
