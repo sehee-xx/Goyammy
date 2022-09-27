@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 const schema = yup.object({
   email: yup
     .string()
-    .required("이메일은 필수 입력 사항입니다.")
+    .required("이메일 아이디를 @까지 정확하게 입력해주세요.")
     .matches(
       /^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
       "이메일 형식을 맞춰주세요."
