@@ -57,8 +57,16 @@ export const StatusText = styled.label`
   font-size: 20px;
   color: #8b4513;
 `;
-export const Footer = styled.div``;
+export const Footer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 export const Label = styled.label`
   color: #8b4513;
   padding: 0px 5px;
+`;
+export const Signup = styled.div`
+  font-weight: 700;
+  color: orange;
+  cursor: pointer;
 `;

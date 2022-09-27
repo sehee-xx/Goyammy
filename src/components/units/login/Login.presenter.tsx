@@ -1,8 +1,9 @@
 import Button01 from "../../commons/buttons/01";
 import Input01 from "../../commons/inputs/01";
 import * as S from "./Login.styles";
+import { ILoginUIProps } from "./Login.types";
 
-export default function LoginUI(props: any) {
+export default function LoginUI(props: ILoginUIProps) {
   return (
     <form onSubmit={props.handleSubmit(props.onClickLogin)}>
       <S.Main>
@@ -25,11 +26,8 @@ export default function LoginUI(props: any) {
           <Button01 isActive={props.formState.isValid} title="LOGIN"></Button01>
         </S.Body>
         <S.Footer>
-          <S.Label>이메일 찾기</S.Label>
-          <S.Label> | </S.Label>
-          <S.Label>비밀번호 찾기</S.Label>
-          <S.Label> | </S.Label>
-          <S.Label>회원가입</S.Label>
+          <S.Label>아직 계정이 없으신가요?</S.Label>
+          <S.Signup onClick={props.onClickMoveToSignup}>회원가입</S.Signup>
         </S.Footer>
       </S.Main>
     </form>
