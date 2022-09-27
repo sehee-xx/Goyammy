@@ -11,9 +11,7 @@ export const Main = styled.div`
   align-items: center;
   padding: 40px 50px 50px 50px;
 `;
-export const Header = styled.div`
-  
-`
+export const Header = styled.div``;
 export const Logo = styled.div`
   font-size: 35px;
   font-weight: 900;
@@ -23,14 +21,14 @@ export const Logo = styled.div`
   color: orange;
   cursor: pointer;
   padding-bottom: 30px;
-`
+`;
 export const Body = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-bottom: 20px;
-`
+`;
 export const Label = styled.label`
   align-self: flex-start;
   padding-bottom: 3px;
@@ -38,17 +36,26 @@ export const Label = styled.label`
   color: orange;
   font-weight: bold;
   font-size: 15px;
-`
+`;
 export const Error = styled.div`
-  color: #FF6347;
+  color: #ff6347;
   font-weight: bold;
   display: flex;
   flex-direction: row;
   align-self: flex-start;
   padding-left: 10px;
   padding-bottom: 10px;
-`
-
+`;
 export const Footer = styled.div`
-
-`
+  display: flex;
+  flex-direction: row;
+`;
+export const Qustion = styled.label`
+  color: #8b4513;
+  padding: 0px 5px;
+`;
+export const Login = styled.div`
+  font-weight: 700;
+  color: orange;
+  cursor: pointer;
+`;
