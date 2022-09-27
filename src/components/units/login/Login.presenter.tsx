@@ -22,10 +22,6 @@ export default function LoginUI(props: any) {
             register={props.register("password")}
           />
           <S.Error>{props.formState.errors.password?.message}</S.Error>
-          <S.RowBox>
-            <S.LoginStatusCheck type="checkbox" />
-            <S.StatusText>로그인 상태 유지</S.StatusText>
-          </S.RowBox>
           <Button01 isActive={props.formState.isValid} title="LOGIN"></Button01>
         </S.Body>
         <S.Footer>
