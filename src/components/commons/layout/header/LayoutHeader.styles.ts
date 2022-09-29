@@ -23,13 +23,40 @@ export const InnerLogo = styled.img`
   cursor: pointer;
 `;
 
-export const InnerButton = styled.span`
-  margin: 10px;
-  color: orange;
+export const RowBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+`;
+
+export const Profile = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+`;
+
+export const ProfileImg = styled.img`
+  width: 30px;
+`;
+
+export const UserName = styled.div`
+  font-size: 15px;
   font-weight: 600;
-  font-size: 20px;
-  cursor: pointer;
+  color: #464747;
   :hover {
-    color: #cd863f;
+    color: #eaa945;
   }
+  cursor: pointer;
+`;
+
+export const Authentication = styled.div`
+  font-size: 15px;
+  font-weight: 600;
+  color: #464747;
+  :hover {
+    color: #eaa945;
+  }
+  cursor: pointer;
 `;

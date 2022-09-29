@@ -1,36 +1,36 @@
-import {
-  InnerButton,
-  InnerLogo,
-  InnerWrapper,
-  Wrapper,
-} from "./LayoutHeader.styles";
-import { IProps } from "./LayoutHeader.types";
+import * as S from "./LayoutHeader.styles";
+import { ILayoutHeaderProps } from "./LayoutHeader.types";
 
-export default function LayoutHeaderUI(props: IProps) {
+export default function LayoutHeaderUI(props: ILayoutHeaderProps) {
   return (
-    <Wrapper>
-      <InnerWrapper>
-        <InnerLogo
+    <S.Wrapper>
+      <S.InnerWrapper>
+        <S.InnerLogo
           onClick={props.onClickLogo}
           src="/images/logo.png"
-        ></InnerLogo>
+        ></S.InnerLogo>
         {props.accessToken && (
-          <div>
-            <InnerButton onClick={props.onClickUser}>
-              {props.data?.fetchUserLoggedIn.name}
-            </InnerButton>
-            <InnerButton onClick={props.onClickLogout}>LOGOUT</InnerButton>
-          </div>
+          <S.RowBox>
+            <S.Profile onClick={props.onClickUser}>
+              <S.ProfileImg src="/images/profile.png"></S.ProfileImg>
+              <S.UserName>{props.data?.fetchUserLoggedIn.name}</S.UserName>
+            </S.Profile>
+            <S.Authentication onClick={props.onClickLogout}>
+              LOGOUT
+            </S.Authentication>
+          </S.RowBox>
         )}
         {!props.accessToken && (
-          <div>
-            <InnerButton onClick={props.onClickMoveToLogin}>LOGIN</InnerButton>
-            <InnerButton onClick={props.onClickMoveToSignup}>
+          <S.RowBox>
+            <S.Authentication onClick={props.onClickMoveToLogin}>
+              LOGIN
+            </S.Authentication>
+            <S.Authentication onClick={props.onClickMoveToSignup}>
               SIGN-UP
-            </InnerButton>
-          </div>
+            </S.Authentication>
+          </S.RowBox>
         )}
-      </InnerWrapper>
-    </Wrapper>
+      </S.InnerWrapper>
+    </S.Wrapper>
   );
 }
