@@ -1,4 +1,4 @@
-export interface IProps {
+export interface ILayoutHeaderProps {
   onClickLogo: () => void;
   onClickMoveToLogin: () => void;
   onClickMoveToSignup: () => void;
