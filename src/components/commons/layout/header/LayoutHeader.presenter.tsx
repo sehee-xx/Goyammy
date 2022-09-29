@@ -16,7 +16,9 @@ export default function LayoutHeaderUI(props: IProps) {
         ></InnerLogo>
         {props.accessToken && (
           <div>
-            <InnerButton>{props.data?.fetchUserLoggedIn.name}</InnerButton>
+            <InnerButton onClick={props.onClickUser}>
+              {props.data?.fetchUserLoggedIn.name}
+            </InnerButton>
             <InnerButton onClick={props.onClickLogout}>LOGOUT</InnerButton>
           </div>
         )}

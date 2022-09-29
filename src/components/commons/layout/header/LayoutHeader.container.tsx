@@ -24,6 +24,10 @@ export default function LayoutHeader() {
     router.push("/signup");
   };
 
+  const onClickUser = () => {
+    router.push("/mypages");
+  };
+
   const onClickLogout = () => {
     Modal.confirm({
       content: "정말로 로그아웃 하시겠습니까?",
@@ -39,6 +43,7 @@ export default function LayoutHeader() {
       onClickLogo={onClickLogo}
       onClickMoveToLogin={onClickMoveToLogin}
       onClickMoveToSignup={onClickMoveToSignup}
+      onClickUser={onClickUser}
       data={data}
       accessToken={accessToken}
       onClickLogout={onClickLogout}
