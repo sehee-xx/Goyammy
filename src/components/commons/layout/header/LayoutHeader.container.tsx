@@ -13,7 +13,7 @@ export default function LayoutHeader() {
   const [logoutUser] = useMutation(LOGOUT_USER);
 
   const onClickLogo = () => {
-    router.push("/boards");
+    router.push("/");
   };
 
   const onClickMoveToLogin = () => {
