@@ -27,7 +27,7 @@ export default function LayoutBannerUI() {
           <SliderItem src="/images/banner3.jpeg" />
         </div>
         <div>
-          <SliderItem src="/images/banner4.png" />
+          <SliderItem src="/images/banner4.jpeg" />
         </div>
         <div>
           <SliderItem src="/images/banner5.jpeg" />
