@@ -6,7 +6,7 @@ const NAVIGATION_MENUS = [
   { name: "CATS", page: "/boards" },
   { name: "CAFE", page: "/boards" },
   { name: "MARKET", page: "/markets" },
-  { name: "MY:PAGE", page: "/mypages" },
+  { name: "MYPAGE", page: "/mypages" },
   { name: "EVENT", page: "/boards" },
 ];
 
