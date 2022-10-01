@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   height: 64px;
-  background-color: #cd863f;
+  background-color: #f39c1f;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -16,6 +16,6 @@ export const MenuItem = styled.div`
   font-size: 22px;
   cursor: pointer;
   :hover {
-    color: #ffd700;
+    color: #464747;
   }
 `;

@@ -47,7 +47,7 @@ export const UserName = styled.div`
   font-weight: 600;
   color: #464747;
   :hover {
-    color: #eaa945;
+    color: #f39c1f;
   }
   cursor: pointer;
 `;
@@ -57,7 +57,7 @@ export const Authentication = styled.div`
   font-weight: 600;
   color: #464747;
   :hover {
-    color: #eaa945;
+    color: #f39c1f;
   }
   cursor: pointer;
 `;
