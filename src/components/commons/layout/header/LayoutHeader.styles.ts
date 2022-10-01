@@ -10,7 +10,8 @@ export const Wrapper = styled.div`
 `;
 
 export const InnerWrapper = styled.div`
-  width: 1200px;
+  width: 100%;
+  max-width: 1154px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
