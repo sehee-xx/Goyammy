@@ -9,7 +9,6 @@ const Body = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 100px;
-  background-image: url("/images/background.jpeg");
 `;
 
 interface ILayoutProps {
