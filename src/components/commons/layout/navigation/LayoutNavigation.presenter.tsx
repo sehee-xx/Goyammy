@@ -3,7 +3,7 @@ import { MenuItem, Wrapper } from "./LayoutNavigation.styles";
 import { ILayoutNavigationUIProps } from "./LayoutNavigation.types";
 
 const NAVIGATION_MENUS = [
-  { name: "CATS", page: "/boards" },
+  { name: "CATS", page: "/cats" },
   { name: "CAFE", page: "/boards" },
   { name: "MARKET", page: "/markets" },
   { name: "MYPAGE", page: "/mypages" },
