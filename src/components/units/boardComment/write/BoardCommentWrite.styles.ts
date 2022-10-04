@@ -7,16 +7,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
-`;
-
-export const Page = styled.div`
-  width: 1199px;
-  display: flex;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-top: 87px;
   padding-top: 40px;
   background-color: #ffdead;

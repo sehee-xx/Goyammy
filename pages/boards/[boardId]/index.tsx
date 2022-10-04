@@ -6,6 +6,7 @@ import { PageAdd } from "../../../src/components/units/board/detail/BoardDetail.
 import styled from "@emotion/styled";
 
 const Comment = styled.div`
+  width: 100%;
   border: 3px solid #cd863f;
   border-radius: 30px;
   background-color: white;

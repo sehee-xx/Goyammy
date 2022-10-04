@@ -5,10 +5,13 @@ import styled from "@emotion/styled";
 import { ReactNode } from "react";
 
 const Body = styled.div`
+  width: 100%;
+  max-width: 1247px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px;
+  padding-top: 100px;
 `;
 
 interface ILayoutProps {

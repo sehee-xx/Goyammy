@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
-export const Main = styled.div`
-  width: 600px;
+export const Main = styled.form`
+  width: 100%;
   background-color: white;
   border-radius: 30px;
   border: 3px solid #cd863f;
@@ -11,7 +11,9 @@ export const Main = styled.div`
   align-items: center;
   padding: 40px 50px 50px 50px;
 `;
+
 export const Header = styled.div``;
+
 export const Logo = styled.div`
   font-size: 35px;
   font-weight: 900;
@@ -22,6 +24,7 @@ export const Logo = styled.div`
   cursor: pointer;
   padding-bottom: 30px;
 `;
+
 export const Body = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,6 +32,7 @@ export const Body = styled.div`
   justify-content: center;
   padding-bottom: 20px;
 `;
+
 export const Label = styled.label`
   align-self: flex-start;
   padding-bottom: 3px;
@@ -37,6 +41,7 @@ export const Label = styled.label`
   font-weight: bold;
   font-size: 15px;
 `;
+
 export const Error = styled.div`
   color: #ff6347;
   font-weight: bold;
@@ -46,14 +51,17 @@ export const Error = styled.div`
   padding-left: 10px;
   padding-bottom: 10px;
 `;
+
 export const Footer = styled.div`
   display: flex;
   flex-direction: row;
 `;
+
 export const Question = styled.label`
   color: #8b4513;
   padding: 0px 5px;
 `;
+
 export const Login = styled.div`
   font-weight: 700;
   color: orange;
