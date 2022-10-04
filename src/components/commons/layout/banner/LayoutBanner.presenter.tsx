@@ -1,7 +1,11 @@
-import { SliderItem, Wrapper } from "./LayoutBanner.styles";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import {
+  Arrow,
+  Left,
+  Right,
+  SliderItem,
+  StyledSlider,
+  Wrapper,
+} from "./LayoutBanner.styles";
 
 export default function LayoutBannerUI() {
   const settings = {
@@ -12,11 +16,21 @@ export default function LayoutBannerUI() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2200,
+    prevArrow: (
+      <Left>
+        <Arrow src="/images/leftArrow.png" />
+      </Left>
+    ),
+    nextArrow: (
+      <Right>
+        <Arrow src="/images/rightArrow.png" />
+      </Right>
+    ),
   };
 
   return (
     <Wrapper>
-      <Slider {...settings}>
+      <StyledSlider {...settings}>
         <div>
           <SliderItem src="/images/banner1.png" />
         </div>
@@ -35,7 +49,7 @@ export default function LayoutBannerUI() {
         <div>
           <SliderItem src="/images/banner6.png" />
         </div>
-      </Slider>
+      </StyledSlider>
     </Wrapper>
   );
 }
