@@ -63,11 +63,13 @@ export const Info = styled.div`
   color: #8b4513;
 `;
 export const Link = styled.img`
+  height: 30px;
   cursor: pointer;
 `;
 export const Location = styled.img`
+  height: 30px;
   cursor: pointer;
-  padding-left: 29.33px;
+  padding-left: 10px;
 `;
 export const Body = styled.div`
   width: 100%;
