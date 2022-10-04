@@ -31,6 +31,7 @@ export const Right = styled.div`
   text-align: right;
   line-height: 30px;
 `;
+
 export const Arrow = styled.img`
   height: 30px;
 `;
