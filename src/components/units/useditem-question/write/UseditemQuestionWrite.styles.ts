@@ -11,8 +11,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Page = styled.div`
-  width: 1199px;
-  display: flex;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

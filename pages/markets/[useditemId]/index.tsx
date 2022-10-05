@@ -6,6 +6,7 @@ import UseditemQuestionWrite from "../../../src/components/units/useditem-questi
 import ItemDetail from "../../../src/components/units/useditem/detail/ItemDetail.container";
 
 const Comment = styled.div`
+  width: 100%;
   border: 3px solid #cd863f;
   border-radius: 30px;
   background-color: white;

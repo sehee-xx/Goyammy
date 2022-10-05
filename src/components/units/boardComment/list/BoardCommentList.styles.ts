@@ -4,11 +4,11 @@ import { Rate } from "antd";
 export const ItemWrapper = styled.div`
   width: 100%;
   padding-top: 20px;
-  /* height: 128px; */
   border-radius: 30px;
   background-color: #faf0e6;
   padding: 20px 30px;
   margin-bottom: 20px;
+  margin-top: 50px;
 `;
 
 export const FlexWrapper = styled.div`

@@ -11,14 +11,13 @@ export const Wrapper = styled.div`
 `;
 
 export const Page = styled.div`
-  width: 1199px;
+  width: 100%;
   display: flex;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 87px;
-  padding-top: 40px;
+  margin-top: 30px;
   background-color: #ffdead;
   border-radius: 30px;
   padding: 20px 30px;
