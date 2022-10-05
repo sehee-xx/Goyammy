@@ -1,7 +1,10 @@
 import styled from "@emotion/styled";
 import { ITextTokenProps } from "./BoardList.types";
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  width: 100%;
+  max-width: 1247px;
+`;
 export const Main = styled.div`
   width: 100%;
   background-color: linen;
