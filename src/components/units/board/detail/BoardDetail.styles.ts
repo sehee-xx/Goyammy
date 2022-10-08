@@ -19,7 +19,7 @@ export const Main = styled.div`
   justify-content: center;
   align-items: center;
   padding: 80px 102px 0px 102px;
-  border-radius: 30px;
+  border-radius: 10px;
 `;
 
 export const Header = styled.div`
