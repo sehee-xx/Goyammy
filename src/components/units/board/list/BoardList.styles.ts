@@ -8,8 +8,8 @@ export const Wrapper = styled.div`
 export const Main = styled.div`
   width: 100%;
   background-color: linen;
-  border-radius: 30px;
-  border: 3px solid #cd863f;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
   justify-content: center;
