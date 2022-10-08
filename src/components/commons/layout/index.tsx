@@ -10,11 +10,11 @@ const HIDDEN_HEADERS = ["/login", "/signup"];
 const Background = styled.div`
   width: 100%;
   background-color: #f8f8f8;
+  padding-bottom: 200px;
 `;
 
 const Body = styled.div`
   width: 100%;
-  height: 1000px;
   max-width: 1247px;
   margin: auto;
   display: flex;
