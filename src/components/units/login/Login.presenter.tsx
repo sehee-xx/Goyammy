@@ -22,7 +22,7 @@ export default function LoginUI(props: ILoginUIProps) {
           register={props.register("password")}
         />
         <S.Error>{props.formState.errors.password?.message}</S.Error>
-        <Button01 isActive={props.formState.isValid} title="LOGIN"></Button01>
+        <Button01 isActive={props.formState.isValid} title="로그인"></Button01>
       </S.Body>
       <S.Footer>
         <S.Question>아직 계정이 없으신가요?</S.Question>
