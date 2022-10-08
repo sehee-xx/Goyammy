@@ -9,5 +9,5 @@ export const Wrapper = styled.div`
 
 export const CatImg = styled.img`
   width: 33.33%;
-  height: 30%;
+  height: 420px;
 `;
