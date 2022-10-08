@@ -1,31 +1,28 @@
 import styled from "@emotion/styled";
 
 export const Main = styled.form`
-  width: 100%;
+  width: 500px;
   background-color: white;
   border-radius: 30px;
-  border: 3px solid #cd863f;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 40px 50px 50px 50px;
+  padding: 50px 60px;
+  margin-top: 50px;
 `;
 
-export const Header = styled.div``;
-
 export const Logo = styled.div`
-  font-size: 35px;
+  font-size: 28px;
   font-weight: 900;
-  padding-top: 10px;
   font-family: "live";
   font-style: normal;
-  color: orange;
-  cursor: pointer;
+  color: #f39c1f;
   padding-bottom: 30px;
 `;
 
-export const Body = styled.div`
+export const Contents = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,37 +30,43 @@ export const Body = styled.div`
   padding-bottom: 20px;
 `;
 
+export const Info = styled.div`
+  width: 100%;
+  padding-bottom: 10px;
+`;
+
 export const Label = styled.label`
   align-self: flex-start;
-  padding-bottom: 3px;
-  padding-left: 10px;
-  color: orange;
+  padding-bottom: 4px;
+  padding-left: 6px;
+  color: #464747;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
 `;
 
 export const Error = styled.div`
-  color: #ff6347;
-  font-weight: bold;
+  color: #ff0033;
+  font-size: 12px;
   display: flex;
   flex-direction: row;
   align-self: flex-start;
-  padding-left: 10px;
+  padding-left: 6px;
   padding-bottom: 10px;
 `;
 
 export const Footer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
 `;
 
 export const Question = styled.label`
-  color: #8b4513;
+  color: #464747;
   padding: 0px 5px;
 `;
 
 export const Login = styled.div`
   font-weight: 700;
-  color: orange;
+  color: #f39c1f;
   cursor: pointer;
 `;
