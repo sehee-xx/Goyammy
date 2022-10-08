@@ -7,8 +7,14 @@ import { useRouter } from "next/router";
 
 const HIDDEN_HEADERS = ["/login", "/signup"];
 
+const Background = styled.div`
+  width: 100%;
+  background-color: #f8f8f8;
+`;
+
 const Body = styled.div`
   width: 100%;
+  height: 1000px;
   max-width: 1247px;
   margin: auto;
   display: flex;
@@ -29,7 +35,9 @@ export default function Layout(props: ILayoutProps) {
       <LayoutHeader />
       {!isHiddenHeader && <LayoutBanner />}
       <LayoutNavigation />
-      <Body>{props.children}</Body>
+      <Background>
+        <Body>{props.children}</Body>
+      </Background>
     </>
   );
 }

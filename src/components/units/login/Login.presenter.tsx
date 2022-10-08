@@ -7,7 +7,7 @@ export default function LoginUI(props: ILoginUIProps) {
   return (
     <S.Main onSubmit={props.handleSubmit(props.onClickLogin)}>
       <S.Header>
-        <S.Logo>🔐 GOYAMMY 🔐</S.Logo>
+        <S.Logo>로그인</S.Logo>
       </S.Header>
       <S.Body>
         <Input01
