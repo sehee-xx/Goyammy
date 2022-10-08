@@ -1,21 +1,15 @@
 import styled from "@emotion/styled";
 import { CheckCircleOutlined } from "@ant-design/icons";
 
-export const Wrapper = styled.div`
-  width: 100%;
-  background-color: #f8f8f8;
-`;
-
 export const Main = styled.form`
-  width: 600px;
+  width: 500px;
   background-color: white;
   border-radius: 30px;
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 40px 120px;
+  padding: 50px 60px;
   margin-top: 50px;
 `;
 
@@ -43,7 +37,7 @@ export const Error = styled.div`
   display: flex;
   flex-direction: row;
   align-self: flex-start;
-  padding-left: 10px;
+  padding-left: 6px;
   padding-bottom: 10px;
 `;
 
@@ -71,6 +65,7 @@ export const StatusText = styled.label`
 export const Footer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
 `;
 
 export const Question = styled.label`
