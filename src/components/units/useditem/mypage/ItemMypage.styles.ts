@@ -1,5 +1,25 @@
 import styled from "@emotion/styled";
 
+export const Wrapper = styled.div`
+  width: 100%;
+  max-width: 1247px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+`;
+
+export const Main = styled.div`
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  padding: 80px 102px 0px 102px;
+  border-radius: 10px;
+`;
+
 export const Box = styled.div`
   display: flex;
   flex-direction: column;

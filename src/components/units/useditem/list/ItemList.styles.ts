@@ -9,17 +9,19 @@ export const Wrapper = styled.div`
   align-items: center;
   border-radius: 30px;
 `;
+
 export const Main = styled.div`
   width: 100%;
   background-color: white;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
   padding: 80px 102px 0px 102px;
-  border: 3px solid #cd863f;
-  border-radius: 30px;
+  border-radius: 10px;
 `;
+
 export const Header = styled.div``;
+
 export const Title = styled.div`
   font-size: 40px;
   font-weight: bold;
@@ -27,11 +29,13 @@ export const Title = styled.div`
   text-align: center;
   color: #8b4513;
 `;
+
 export const TodayList = styled.div`
   display: flex;
   flex-direction: row;
   padding-bottom: 80px;
 `;
+
 export const TodayItem = styled.div`
   width: 284px;
   height: 280px;
@@ -39,6 +43,7 @@ export const TodayItem = styled.div`
   border-radius: 30px;
   margin: 0px 12px;
 `;
+
 export const TodayImg = styled.img`
   width: 100%;
   height: 180px;
