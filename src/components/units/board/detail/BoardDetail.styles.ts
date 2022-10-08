@@ -13,13 +13,12 @@ export const Wrapper = styled.div`
 export const Main = styled.div`
   width: 100%;
   background-color: white;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 80px 102px 0px 102px;
-  border: 3px solid #cd863f;
   border-radius: 30px;
 `;
 
