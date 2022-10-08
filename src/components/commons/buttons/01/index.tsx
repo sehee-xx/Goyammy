@@ -7,12 +7,11 @@ interface IProps {
 
 const Button = styled.button`
   width: 100%;
-  height: 50px;
+  height: 60px;
   font-size: 16px;
   font-weight: bold;
-  border-radius: 15px;
+  border-radius: 10px;
   border: none;
-  color: #8b4513;
   margin-top: 30px;
   cursor: pointer;
   background-color: ${(props: any) => (props.isActive ? "#f39c1f" : "#a5a5a5")};

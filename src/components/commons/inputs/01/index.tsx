@@ -11,7 +11,7 @@ const Input = styled.input`
   ::placeholder {
     color: #a5a5a5;
   }
-  border-radius: 15px;
+  border-radius: 10px;
   padding-left: 20px;
 `;
 
