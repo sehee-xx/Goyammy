@@ -11,11 +11,11 @@ export default function LayoutBannerUI() {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 1700,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2200,
+    autoplaySpeed: 3000,
     prevArrow: (
       <Left>
         <Arrow src="/images/leftArrow.png" />
@@ -31,24 +31,12 @@ export default function LayoutBannerUI() {
   return (
     <Wrapper>
       <StyledSlider {...settings}>
-        <div>
-          <SliderItem src="/images/banner1.png" />
-        </div>
-        <div>
-          <SliderItem src="/images/banner2.png" />
-        </div>
-        <div>
-          <SliderItem src="/images/banner3.png" />
-        </div>
-        <div>
-          <SliderItem src="/images/banner4.png" />
-        </div>
-        <div>
-          <SliderItem src="/images/banner5.png" />
-        </div>
-        <div>
-          <SliderItem src="/images/banner6.png" />
-        </div>
+        <SliderItem src="/images/banner1.png" />
+        <SliderItem src="/images/banner2.png" />
+        <SliderItem src="/images/banner3.png" />
+        <SliderItem src="/images/banner4.png" />
+        <SliderItem src="/images/banner5.png" />
+        <SliderItem src="/images/banner6.png" />
       </StyledSlider>
     </Wrapper>
   );

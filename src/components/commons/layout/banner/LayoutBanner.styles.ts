@@ -4,36 +4,37 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export const Wrapper = styled.div`
-  height: 378px;
-  background-color: white;
-`;
-
-export const SliderItem = styled.img`
+  width: 100%;
+  max-width: 1247px;
   margin: auto;
 `;
 
+export const SliderItem = styled.img`
+  width: 100%;
+`;
+
 export const Left = styled.div`
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   position: absolute;
-  left: 70px;
+  left: 15px;
   z-index: 99;
   text-align: left;
   line-height: 30px;
 `;
 
 export const Right = styled.div`
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   position: absolute;
-  right: 70px;
+  right: 15px;
   z-index: 99;
   text-align: right;
   line-height: 30px;
 `;
 
 export const Arrow = styled.img`
-  height: 30px;
+  height: 25px;
 `;
 
 export const StyledSlider = styled(Slider)`
