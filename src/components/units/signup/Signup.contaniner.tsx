@@ -50,14 +50,14 @@ export default function Signup() {
         },
       });
       Modal.success({
-        content: `😻 ${result.data?.createUser.name}님의 회원가입을 축하합니다! 😻`,
+        content: `${result.data?.createUser.name}님의 회원가입을 축하합니다.`,
         onOk() {
           router.push("/login");
         },
       });
     } catch (error: any) {
       Modal.error({
-        title: "😿 회원가입에 실패했습니다 😿",
+        title: "회원가입에 실패했습니다.",
         content: error.message,
       });
     }
