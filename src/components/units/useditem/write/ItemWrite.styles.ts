@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
   background-color: white;
 `;
 export const Title = styled.div`
