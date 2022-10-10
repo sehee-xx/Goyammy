@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
 export const Main = styled.div`
   width: 100%;
   background-color: white;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   justify-content: center;
