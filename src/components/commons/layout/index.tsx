@@ -7,13 +7,8 @@ import { useRouter } from "next/router";
 
 const HIDDEN_HEADERS = ["/login", "/signup"];
 
-const Wrapper = styled.body`
-  background-color: #f8f8f8;
-`;
-
 const Body = styled.div`
   width: 100%;
-  height: 100%;
   max-width: 1247px;
   margin: auto;
   display: flex;
@@ -30,11 +25,11 @@ export default function Layout(props: ILayoutProps) {
   const router = useRouter();
   const isHiddenHeader = HIDDEN_HEADERS.includes(router.asPath);
   return (
-    <Wrapper>
+    <>
       <LayoutHeader />
       {!isHiddenHeader && <LayoutBanner />}
       <LayoutNavigation />
       <Body>{props.children}</Body>
-    </Wrapper>
+    </>
   );
 }
