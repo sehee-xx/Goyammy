@@ -7,20 +7,19 @@ import { useRouter } from "next/router";
 
 const HIDDEN_HEADERS = ["/login", "/signup"];
 
-const Background = styled.div`
-  width: 100%;
+const Wrapper = styled.body`
   background-color: #f8f8f8;
-  padding-bottom: 200px;
 `;
 
 const Body = styled.div`
   width: 100%;
+  height: 100%;
   max-width: 1247px;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 30px;
+  padding: 30px 0px 150px 0px;
 `;
 
 interface ILayoutProps {
@@ -31,13 +30,11 @@ export default function Layout(props: ILayoutProps) {
   const router = useRouter();
   const isHiddenHeader = HIDDEN_HEADERS.includes(router.asPath);
   return (
-    <>
+    <Wrapper>
       <LayoutHeader />
       {!isHiddenHeader && <LayoutBanner />}
       <LayoutNavigation />
-      <Background>
-        <Body>{props.children}</Body>
-      </Background>
-    </>
+      <Body>{props.children}</Body>
+    </Wrapper>
   );
 }
