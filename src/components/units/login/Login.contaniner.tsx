@@ -43,10 +43,9 @@ export default function Login() {
       });
       const accessToken = result.data.loginUser.accessToken;
       setAccessToken(accessToken);
-      Modal.success({ content: "😽 로그인 성공 😽" });
-      router.push("/boards");
+      router.push("/");
     } catch (error: any) {
-      Modal.error({ content: "😿 로그인 실패 😿" });
+      Modal.error({ content: "로그인에 실패했습니다." });
     }
   };
 
