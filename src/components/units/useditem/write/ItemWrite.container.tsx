@@ -7,7 +7,7 @@ import { useMutation } from "@apollo/client";
 import { CREATE_USEDITEM, UPDATE_USEDITEM } from "./ItemWrite.queries";
 import { Modal } from "antd";
 import { useEffect, useState } from "react";
-import { IItemWriteProps } from "./ItemWrite.types";
+import { IData, IItemWriteProps } from "./ItemWrite.types";
 
 const schema = yup.object({
   name: yup.string().required("상품명은 필수 입력 사항입니다."),
@@ -91,17 +91,6 @@ export default function ItemWrite(props: IItemWriteProps) {
     }
   };
 
-  interface IData {
-    name: string;
-    remarks: string;
-    contents: string;
-    price: number;
-    lat?: number;
-    lng?: number;
-    address?: string;
-    addressDetail?: string;
-  }
-
   const onClickSubmit = async (data: IData) => {
     if (typeof data.lat === "string") data.lat = undefined;
     if (typeof data.lng === "string") data.lng = undefined;
@@ -125,14 +114,14 @@ export default function ItemWrite(props: IItemWriteProps) {
         },
       });
       Modal.success({
-        content: "😽 상품이 등록되었습니다 😽",
+        content: "상품이 등록되었습니다.",
         onOk() {
           router.push(`/markets/${result.data.createUseditem._id}`);
         },
       });
     } catch (error: any) {
       Modal.error({
-        title: "😿 상품 등록에 실패했습니다 😿",
+        title: "상품 등록에 실패했습니다.",
         content: error.message,
       });
     }

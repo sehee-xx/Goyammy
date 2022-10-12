@@ -3,6 +3,17 @@ export interface IItemWriteProps {
   itemData?: any;
 }
 
+export interface IData {
+  name: string;
+  remarks: string;
+  contents: string;
+  price: number;
+  lat?: number;
+  lng?: number;
+  address?: string;
+  addressDetail?: string;
+}
+
 export interface ItemWriteUIProps {
   isEdit: boolean;
   itemData?: any;
