@@ -1,10 +1,10 @@
 import Button02 from "../../../commons/buttons/02";
-import Input02 from "../../../commons/inputs/02";
 import Uploads01 from "../../../commons/uploads/Uploads.container";
 import { v4 as uuidv4 } from "uuid";
 import * as S from "./ItemWrite.styles";
 import { ItemWriteUIProps } from "./ItemWrite.types";
 import KakaoMapWrite from "../../../commons/kakao-map/write";
+import Input03 from "../../../commons/inputs/03";
 
 export default function ItemWriteUI(props: ItemWriteUIProps) {
   return (
@@ -16,14 +16,14 @@ export default function ItemWriteUI(props: ItemWriteUIProps) {
       <S.Wrapper>
         <S.Title>상품{props.isEdit ? " 수정하기" : " 등록하기"} </S.Title>
         <S.Label>상품명</S.Label>
-        <Input02
+        <Input03
           type="text"
           placeholder="상품명을 작성해주세요."
           defaultValue={props.itemData?.fetchUseditem.name}
           register={props.register("name")}
         />
         <S.Label>한줄 요약</S.Label>
-        <Input02
+        <Input03
           type="text"
           placeholder="상품을 입력해주세요."
           register={props.register("remarks")}
@@ -36,14 +36,14 @@ export default function ItemWriteUI(props: ItemWriteUIProps) {
           defaultValue={props.itemData?.fetchUseditem.contents}
         />
         <S.Label>판매 가격</S.Label>
-        <Input02
+        <Input03
           type="text"
           placeholder="판매 가격을 입력해주세요."
           register={props.register("price")}
           defaultValue={props.itemData?.fetchUseditem.price}
         />
         <S.Label>태그 입력</S.Label>
-        <Input02
+        <Input03
           type="text"
           placeholder="#고양이 #중고마켓 #환영합니다"
           defaultValue={props.itemData?.fetchUseditem.tags}
