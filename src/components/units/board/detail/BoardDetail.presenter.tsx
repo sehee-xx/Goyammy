@@ -1,6 +1,7 @@
 import * as S from "./BoardDetail.styles";
 import { IBoardDetailUIProps } from "./BoardDetail.types";
-import {v4 as uuidv4} from "uuid"
+import { v4 as uuidv4 } from "uuid";
+import DOMPurify from "dompurify";
 
 export default function BoardDetailUI(props: IBoardDetailUIProps) {
   return (
@@ -23,12 +24,21 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
         <S.Body>
           <S.Title>{props.data?.fetchBoard.title}</S.Title>
           {props.data?.fetchBoard.images.map((_: any, index: number) => (
-            <S.Image 
-            key={uuidv4()}
-            src={`https://storage.googleapis.com/${props.data?.fetchBoard.images[index]}`}
+            <S.Image
+              key={uuidv4()}
+              src={`https://storage.googleapis.com/${props.data?.fetchBoard.images[index]}`}
             />
           ))}
-          <S.Contents>{props.data?.fetchBoard.contents}</S.Contents>
+
+          {typeof window !== "undefined" ? (
+            <S.Contents
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(props.data?.fetchBoard.contents),
+              }}
+            />
+          ) : (
+            <S.Contents />
+          )}
           {props.data?.fetchBoard.youtubeUrl && (
             <S.Video
               url={props.data?.fetchBoard.youtubeUrl}
