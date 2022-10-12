@@ -1,19 +1,17 @@
 import styled from "@emotion/styled";
 
 const Input = styled.input`
-  width: 996px;
-  height: 52px;
+  width: 100%;
+  height: 50px;
   padding-left: 16px;
-  border-radius: 30px;
+  border-radius: 10px;
+  background-color: #f7f8f9;
   border: none;
-  background-color: #faf0e6;
-  color: #8b4513;
-  outline-color: #cd863f;
+  color: #464747;
+  outline-color: #f39c1f;
   ::placeholder {
-    color: #8b4513;
+    color: #a5a5a5;
   }
-  margin-bottom: 40px;
-  font-size: 16px;
 `;
 
 export default function Input02(props: any) {
