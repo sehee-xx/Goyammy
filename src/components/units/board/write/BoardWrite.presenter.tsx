@@ -4,46 +4,50 @@ import DaumPostcode from "react-daum-postcode";
 import { Modal } from "antd";
 import Uploads01 from "../../../commons/uploads/Uploads.container";
 import { v4 as uuidv4 } from "uuid";
+import Input02 from "../../../commons/inputs/02";
 
 export default function BoardWriteUI(props: IBoardWriteUIProps) {
-  console.log(props.boardData?.fetchBoard);
   return (
-    <S.Wrapper>
+    <S.Wrapper
+      onSubmit={props.handleSubmit(
+        props.isEdit ? props.onClickEdit : props.onClickSubmit
+      )}
+    >
       <S.Title>게시글{props.isEdit ? " 수정" : " 등록"}</S.Title>
-      <S.WriterWrapper>
+      <S.RowBox>
         <S.InputWrapper>
           <S.Label>작성자</S.Label>
-          <S.Writer
+          <Input02
             type="text"
-            placeholder="이름을 적어주세요."
-            onChange={props.onChangeWriter}
+            placeholder="작성자를 입력해 주세요."
+            register={props.register("writer")}
             defaultValue={props.boardData?.fetchBoard.writer}
             disabled={props.isEdit}
           />
         </S.InputWrapper>
         <S.InputWrapper>
           <S.Label>비밀번호</S.Label>
-          <S.Password
+          <Input02
             type="password"
-            placeholder="비밀번호를 작성해주세요."
-            onChange={props.onChangePassword}
+            placeholder="비밀번호를 작성해 주세요."
+            register={props.register("password")}
             defaultValue={props.boardData?.fetchBoard.password}
           />
         </S.InputWrapper>
-      </S.WriterWrapper>
+      </S.RowBox>
       <S.InputWrapper>
         <S.Label>제목</S.Label>
-        <S.Subject
+        <Input02
           type="text"
-          placeholder="제목을 작성해주세요."
-          onChange={props.onChangeTitle}
+          placeholder="제목을 작성해 주세요."
+          register={props.register("title")}
           defaultValue={props.boardData?.fetchBoard.title}
         />
       </S.InputWrapper>
       <S.InputWrapper>
         <S.Label>내용</S.Label>
         <S.Contents
-          placeholder="내용을 작성해주세요."
+          placeholder="내용을 입력하세요."
           onChange={props.onChangeContents}
           defaultValue={props.boardData?.fetchBoard.contents}
         />
@@ -59,7 +63,7 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                 : props.boardData?.fetchBoard.boardAddress?.zipcode
             }
           />
-          <S.SearchButton onClick={props.onToggleModal}>
+          <S.SearchButton type="button" onClick={props.onToggleModal}>
             우편번호 검색
           </S.SearchButton>
           {props.isModalVisible && (
@@ -80,45 +84,35 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
               : props.boardData?.fetchBoard.boardAddress?.address
           }
         />
-        <S.Address
-          onChange={props.onChangeAddressDetail}
+        <Input02
+          register={props.register("addressDetail")}
           defaultValue={props.boardData?.fetchBoard.boardAddress?.addressDetail}
         />
       </S.InputWrapper>
-
       <S.InputWrapper>
         <S.Label>유튜브</S.Label>
-        <S.Youtube
-          placeholder="링크를 복사해주세요."
-          onChange={props.onChangeYoutubeUrl}
+        <Input02
+          placeholder="링크를 복사해 주세요."
+          register={props.register("youtubeUrl")}
           defaultValue={props.boardData?.fetchBoard.youtubeUrl}
         />
       </S.InputWrapper>
-      <S.ImageWrapper>
-        {new Array(3).fill(1).map((_: any, index: number) => (
-          <Uploads01
-            key={uuidv4()}
-            index={index}
-            onChangeFiles={props.onChangeFiles}
-            fileUrls={props.fileUrls}
-          />
-        ))}
-      </S.ImageWrapper>
-      <S.OptionWrapper>
-        <S.Label>메인설정</S.Label>
-        <S.RadioButton type="radio" id="youtube" name="radio-button" />
-        <S.RadioLabel htmlFor="youtube">유튜브</S.RadioLabel>
-        <S.RadioButton type="radio" id="image" name="radio-button" />
-        <S.RadioLabel htmlFor="image">사진</S.RadioLabel>
-      </S.OptionWrapper>
-      <S.ButtonWrapper>
-        <S.SubmitButton
-          disabled={props.isEdit ? false : props.checkButton}
-          onClick={props.isEdit ? props.onClickEdit : props.onClickSubmit}
-        >
-          {props.isEdit ? " 수정" : " 등록"}하기
-        </S.SubmitButton>
-      </S.ButtonWrapper>
+      <S.InputWrapper>
+        <S.Label>이미지</S.Label>
+        <S.ImageWrapper>
+          {new Array(3).fill(1).map((_: any, index: number) => (
+            <Uploads01
+              key={uuidv4()}
+              index={index}
+              onChangeFiles={props.onChangeFiles}
+              fileUrls={props.fileUrls}
+            />
+          ))}
+        </S.ImageWrapper>
+      </S.InputWrapper>
+      <S.SubmitButton disabled={!props.formState.isValid}>
+        {props.isEdit ? " 수정" : " 등록"}
+      </S.SubmitButton>
     </S.Wrapper>
   );
 }
