@@ -6,10 +6,9 @@ export const UploadImage = styled.img`
   margin-right: 24px;
 `;
 export const UploadButton = styled.div`
-  width: 78px;
-  height: 78px;
-  border: 1px solid #f2f2f2;
-  background-color: #ffdab9;
+  width: 100px;
+  height: 100px;
+  background-color: #f7f8f9;
   margin-right: 24px;
   outline: none;
   border: none;
@@ -18,7 +17,7 @@ export const UploadButton = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  color: #8b4513;
+  color: #a5a5a5;
 `;
 export const UploadFileHidden = styled.input`
   display: none;
