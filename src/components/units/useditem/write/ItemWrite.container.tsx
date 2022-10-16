@@ -47,6 +47,7 @@ export default function ItemWrite(props: IItemWriteProps) {
     trigger("lng");
     trigger("address");
   };
+
   const onClickEdit = async (data: any) => {
     if (typeof data.lat === "string") data.lat = undefined;
     if (typeof data.lng === "string") data.lng = undefined;
@@ -76,16 +77,15 @@ export default function ItemWrite(props: IItemWriteProps) {
         },
       });
 
-      console.log(result);
       Modal.success({
-        content: "😽 상품이 수정되었습니다 😽",
+        content: "상품이 수정되었습니다.",
         onOk() {
           router.push(`/markets/${router.query.useditemId}`);
         },
       });
     } catch (error: any) {
       Modal.error({
-        title: "😿 상품 수정에 실패했습니다 😿",
+        title: "상품 수정에 실패했습니다.",
         content: error.message,
       });
     }
@@ -136,18 +136,19 @@ export default function ItemWrite(props: IItemWriteProps) {
     }
     setFileUrls([...newFileUrls]);
   }
+
   return (
     <ItemWriteUI
       isEdit={props.isEdit}
       itemData={props.itemData}
+      formState={formState}
+      fileUrls={fileUrls}
       register={register}
       handleSubmit={handleSubmit}
-      formState={formState}
       onClickSubmit={onClickSubmit}
       onClickEdit={onClickEdit}
       onChangeContents={onChangeContents}
       onChangeFiles={onChangeFiles}
-      fileUrls={fileUrls}
       onChangeLocation={onChangeLocation}
     />
   );
