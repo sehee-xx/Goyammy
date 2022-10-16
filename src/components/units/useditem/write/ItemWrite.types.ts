@@ -20,10 +20,10 @@ export interface ItemWriteUIProps {
   register: any;
   handleSubmit: any;
   formState: any;
+  fileUrls: any;
   onClickSubmit: (data: any) => void;
   onClickEdit: (data: any) => void;
   onChangeContents: (value: string) => void;
   onChangeFiles: (index: number, url: string) => void;
-  fileUrls: any;
   onChangeLocation: (la: number, ma: number, address: string) => void;
 }
