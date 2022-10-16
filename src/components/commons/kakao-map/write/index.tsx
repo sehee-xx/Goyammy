@@ -60,5 +60,10 @@ export default function KakaoMapWrite(props: any) {
       });
     };
   }, []);
-  return <div id="map" style={{ width: "384px", height: "252px" }}></div>;
+  return (
+    <div
+      id="map"
+      style={{ width: "100%", maxWidth: "500px", height: "228px" }}
+    ></div>
+  );
 }
