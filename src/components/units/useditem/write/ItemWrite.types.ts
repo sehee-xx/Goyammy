@@ -21,6 +21,8 @@ export interface ItemWriteUIProps {
   handleSubmit: any;
   formState: any;
   fileUrls: any;
+  tags: string[];
+  setTags: any;
   onClickSubmit: (data: any) => void;
   onClickEdit: (data: any) => void;
   onChangeContents: (value: string) => void;

@@ -65,6 +65,13 @@ export const ProductInfo = styled(ReactQuill)`
   }
 `;
 
+export const TagBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+`;
+
 export const GPSBox = styled.div`
   width: 100%;
   display: flex;

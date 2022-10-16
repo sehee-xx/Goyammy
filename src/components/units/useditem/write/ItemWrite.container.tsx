@@ -28,6 +28,7 @@ export default function ItemWrite(props: IItemWriteProps) {
   });
 
   const [fileUrls, setFileUrls] = useState<string[]>([]);
+  const [tags, setTags] = useState<string[]>([]);
 
   useEffect(() => {
     setFileUrls(props.itemData?.fetchUseditem?.images || []);
@@ -58,6 +59,7 @@ export default function ItemWrite(props: IItemWriteProps) {
       if (data.remarks) updateUseditemInput.remarks = data.remarks;
       if (data.contents) updateUseditemInput.contents = data.contents;
       if (data.price) updateUseditemInput.price = data.price;
+      if (data.tags) updateUseditemInput.tags = data.tags;
       if (fileUrls) updateUseditemInput.images = fileUrls;
       if (data.lat || data.lng || data.address || data.addressDetail) {
         updateUseditemInput.useditemAddress = {};
@@ -102,7 +104,7 @@ export default function ItemWrite(props: IItemWriteProps) {
             remarks: data.remarks,
             contents: data.contents,
             price: data.price,
-            // tags: data.tags,
+            tags,
             images: fileUrls,
             useditemAddress: {
               lat: data.lat,
@@ -143,6 +145,8 @@ export default function ItemWrite(props: IItemWriteProps) {
       itemData={props.itemData}
       formState={formState}
       fileUrls={fileUrls}
+      tags={tags}
+      setTags={setTags}
       register={register}
       handleSubmit={handleSubmit}
       onClickSubmit={onClickSubmit}

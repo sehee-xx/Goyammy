@@ -5,6 +5,7 @@ import * as S from "./ItemWrite.styles";
 import { ItemWriteUIProps } from "./ItemWrite.types";
 import KakaoMapWrite from "../../../commons/kakao-map/write";
 import Input02 from "../../../commons/inputs/02";
+import MakeTag from "../../../commons/tags";
 
 export default function ItemWriteUI(props: ItemWriteUIProps) {
   return (
@@ -54,11 +55,9 @@ export default function ItemWriteUI(props: ItemWriteUIProps) {
         </S.InputWrapper>
         <S.InputWrapper>
           <S.Label>태그 입력</S.Label>
-          <Input02
-            type="text"
-            placeholder="#고양이 #중고마켓 #환영합니다"
-            defaultValue={props.itemData?.fetchUseditem.tags}
-          />
+          <S.TagBox>
+            <MakeTag tags={props.tags} setTags={props.setTags} />
+          </S.TagBox>
         </S.InputWrapper>
       </S.RowBox>
       <S.RowBox>
