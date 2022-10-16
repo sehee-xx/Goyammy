@@ -5,6 +5,7 @@ import { Modal } from "antd";
 import Uploads01 from "../../../commons/uploads/Uploads.container";
 import { v4 as uuidv4 } from "uuid";
 import Input02 from "../../../commons/inputs/02";
+import Button02 from "../../../commons/buttons/02";
 
 export default function BoardWriteUI(props: IBoardWriteUIProps) {
   return (
@@ -110,9 +111,10 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
           ))}
         </S.ImageWrapper>
       </S.InputWrapper>
-      <S.SubmitButton disabled={!props.formState.isValid}>
-        {props.isEdit ? " 수정" : " 등록"}
-      </S.SubmitButton>
+      <Button02
+        title={props.isEdit ? "수정" : "등록"}
+        isActive={props.formState.isValid}
+      ></Button02>
     </S.Wrapper>
   );
 }
