@@ -44,7 +44,7 @@ export default function ItemDetailUI(props: IItemDetailProps) {
             </S.ColumnBox>
             <S.ColumnBox>
               <S.Pick
-                src="/images/pick.png"
+                src={props.isPicked ? "/images/Pick.png" : "/images/unPick.png"}
                 onClick={props.onClickPick}
               ></S.Pick>
               <S.PickCount>{props.data?.fetchUseditem.pickedCount}</S.PickCount>
@@ -74,7 +74,11 @@ export default function ItemDetailUI(props: IItemDetailProps) {
           ) : (
             <S.ProductInfo />
           )}
-          <S.Tag>{props.data?.fetchUseditem.tags}</S.Tag>
+          <S.TagBox>
+            {props.data?.fetchUseditem.tags.map((el: string) => {
+              return <S.Tag key={uuidv4()}>#{el}</S.Tag>;
+            })}
+          </S.TagBox>
           <KakaoMapDetail
             lat={props.data?.fetchUseditem?.useditemAddress?.lat || 37.4847}
             lng={props.data?.fetchUseditem?.useditemAddress?.lng || 126.9027}

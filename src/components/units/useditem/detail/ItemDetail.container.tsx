@@ -1,6 +1,7 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import ItemDetailUI from "./ItemDetail.presenter";
 import {
   CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING,
@@ -12,6 +13,8 @@ import {
 
 export default function ItemDetail() {
   const router = useRouter();
+
+  const [isPicked, setIsPicked] = useState(false);
 
   const [deleteUseditem] = useMutation(DELETE_USEDITEM);
 
@@ -56,6 +59,7 @@ export default function ItemDetail() {
       await toggleUseditemPick({
         variables: { useditemId: router.query.useditemId },
       });
+      setIsPicked((prev) => !prev);
       refetch();
     } catch (error: any) {
       Modal.error({ content: error.message });
@@ -81,8 +85,9 @@ export default function ItemDetail() {
     <ItemDetailUI
       data={data}
       createDate={createDate}
-      onClickGoToList={onClickGoToList}
       userData={userData}
+      isPicked={isPicked}
+      onClickGoToList={onClickGoToList}
       onClickDeleteButton={onClickDeleteButton}
       onClickUpdateButton={onClickUpdateButton}
       onClickPick={onClickPick}

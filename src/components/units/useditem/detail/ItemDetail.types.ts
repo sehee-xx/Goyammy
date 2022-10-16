@@ -1,8 +1,9 @@
 export interface IItemDetailProps {
   data?: any;
   createDate: string;
-  onClickGoToList: () => void;
   userData?: any;
+  isPicked: boolean;
+  onClickGoToList: () => void;
   onClickDeleteButton: () => void;
   onClickUpdateButton: () => void;
   onClickPick: () => void;
