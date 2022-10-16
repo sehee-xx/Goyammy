@@ -6,20 +6,18 @@ interface IProps {
 }
 
 const Button = styled.button`
-  width: 179px;
-  height: 52px;
+  width: 180px;
+  height: 60px;
   border: none;
-  border-radius: 20px;
-  font-size: 16px;
+  border-radius: 10px;
+  font-size: 18px;
   font-weight: 500;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-top: 100px;
   cursor: pointer;
-  background-color: orange;
+  background-color: #f39c1f;
   :disabled {
-    background-color: #ffdab9;
-    color: #8b4513;
-    cursor: default;
+    background-color: #a5a5a5;
+    color: #fff;
   }
   color: white;
 `;
