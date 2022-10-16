@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
+
 export const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 export const Wrapper = styled.form`
@@ -109,21 +110,4 @@ export const Address = styled.input`
 export const ImageWrapper = styled.div`
   display: flex;
   flex-direction: row;
-`;
-
-export const SubmitButton = styled.button`
-  width: 180px;
-  height: 60px;
-  border: none;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: 500;
-  margin-top: 100px;
-  cursor: pointer;
-  background-color: #f39c1f;
-  :disabled {
-    background-color: #a5a5a5;
-    color: #fff;
-  }
-  color: white;
 `;
