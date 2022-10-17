@@ -7,13 +7,14 @@ export const Wrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: white;
 `;
 
 export const MenuItem = styled.div`
   margin: 0px 60px;
   font-size: 18px;
   cursor: pointer;
+  color: ${(props: { isValid: boolean }) =>
+    props.isValid ? "#464747" : "#fff"};
   :hover {
     color: #464747;
   }
