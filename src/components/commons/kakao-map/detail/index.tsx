@@ -26,8 +26,22 @@ export default function KakaoMapDetail(props: any) {
           props.lng
         );
 
+        const imageSrc = "/images/mapLocation.png";
+        const imageSize = new window.kakao.maps.Size(55, 59);
+        const imageOption = {
+          offset: new window.kakao.maps.Point(27, 69),
+        };
+
+        const markerImage = new window.kakao.maps.MarkerImage(
+          imageSrc,
+          imageSize,
+          imageOption
+        );
+
         const marker = new window.kakao.maps.Marker({
+          map,
           position: markerPosition,
+          image: markerImage,
         });
 
         marker.setMap(map);
