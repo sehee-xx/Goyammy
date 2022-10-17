@@ -6,6 +6,8 @@ import { ItemWriteUIProps } from "./ItemWrite.types";
 import KakaoMapWrite from "../../../commons/kakao-map/write";
 import Input02 from "../../../commons/inputs/02";
 import MakeTag from "../../../commons/tags";
+import { Modal } from "antd";
+import DaumPostcode from "react-daum-postcode";
 
 export default function ItemWriteUI(props: ItemWriteUIProps) {
   return (
@@ -63,27 +65,31 @@ export default function ItemWriteUI(props: ItemWriteUIProps) {
       <S.RowBox>
         <S.InputWrapper>
           <S.Label>거래 위치</S.Label>
-          <KakaoMapWrite
-            onChangeLocation={props.onChangeLocation}
-            lat={props.itemData?.fetchUseditem.useditemAddress.lat || 37.4847}
-            lng={props.itemData?.fetchUseditem.useditemAddress.lng || 126.9027}
-          />
+          <KakaoMapWrite setLatLng={props.setLatLng} address={props.address} />
         </S.InputWrapper>
         <S.InputWrapper>
-          <S.Label>GPS</S.Label>
-          <S.GPSBox>
-            <S.LATLNG
+          <S.Label>우편번호</S.Label>
+          <S.ZipcodeBox>
+            <S.Zipcode
               readOnly
-              {...props.register("lat")}
-              defaultValue={props.itemData?.fetchUseditem.useditemAddress.lat}
+              {...props.register("zipcode")}
+              defaultValue={
+                props.itemData?.fetchUseditem.useditemAddress.zipcode
+              }
             />
-            <S.LocationIcon src="/images/location.png" />
-            <S.LATLNG
-              readOnly
-              {...props.register("lng")}
-              defaultValue={props.itemData?.fetchUseditem.useditemAddress.lng}
-            />
-          </S.GPSBox>
+            <S.ZipcodeButton type="button" onClick={props.onToggleModal}>
+              우편번호 검색
+            </S.ZipcodeButton>
+            {props.isModalVisible && (
+              <Modal
+                visible={true}
+                onOk={props.onToggleModal}
+                onCancel={props.onToggleModal}
+              >
+                <DaumPostcode onComplete={props.handleComplete} />
+              </Modal>
+            )}
+          </S.ZipcodeBox>
           <S.Label>주소</S.Label>
           <S.Address
             readOnly

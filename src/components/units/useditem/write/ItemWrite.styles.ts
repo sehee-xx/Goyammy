@@ -72,16 +72,16 @@ export const TagBox = styled.div`
   flex-wrap: wrap;
 `;
 
-export const GPSBox = styled.div`
+export const ZipcodeBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
 `;
 
-export const LATLNG = styled.input`
+export const Zipcode = styled.input`
   width: 100%;
+  max-width: 77px;
   height: 50px;
   padding-left: 16px;
   border-radius: 10px;
@@ -91,8 +91,16 @@ export const LATLNG = styled.input`
   outline: none;
 `;
 
-export const LocationIcon = styled.img`
-  height: 35px;
+export const ZipcodeButton = styled.button`
+  width: 100%;
+  max-width: 124px;
+  height: 50px;
+  margin-left: 16px;
+  border: none;
+  background-color: #f39c1f;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
 `;
 
 export const Address = styled.input`
