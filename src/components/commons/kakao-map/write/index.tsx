@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect } from "react";
 
 declare const window: typeof globalThis & {
@@ -9,61 +8,57 @@ export default function KakaoMapWrite(props: any) {
   useEffect(() => {
     const script = document.createElement("script");
     script.src =
-      "//dapi.kakao.com/v2/maps/sdk.js?appkey=bf1abfa34e8657abbd85bce3a25b1c4d&autoload=false";
+      "//dapi.kakao.com/v2/maps/sdk.js?appkey=bf1abfa34e8657abbd85bce3a25b1c4d&autoload=false&libraries=services";
     document.head.appendChild(script);
 
     script.onload = () => {
       window.kakao.maps.load(function () {
         const container = document.getElementById("map");
         const options = {
-          center: new window.kakao.maps.LatLng(props.lat, props.lng),
+          center: new window.kakao.maps.LatLng(
+            37.5213527337159,
+            126.937326091368
+          ),
           level: 3,
         };
 
         const map = new window.kakao.maps.Map(container, options);
 
-        const markerPosition = new window.kakao.maps.LatLng(
-          props.lat,
-          props.lng
-        );
+        const geocoder = new window.kakao.maps.services.Geocoder();
 
-        const marker = new window.kakao.maps.Marker({
-          position: markerPosition,
-        });
+        geocoder.addressSearch(
+          props.address || "서울 영등포구 63로 45",
+          function (result: any, status: any) {
+            if (status === window.kakao.maps.services.Status.OK) {
+              const coords = new window.kakao.maps.LatLng(
+                result[0].y,
+                result[0].x
+              );
+              props.setLatLng([result[0].y, result[0].x]);
+              const imageSrc = "/images/mapLocation.png";
+              const imageSize = new window.kakao.maps.Size(55, 59);
+              const imageOption = {
+                offset: new window.kakao.maps.Point(27, 69),
+              };
 
-        marker.setMap(map);
+              const markerImage = new window.kakao.maps.MarkerImage(
+                imageSrc,
+                imageSize,
+                imageOption
+              );
 
-        window.kakao.maps.event.addListener(
-          map,
-          "click",
-          function (mouseEvent: any) {
-            const latlng = mouseEvent.latLng;
-            marker.setPosition(latlng);
-            axios
-              .get(
-                `https://dapi.kakao.com/v2/local/geo/coord2address.json?x=${latlng.La}&y=${latlng.Ma}`,
-                {
-                  headers: {
-                    Authorization: "KakaoAK 16927a3a7308d690fd1868a394bee796",
-                  },
-                }
-              )
-              .then((res) => {
-                props.onChangeLocation(
-                  latlng.Ma,
-                  latlng.La,
-                  res.data.documents[0].address.address_name
-                );
+              const marker = new window.kakao.maps.Marker({
+                map,
+                position: coords,
+                image: markerImage,
               });
+
+              map.setCenter(coords);
+            }
           }
         );
       });
     };
-  }, []);
-  return (
-    <div
-      id="map"
-      style={{ width: "100%", maxWidth: "500px", height: "228px" }}
-    ></div>
-  );
+  }, [props.address]);
+  return <div id="map" style={{ width: "100%", height: "227px" }}></div>;
 }
