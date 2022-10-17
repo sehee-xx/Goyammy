@@ -22,6 +22,7 @@ export const FETCH_USEDITEM = gql`
         lng
         address
         addressDetail
+        zipcode
       }
       createdAt
     }
