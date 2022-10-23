@@ -82,7 +82,7 @@ export default function BoardDetail() {
   };
 
   const onClickLocation = () => {
-    console.log(data?.fetchBoard.boardAddress);
+    console.log(data?.fetchBoard.boardAddress.address);
   };
 
   return (

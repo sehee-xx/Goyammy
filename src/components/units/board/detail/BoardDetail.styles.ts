@@ -151,6 +151,7 @@ export const LikeDisLike = styled.div`
   gap: 30px;
   padding-bottom: 66px;
 `;
+
 export const LikeBox = styled.div`
   display: flex;
   flex-direction: column;

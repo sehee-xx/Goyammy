@@ -2,6 +2,7 @@ import * as S from "./BoardDetail.styles";
 import { IBoardDetailUIProps } from "./BoardDetail.types";
 import { v4 as uuidv4 } from "uuid";
 import DOMPurify from "dompurify";
+import { Tooltip } from "antd";
 
 export default function BoardDetailUI(props: IBoardDetailUIProps) {
   return (
@@ -14,11 +15,16 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
             <S.Date>{props.createDate} </S.Date>
           </S.HeaderText>
           <S.Info>
-            <S.LinkLocation src="/images/link.png"></S.LinkLocation>
-            <S.LinkLocation
-              onClick={props.onClickLocation}
-              src="/images/location.png"
-            ></S.LinkLocation>
+            <Tooltip title={props.data?.fetchBoard?.youtubeUrl}>
+              <S.LinkLocation src="/images/link.png"></S.LinkLocation>
+            </Tooltip>
+
+            <Tooltip title={props.data?.fetchBoard?.boardAddress?.address}>
+              <S.LinkLocation
+                onClick={props.onClickLocation}
+                src="/images/location.png"
+              ></S.LinkLocation>
+            </Tooltip>
           </S.Info>
         </S.Header>
         <S.Body>
@@ -44,7 +50,7 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
           {props.data?.fetchBoard.youtubeUrl && (
             <S.Video
               url={props.data?.fetchBoard.youtubeUrl}
-              width="1043px"
+              width="100%"
               height="600px"
             />
           )}
