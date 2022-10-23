@@ -15,12 +15,11 @@ export default function BoardCommentList() {
   });
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [commentEditId, setCommentEditId] = useState("");
-  const [commentDeleteId, setCommentDeleteId] = useState("")
+  const [commentDeleteId, setCommentDeleteId] = useState("");
   const [commentPassword, setCommentPassword] = useState("");
 
   const [deleteBoardComment] = useMutation(DELETE_BOARD_COMMENT);
 
-  // infinite scroll 함수
   const loadFunc = () => {
     if (!data) return;
 
@@ -32,13 +31,15 @@ export default function BoardCommentList() {
             fetchBoardComments: [...prev.fetchBoardComments],
           };
         return {
-          fetchBoardComments: [...prev.fetchBoardComments, ...fetchMoreResult.fetchBoardComments],
+          fetchBoardComments: [
+            ...prev.fetchBoardComments,
+            ...fetchMoreResult.fetchBoardComments,
+          ],
         };
       },
     });
   };
 
-  // isModalVisible을 변경하는 함수
   const onToggleModal = () => {
     setIsModalVisible((prev) => !prev);
   };

@@ -27,12 +27,12 @@ export default function BoardCommentListUI(props: IBoardCommentListUIProps) {
                     <S.Contents>{el.contents}</S.Contents>
                   </S.MainWrapper>
                   <S.OptionWrapper>
-                    <S.UpdateIcon
+                    <S.EditDeleteIcon
                       src="/images/graypencil.png/"
                       id={el._id}
                       onClick={props.onClickEditIcon}
                     />
-                    <S.DeleteIcon
+                    <S.EditDeleteIcon
                       src="/images/grayX.png/"
                       id={el._id}
                       onClick={props.onClickDeleteIcon}
@@ -43,6 +43,8 @@ export default function BoardCommentListUI(props: IBoardCommentListUIProps) {
                         visible={true}
                         onOk={props.onClickDelete}
                         onCancel={props.onToggleModal}
+                        cancelText="취소"
+                        okText="삭제"
                       >
                         <S.password
                           type="password"
