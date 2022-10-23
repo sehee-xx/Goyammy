@@ -62,6 +62,7 @@ export const ProductInfo = styled(ReactQuill)`
   }
   .ql-container.ql-snow {
     border: none !important;
+    height: 220px;
   }
 `;
 

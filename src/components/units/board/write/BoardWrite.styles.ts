@@ -61,6 +61,7 @@ export const Contents = styled(ReactQuill)`
   }
   .ql-container.ql-snow {
     border: none !important;
+    height: 220px;
   }
 `;
 
