@@ -11,7 +11,7 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
           <S.ProfileImage src="/images/profile.png"></S.ProfileImage>
           <S.HeaderText>
             <S.Writer>{props.data?.fetchBoard.writer}</S.Writer>
-            <S.Date>Date : {props.createDate} </S.Date>
+            <S.Date>{props.createDate} </S.Date>
           </S.HeaderText>
           <S.Info>
             <S.LinkLocation src="/images/link.png"></S.LinkLocation>
