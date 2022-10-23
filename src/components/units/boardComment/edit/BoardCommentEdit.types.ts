@@ -1,14 +1,15 @@
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
 
 export interface IBoardCommentWriteUIProps {
-  onChangePassword: (event: ChangeEvent<HTMLInputElement>) => void;
-  onChangeContents: (event: ChangeEvent<HTMLTextAreaElement>) => void;
-  onClickUpdate: () => void;
-  setStar: Dispatch<SetStateAction<number>>;
   password: string;
   star: number;
   editContents: string;
   el: any;
+  onClickUpdate: () => void;
+  onClickCancel: () => void;
+  onChangePassword: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChangeContents: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+  setStar: Dispatch<SetStateAction<number>>;
 }
 
 export interface IBoardCommentEditProps {

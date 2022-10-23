@@ -20,11 +20,15 @@ export default function BoardCommentEdit(props: IBoardCommentEditProps) {
     setContents(event.target.value);
   };
 
+  const onClickCancel = () => {
+    props.setCommentEditId("");
+  };
+
   const onClickUpdate = async () => {
     try {
       if (!password) {
         Modal.error({
-          title: "비밀번호를 입력해주세요."
+          title: "비밀번호를 입력해주세요.",
         });
         return;
       }
@@ -41,8 +45,8 @@ export default function BoardCommentEdit(props: IBoardCommentEditProps) {
             rating: star,
           },
           password,
-          boardCommentId: props.el._id
-        }
+          boardCommentId: props.el._id,
+        },
       });
       Modal.success({
         content: "댓글이 수정되었습니다.",
@@ -50,7 +54,7 @@ export default function BoardCommentEdit(props: IBoardCommentEditProps) {
           setPassword("");
           setContents("");
           setStar(0);
-          props.setCommentEditId("")
+          props.setCommentEditId("");
         },
       });
     } catch (error: any) {
@@ -62,14 +66,15 @@ export default function BoardCommentEdit(props: IBoardCommentEditProps) {
   };
   return (
     <BoardCommentWriteUI
-      onChangePassword={onChangePassword}
-      onChangeContents={onChangeContents}
-      onClickUpdate={onClickUpdate}
       editContents={contents}
-      setStar={setStar}
       el={props.el}
       password={password}
       star={star}
+      onChangePassword={onChangePassword}
+      onChangeContents={onChangeContents}
+      onClickUpdate={onClickUpdate}
+      onClickCancel={onClickCancel}
+      setStar={setStar}
     />
   );
 }

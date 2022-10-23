@@ -7,20 +7,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
-`;
-
-export const Page = styled.div`
-  width: 100%;
-  display: flex;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  background-color: #ffdead;
-  border-radius: 30px;
-  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 10px;
 `;
 
 export const Header = styled.div`
@@ -28,82 +16,104 @@ export const Header = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 export const Top = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
-  padding-bottom: 40px;
+  justify-content: space-between;
 `;
-export const TopImg = styled.img``;
+
 export const TopText = styled.div`
-  padding-left: 14px;
-  font-size: 30px;
+  padding-bottom: 20px;
+  font-size: 28px;
   font-weight: 600;
-  color: #8b4513;
+  color: #464747;
 `;
+
+export const CancelIcon = styled.img`
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+`;
+
 export const WriterInfo = styled.div`
   display: flex;
   flex-direction: row;
   align-items: baseline;
   padding-bottom: 20px;
 `;
+
 export const Writer = styled.input`
   width: 180px;
-  height: 52px;
+  height: 50px;
   padding-left: 20px;
-  color: #8b4513;
-  font-size: 18px;
+  color: #464747;
+  font-size: 14px;
   font-weight: 500;
   margin-right: 24px;
   border: none;
-  border-radius: 30px;
+  border-radius: 10px;
+  background-color: #f7f8f9;
   ::placeholder {
-    color: #8b4513;
+    color: #a5a5a5;
   }
-  outline-color: #8b4513;
+  outline-color: #f39c1f;
 `;
+
 export const Comment = styled.div`
   width: 100%;
   border: none;
-  border-radius: 30px;
+  border-radius: 10px;
 `;
+
 export const CommentInput = styled.textarea`
   width: 100%;
-  height: 108px;
+  height: 120px;
   padding: 20px 20px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
-  color: #8b4513;
+  color: #464747;
   border: none;
-  border-bottom: 1px solid #f2f2f2;
-  border-radius: 30px;
+  border-radius: 10px;
   resize: none;
+  background-color: #f7f8f9;
   ::placeholder {
-    color: #8b4513;
+    color: #a5a5a5;
   }
-  outline-color: #8b4513;
+  outline-color: #f39c1f;
 `;
+
 export const CommentBottom = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-left: 20px;
+  padding-left: 10px;
 `;
+
 export const CommentLimit = styled.div`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
-  color: #8b4513;
+  color: #464747;
 `;
+
 export const CommentButton = styled.button`
-  width: 91px;
-  height: 52px;
-  background-color: black;
+  width: 100px;
+  height: 50px;
+  background-color: #a5a5a5;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
-  border-radius: 30px;
-  margin-top: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: none;
   cursor: pointer;
+  :hover {
+    background-color: #f39c1f;
+    color: white;
+  }
 `;
-export const Star = styled(Rate)``;
+
+export const Star = styled(Rate)`
+  color: #f39c1f;
+`;
