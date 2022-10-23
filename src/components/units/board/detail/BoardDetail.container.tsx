@@ -8,12 +8,33 @@ import {
   LIKE_BOARD,
 } from "./BoardDetail.queries";
 import { Modal } from "antd";
+import { Arrow, Left, Right } from "./BoardDetail.styles";
 
 export default function BoardDetail() {
   const router = useRouter();
   const [deleteBoard] = useMutation(DELETE_BOARD);
   const [likeBoard] = useMutation(LIKE_BOARD);
   const [dislikeBoard] = useMutation(DISLIKE_BOARD);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    prevArrow: (
+      <Left>
+        <Arrow src="/images/leftArrow.png" />
+      </Left>
+    ),
+    nextArrow: (
+      <Right>
+        <Arrow src="/images/rightArrow.png" />
+      </Right>
+    ),
+  };
 
   const onClickLike = () => {
     likeBoard({
@@ -68,6 +89,7 @@ export default function BoardDetail() {
     <BoardDetailUI
       data={data}
       createDate={createDate}
+      setting={settings}
       onClickListButton={onClickListButton}
       onClickDeleteButton={onClickDeleteButton}
       onClickUpdateButton={onClickUpdateButton}

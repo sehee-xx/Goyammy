@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import ReactPlayer from "react-player";
+import Slider from "react-slick";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -8,6 +9,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 30px;
+  margin-bottom: 100px;
 `;
 
 export const Main = styled.div`
@@ -16,9 +18,8 @@ export const Main = styled.div`
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 80px 102px 0px 102px;
+  padding: 80px 102px;
   border-radius: 10px;
 `;
 
@@ -27,138 +28,187 @@ export const Header = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   align-self: flex-start;
-  border-bottom: 4px solid #cd863f;
-  padding-bottom: 20px;
+  border-bottom: 2px solid #f39c1f;
+  padding-bottom: 10px;
 `;
+
 export const ProfileImage = styled.img`
-  width: 46.67px;
-  height: 46.67px;
+  width: 40px;
 `;
+
 export const HeaderText = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-left: 16.67px;
+  padding-left: 15px;
 `;
+
 export const Writer = styled.div`
-  width: 67px;
-  height: 36px;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
-  color: black;
-  color: #8b4513;
+  color: #464747;
 `;
+
 export const Date = styled.div`
-  font-size: 16px;
-  color: #8b4513;
+  font-size: 12px;
+  color: #464747;
 `;
+
 export const Info = styled.div`
   display: flex;
   flex-direction: row;
-  align-self: flex-end;
   justify-content: center;
   align-items: center;
-  color: #8b4513;
+  gap: 10px;
 `;
-export const Link = styled.img`
+
+export const LinkLocation = styled.img`
   height: 30px;
   cursor: pointer;
 `;
-export const Location = styled.img`
-  height: 30px;
-  cursor: pointer;
-  padding-left: 10px;
-`;
+
 export const Body = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 80px;
-  color: #8b4513;
+  padding-top: 50px;
 `;
+
 export const Title = styled.div`
   font-size: 36px;
   font-weight: 700;
-  color: black;
-  padding-bottom: 40px;
-  color: #8b4513;
+  padding-bottom: 50px;
+  color: #464747;
 `;
-export const Image = styled.img`
-  padding-bottom: 40px;
-  cursor: pointer;
-`;
+
 export const Contents = styled.div`
   font-size: 16px;
-  padding-bottom: 120px;
-  color: #8b4513;
+  padding-bottom: 50px;
+  color: #464747;
 `;
+
+export const StyledSlider = styled(Slider)`
+  width: 100%;
+  max-width: 1043px;
+  position: relative;
+  .slick-prev::before,
+  .slick-next::before {
+    opacity: 0;
+    display: none;
+  }
+  .slick-slide div {
+    cursor: pointer;
+  }
+`;
+
+export const Image = styled.img`
+  width: 100%;
+  height: 1000px;
+`;
+
+export const Left = styled.div`
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 15px;
+  z-index: 99;
+  text-align: left;
+  line-height: 30px;
+`;
+
+export const Right = styled.div`
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 15px;
+  z-index: 99;
+  text-align: right;
+  line-height: 30px;
+`;
+
+export const Arrow = styled.img`
+  height: 25px;
+`;
+
 export const Video = styled(ReactPlayer)`
-  margin: auto;
+  padding-top: 66px;
   cursor: pointer;
-  padding: 50px;
 `;
+
 export const Footer = styled.div`
   display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+`;
+
+export const LikeDisLike = styled.div`
+  display: flex;
   flex-direction: row;
-  padding-bottom: 80px;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding-bottom: 66px;
 `;
 export const LikeBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-right: 20px;
 `;
+
 export const Like = styled.img`
   width: 34px;
   height: 32px;
   cursor: pointer;
 `;
+
 export const LikeText = styled.div`
   font-size: 18px;
+  font-weight: 600;
   color: #ffd600;
 `;
+
 export const DislikeBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-left: 40px;
 `;
+
 export const Dislike = styled.img`
-  width: 32px;
-  height: 30px;
+  width: 34px;
+  height: 32px;
   cursor: pointer;
 `;
+
 export const DislikeText = styled.div`
   font-size: 18px;
-  color: gray;
-`;
-export const Button = styled.button`
-  width: 179px;
-  height: 52px;
-  font-size: 16px;
-  font-weight: 500;
-  border: none;
-  border-radius: 30px;
-  background-color: #ffdab9;
-  margin-right: 24px;
-  text-align: center;
-  color: #8b4513;
-  cursor: pointer;
-  :hover {
-    background-color: orange;
-    color: white;
-  }
+  font-weight: 600;
+  color: #464747;
 `;
 
 export const ButtonBox = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding-top: 101px;
-  padding-bottom: 100px;
+  gap: 30px;
+`;
+
+export const Button = styled.button`
+  width: 160px;
+  height: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  background-color: #a5a5a5;
+  color: #464747;
+  cursor: pointer;
+  :hover {
+    background-color: #f39c1f;
+    color: white;
+  }
 `;
 
 export const PageAdd = styled.div`
