@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
+import { breakPoints } from "../../../commons/breakPoints/breakPoints";
 
 export const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
@@ -13,12 +14,28 @@ export const Wrapper = styled.form`
   border-radius: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
   background-color: white;
+
+  @media ${breakPoints.tablet} {
+    padding: 40px 60px;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding: 30px 30px;
+  }
 `;
 
 export const Title = styled.div`
   font-size: 40px;
   font-weight: bold;
   color: #464747;
+
+  @media ${breakPoints.tablet} {
+    font-size: 30px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 20px;
+  }
 `;
 
 export const RowBox = styled.div`
@@ -27,6 +44,14 @@ export const RowBox = styled.div`
   flex-direction: row;
   padding-top: 40px;
   gap: 30px;
+
+  @media ${breakPoints.tablet} {
+    padding-top: 20px;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding-top: 10px;
+  }
 `;
 
 export const InputWrapper = styled.div`
@@ -41,6 +66,14 @@ export const Label = styled.div`
   font-size: 18px;
   font-weight: 500;
   color: #464747;
+
+  @media ${breakPoints.tablet} {
+    font-size: 14px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
+  }
 `;
 
 export const Contents = styled(ReactQuill)`
@@ -53,15 +86,21 @@ export const Contents = styled(ReactQuill)`
   background-color: #f7f8f9;
   color: #464747;
   outline-color: #f39c1f;
-  ::placeholder {
-    color: #a5a5a5;
-  }
   .ql-toolbar.ql-snow {
     border: none !important;
   }
   .ql-container.ql-snow {
     border: none !important;
     height: 220px;
+    font-size: 14px;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 250px;
+    padding: 0px;
+    .ql-container.ql-snow {
+      height: 200px;
+    }
   }
 `;
 
@@ -79,6 +118,11 @@ export const Zipcode = styled.input`
   background-color: #f7f8f9;
   color: #464747;
   outline: none;
+
+  @media ${breakPoints.mobile} {
+    height: 40px;
+    padding-left: 12px;
+  }
 `;
 
 export const SearchButton = styled.button`
@@ -90,13 +134,19 @@ export const SearchButton = styled.button`
   border-radius: 10px;
   cursor: pointer;
   color: white;
+
+  @media ${breakPoints.mobile} {
+    height: 40px;
+    margin-left: 12px;
+    font-size: 12px;
+  }
 `;
 
 export const Address = styled.input`
   width: 100%;
   height: 50px;
   padding-left: 16px;
-  margin-bottom: 15px;
+  margin: 15px 0px;
   border-radius: 10px;
   background-color: #f7f8f9;
   border: none;
@@ -105,10 +155,16 @@ export const Address = styled.input`
   ::placeholder {
     color: #a5a5a5;
   }
-  margin-top: 15px;
+
+  @media ${breakPoints.mobile} {
+    height: 40px;
+    padding-left: 12px;
+    margin: 10px 0px;
+  }
 `;
 
 export const ImageWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  gap: 20px;
 `;

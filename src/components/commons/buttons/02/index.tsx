@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../breakPoints/breakPoints";
 
 interface IProps {
   isActive: boolean;
@@ -20,6 +21,13 @@ const Button = styled.button`
     color: #fff;
   }
   color: white;
+
+  @media ${breakPoints.mobile} {
+    width: 120px;
+    height: 50px;
+    font-size: 14px;
+    margin-top: 50px;
+  }
 `;
 
 export default function Button02(props: IProps) {

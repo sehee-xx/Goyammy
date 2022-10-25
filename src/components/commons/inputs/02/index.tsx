@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../breakPoints/breakPoints";
 
 const Input = styled.input`
   width: 100%;
@@ -11,6 +12,14 @@ const Input = styled.input`
   outline-color: #f39c1f;
   ::placeholder {
     color: #a5a5a5;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 40px;
+    padding-left: 12px;
+    ::placeholder {
+      font-size: 11px;
+    }
   }
 `;
 
