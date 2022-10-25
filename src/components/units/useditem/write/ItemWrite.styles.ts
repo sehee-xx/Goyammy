@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import { EnvironmentOutlined } from "@ant-design/icons";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
+import { breakPoints } from "../../../commons/breakPoints/breakPoints";
 
 export const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
@@ -14,6 +14,14 @@ export const Wrapper = styled.form`
   border-radius: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
   background-color: white;
+
+  @media ${breakPoints.tablet} {
+    padding: 40px 60px;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding: 30px 30px;
+  }
 `;
 
 export const Title = styled.div`
@@ -21,6 +29,16 @@ export const Title = styled.div`
   font-weight: bold;
   padding-bottom: 40px;
   color: #464747;
+
+  @media ${breakPoints.tablet} {
+    font-size: 30px;
+    padding: 0px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
 `;
 
 export const RowBox = styled.div`
@@ -42,6 +60,14 @@ export const Label = styled.div`
   font-size: 18px;
   font-weight: 500;
   color: #464747;
+
+  @media ${breakPoints.tablet} {
+    font-size: 14px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
+  }
 `;
 
 export const ProductInfo = styled(ReactQuill)`
@@ -54,15 +80,21 @@ export const ProductInfo = styled(ReactQuill)`
   background-color: #f7f8f9;
   color: #464747;
   outline-color: #f39c1f;
-  ::placeholder {
-    color: #a5a5a5;
-  }
   .ql-toolbar.ql-snow {
     border: none !important;
   }
   .ql-container.ql-snow {
     border: none !important;
     height: 220px;
+    font-size: 14px;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 250px;
+    padding: 0px;
+    .ql-container.ql-snow {
+      height: 200px;
+    }
   }
 `;
 
@@ -119,20 +151,8 @@ export const Address = styled.input`
   }
 `;
 
-export const Image = styled.img`
-  width: 100px;
-  height: 100px;
-  margin-right: 16px;
-  background-color: #ffdab9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #8b4513;
-`;
-
 export const ImageWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  align-self: flex-start;
-  padding-bottom: 40px;
+  gap: 20px;
 `;
