@@ -2,6 +2,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { Arrow } from "../../board/detail/BoardDetail.styles";
 import ItemDetailUI from "./ItemDetail.presenter";
 import {
   CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING,
@@ -10,19 +11,36 @@ import {
   FETCH_USER_LOGGED_IN,
   TOGGLE_USEDITEM_PICK,
 } from "./ItemDetail.queries";
+import { Left, Right } from "./ItemDetail.styles";
 
 export default function ItemDetail() {
   const router = useRouter();
-
   const [isPicked, setIsPicked] = useState(false);
-
   const [deleteUseditem] = useMutation(DELETE_USEDITEM);
-
   const [toggleUseditemPick] = useMutation(TOGGLE_USEDITEM_PICK);
-
   const [createPointTransactionOfBuyingAndSelling] = useMutation(
     CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING
   );
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    prevArrow: (
+      <Left>
+        <Arrow src="/images/leftArrow.png" />
+      </Left>
+    ),
+    nextArrow: (
+      <Right>
+        <Arrow src="/images/rightArrow.png" />
+      </Right>
+    ),
+  };
 
   const { data, refetch } = useQuery(FETCH_USEDITEM, {
     variables: { useditemId: router.query.useditemId },
@@ -87,6 +105,7 @@ export default function ItemDetail() {
       createDate={createDate}
       userData={userData}
       isPicked={isPicked}
+      setting={settings}
       onClickGoToList={onClickGoToList}
       onClickDeleteButton={onClickDeleteButton}
       onClickUpdateButton={onClickUpdateButton}

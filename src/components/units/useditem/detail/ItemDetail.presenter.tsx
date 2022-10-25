@@ -12,16 +12,6 @@ declare const window: typeof globalThis & {
 };
 
 export default function ItemDetailUI(props: IItemDetailProps) {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 1500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2200,
-  };
-
   return (
     <S.Wrapper>
       <S.Main>
@@ -32,48 +22,55 @@ export default function ItemDetailUI(props: IItemDetailProps) {
             <S.Date>{props.createDate}</S.Date>
           </S.HeaderText>
           <S.Info>
-            <S.Link src="/images/link.png"></S.Link>
-            <S.Location src="/images/location.png"></S.Location>
+            <S.LinkLocation src="/images/link.png"></S.LinkLocation>
+            <S.LinkLocation src="/images/location.png"></S.LinkLocation>
           </S.Info>
         </S.Header>
         <S.Body>
           <S.RowBox>
-            <S.ColumnBox>
-              <S.Keyword>{props.data?.fetchUseditem.remarks}</S.Keyword>
+            {props.data?.fetchUseditem.images[0] ? (
+              <S.ImageWrapper>
+                <S.StyledSlider {...props.setting}>
+                  {props.data?.fetchUseditem.images.map((el: string) => (
+                    <S.Image
+                      key={uuidv4()}
+                      src={`https://storage.googleapis.com/${el}`}
+                    />
+                  ))}
+                </S.StyledSlider>
+              </S.ImageWrapper>
+            ) : (
+              <></>
+            )}
+            <S.ItemInfo>
+              <S.Remark>{props.data?.fetchUseditem.remarks}</S.Remark>
               <S.Name>{props.data?.fetchUseditem.name} </S.Name>
-            </S.ColumnBox>
-            <S.ColumnBox>
-              <S.Pick
-                src={props.isPicked ? "/images/Pick.png" : "/images/unPick.png"}
-                onClick={props.onClickPick}
-              ></S.Pick>
-              <S.PickCount>{props.data?.fetchUseditem.pickedCount}</S.PickCount>
-            </S.ColumnBox>
+              <S.Price>₩ {props.data?.fetchUseditem.price}</S.Price>
+              {typeof window !== "undefined" ? (
+                <S.Contents
+                  dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(
+                      props.data?.fetchUseditem.contents
+                    ),
+                  }}
+                />
+              ) : (
+                <S.Contents />
+              )}
+              <S.ColumnBox>
+                <S.Pick
+                  src={
+                    props.isPicked ? "/images/Pick.png" : "/images/unPick.png"
+                  }
+                  onClick={props.onClickPick}
+                ></S.Pick>
+                <S.PickCount>
+                  {props.data?.fetchUseditem.pickedCount}
+                </S.PickCount>
+              </S.ColumnBox>
+            </S.ItemInfo>
           </S.RowBox>
-          <S.Price>₩ {props.data?.fetchUseditem.price}</S.Price>
-          {props.data?.fetchUseditem.images[0] ? (
-            <S.ImageWrapper>
-              <Slider {...settings}>
-                {props.data?.fetchUseditem.images.map((el: string) => (
-                  <S.Carousel
-                    key={uuidv4()}
-                    src={`https://storage.googleapis.com/${el}`}
-                  />
-                ))}
-              </Slider>
-            </S.ImageWrapper>
-          ) : (
-            <></>
-          )}
-          {typeof window !== "undefined" ? (
-            <S.ProductInfo
-              dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(props.data?.fetchUseditem.contents),
-              }}
-            />
-          ) : (
-            <S.ProductInfo />
-          )}
+
           <S.TagBox>
             {props.data?.fetchUseditem.tags.map((el: string) => {
               return <S.Tag key={uuidv4()}>#{el}</S.Tag>;
