@@ -1,5 +1,5 @@
-import { PlusOutlined } from "@ant-design/icons";
-import { Input, InputRef, Tag, Tooltip } from "antd";
+import * as S from "./Tags.styles";
+import { Input, InputRef, Tooltip } from "antd";
 import { useEffect, useRef, useState } from "react";
 
 export default function MakeTag(props: any) {
@@ -36,6 +36,8 @@ export default function MakeTag(props: any) {
   const handleInputConfirm = () => {
     if (inputValue && props.tags?.indexOf(inputValue) === -1) {
       props.setTags([...props.tags, inputValue]);
+    } else if (typeof props.tags === "undefined" && inputValue) {
+      props.setTags([inputValue]);
     }
     setInputVisible(false);
     setInputValue("");
@@ -73,22 +75,7 @@ export default function MakeTag(props: any) {
 
         const isLongTag: boolean = tag.length > 20;
         const tagElem = (
-          <Tag
-            style={{
-              height: 50,
-              fontSize: "14px",
-              fontWeight: 500,
-              color: "#464747",
-              display: "flex",
-              outline: "none",
-              border: 0,
-              borderRadius: 10,
-              backgroundColor: "#a5a5a5",
-              flexDirection: "row",
-              alignItems: "center",
-              padding: "0px 15px",
-              marginBottom: "15px",
-            }}
+          <S.Tags
             className="edit-tag"
             key={tag}
             closable={true}
@@ -103,7 +90,7 @@ export default function MakeTag(props: any) {
             >
               {isLongTag ? `${tag.slice(0, 20)}...` : tag}
             </span>
-          </Tag>
+          </S.Tags>
         );
         return isLongTag ? (
           <Tooltip title={tag} key={tag}>
@@ -114,17 +101,7 @@ export default function MakeTag(props: any) {
         );
       })}
       {inputVisible && (
-        <Input
-          style={{
-            width: "100%",
-            height: 50,
-            border: 0,
-            borderRadius: 10,
-            outline: "#f39c1f solid 2px",
-            color: "#464747",
-            backgroundColor: "#f7f8f9",
-            paddingLeft: "16px",
-          }}
+        <S.TagInput
           ref={inputRef}
           type="text"
           size="large"
@@ -136,33 +113,9 @@ export default function MakeTag(props: any) {
         />
       )}
       {!inputVisible && (
-        <Tag
-          className="site-tag-plus"
-          onClick={showInput}
-          style={{
-            width: "100%",
-            height: 50,
-            fontSize: 14,
-            color: "#a5a5a5",
-            display: "flex",
-            alignItems: "center",
-            borderRadius: "10px",
-            border: 0,
-            paddingRight: 0,
-            marginRight: 0,
-            backgroundColor: "#f7f8f9",
-          }}
-        >
-          <PlusOutlined
-            style={{
-              paddingLeft: "10px",
-              paddingRight: "5px",
-              fontSize: "10px",
-              color: "#a5a5a5",
-            }}
-          />{" "}
-          태그 입력
-        </Tag>
+        <S.TagBox className="site-tag-plus" onClick={showInput}>
+          <S.Plus /> 태그 입력
+        </S.TagBox>
       )}
     </>
   );
