@@ -11,11 +11,15 @@ export const Wrapper = styled.div`
   align-items: center;
 
   @media ${breakPoints.tablet} {
+    padding: 0px 30px;
     height: 40px;
+    justify-content: space-between;
   }
 
   @media ${breakPoints.mobile} {
-    height: 30px;
+    padding: 0px 30px;
+    height: 35px;
+    justify-content: space-between;
   }
 `;
 
@@ -30,12 +34,14 @@ export const MenuItem = styled.div`
   }
 
   @media ${breakPoints.tablet} {
-    margin: 0px 40px;
+    margin: 0px;
     font-size: 14px;
+    font-weight: 500;
   }
 
   @media ${breakPoints.mobile} {
-    margin: 0px 14px;
-    font-size: 8px;
+    margin: 0px;
+    font-size: 10px;
+    font-weight: 500;
   }
 `;
