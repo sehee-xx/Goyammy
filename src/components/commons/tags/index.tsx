@@ -22,7 +22,6 @@ export default function MakeTag(props: any) {
 
   const handleClose = (removedTag: any) => {
     const newTags = props.tags?.filter((tag: any) => tag !== removedTag);
-    console.log(newTags);
     props.setTags(newTags);
   };
 
@@ -38,7 +37,6 @@ export default function MakeTag(props: any) {
     if (inputValue && props.tags?.indexOf(inputValue) === -1) {
       props.setTags([...props.tags, inputValue]);
     }
-
     setInputVisible(false);
     setInputValue("");
   };
