@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 30px;
   margin-bottom: 100px;
 `;
 
@@ -191,13 +190,15 @@ export const DislikeText = styled.div`
 `;
 
 export const ButtonBox = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   gap: 30px;
 `;
 
 export const Button = styled.button`
-  width: 160px;
+  width: 100%;
+  max-width: 160px;
   height: 50px;
   font-size: 14px;
   font-weight: 500;
