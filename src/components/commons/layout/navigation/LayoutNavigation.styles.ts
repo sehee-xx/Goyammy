@@ -11,13 +11,13 @@ export const Wrapper = styled.div`
   align-items: center;
 
   @media ${breakPoints.tablet} {
-    padding: 0px 30px;
+    padding: 0px 20px;
     height: 40px;
     justify-content: space-between;
   }
 
   @media ${breakPoints.mobile} {
-    padding: 0px 30px;
+    padding: 0px 20px;
     height: 35px;
     justify-content: space-between;
   }

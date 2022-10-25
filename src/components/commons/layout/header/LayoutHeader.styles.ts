@@ -10,11 +10,12 @@ export const Wrapper = styled.div`
 
   @media ${breakPoints.tablet} {
     height: 50px;
-    padding: 0px 30px;
+    padding: 0px 20px;
   }
 
   @media ${breakPoints.mobile} {
     height: 50px;
+    padding: 0px 20px;
   }
 `;
 
