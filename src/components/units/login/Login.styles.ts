@@ -78,6 +78,7 @@ export const Signup = styled.div`
   font-weight: 700;
   color: #f39c1f;
   cursor: pointer;
+  font-size: 14px;
 
   @media ${breakPoints.mobile} {
     font-size: 12px;
