@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { breakPoints } from "../../breakPoints/breakPoints";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -35,6 +36,14 @@ export const Right = styled.div`
 
 export const Arrow = styled.img`
   height: 25px;
+
+  @media ${breakPoints.tablet} {
+    height: 20px;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 15px;
+  }
 `;
 
 export const StyledSlider = styled(Slider)`
