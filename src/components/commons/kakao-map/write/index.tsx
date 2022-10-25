@@ -1,8 +1,23 @@
+import styled from "@emotion/styled";
 import { useEffect } from "react";
+import { breakPoints } from "../../breakPoints/breakPoints";
 
 declare const window: typeof globalThis & {
   kakao: any;
 };
+
+const KakaoMap = styled.div`
+  width: 100%;
+  height: 227px;
+
+  @media ${breakPoints.tablet} {
+    height: 220px;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 182px;
+  }
+`;
 
 export default function KakaoMapWrite(props: any) {
   useEffect(() => {
@@ -61,5 +76,5 @@ export default function KakaoMapWrite(props: any) {
       });
     };
   }, [props.address]);
-  return <div id="map" style={{ width: "100%", height: "227px" }}></div>;
+  return <KakaoMap id="map"></KakaoMap>;
 }
