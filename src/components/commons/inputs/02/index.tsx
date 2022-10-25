@@ -15,6 +15,7 @@ const Input = styled.input`
   }
 
   @media ${breakPoints.mobile} {
+    font-size: 14px;
     height: 40px;
     padding-left: 12px;
     ::placeholder {
