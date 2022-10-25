@@ -18,11 +18,11 @@ const Body = styled.div`
   padding: 30px 0px 150px 0px;
 
   @media ${breakPoints.tablet} {
-    padding: 20px 20px 150px 20px;
+    padding: 20px 20px 20px 20px;
   }
 
   @media ${breakPoints.mobile} {
-    padding: 20px 20px 150px 20px;
+    padding: 20px 20px 20px 20px;
   }
 `;
 
