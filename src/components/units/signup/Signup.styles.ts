@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../commons/breakPoints/breakPoints";
 
 export const Main = styled.form`
   width: 500px;
@@ -10,15 +11,27 @@ export const Main = styled.form`
   justify-content: center;
   padding: 50px 60px;
   margin-top: 50px;
+
+  @media ${breakPoints.mobile} {
+    width: 380px;
+    padding: 30px 45px;
+    margin-top: 20px;
+  }
 `;
 
-export const Logo = styled.div`
+export const Title = styled.div`
   font-size: 28px;
   font-weight: 900;
   font-family: "live";
   font-style: normal;
   color: #f39c1f;
   padding-bottom: 30px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 24px;
+    font-weight: 900;
+    padding-bottom: 20px;
+  }
 `;
 
 export const Contents = styled.div`
@@ -28,6 +41,10 @@ export const Contents = styled.div`
   align-items: center;
   justify-content: center;
   padding-bottom: 20px;
+
+  @media ${breakPoints.mobile} {
+    padding-bottom: 10px;
+  }
 `;
 
 export const Info = styled.div`
@@ -52,6 +69,10 @@ export const Error = styled.div`
   align-self: flex-start;
   padding-left: 6px;
   padding-bottom: 10px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 10px;
+  }
 `;
 
 export const Footer = styled.div`
@@ -63,10 +84,20 @@ export const Footer = styled.div`
 export const Question = styled.label`
   color: #464747;
   padding: 0px 5px;
+  font-size: 14px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
+  }
 `;
 
 export const Login = styled.div`
   font-weight: 700;
   color: #f39c1f;
   cursor: pointer;
+  font-size: 14px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
+  }
 `;

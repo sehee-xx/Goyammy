@@ -6,7 +6,7 @@ import { ISignupUIProps } from "./Signup.types";
 export default function SignupUI(props: ISignupUIProps) {
   return (
     <S.Main onSubmit={props.handleSubmit(props.onClickSignup)}>
-      <S.Logo>회원가입</S.Logo>
+      <S.Title>회원가입</S.Title>
       <S.Contents>
         <S.Info>
           <S.Label>이메일</S.Label>
