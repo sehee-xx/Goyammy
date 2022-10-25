@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { CheckCircleOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../commons/breakPoints/breakPoints";
 
 export const Main = styled.form`
@@ -12,9 +11,6 @@ export const Main = styled.form`
   justify-content: center;
   padding: 50px 60px;
   margin-top: 50px;
-
-  @media ${breakPoints.tablet} {
-  }
 
   @media ${breakPoints.mobile} {
     width: 380px;
@@ -29,9 +25,6 @@ export const Title = styled.div`
   color: #f39c1f;
   padding-bottom: 30px;
 
-  @media ${breakPoints.tablet} {
-  }
-
   @media ${breakPoints.mobile} {
     font-size: 24px;
     font-weight: 900;
@@ -44,9 +37,6 @@ export const Body = styled.div`
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
-
-  @media ${breakPoints.tablet} {
-  }
 
   @media ${breakPoints.mobile} {
     padding-bottom: 10px;
@@ -61,9 +51,6 @@ export const Error = styled.div`
   align-self: flex-start;
   padding-left: 6px;
   padding-bottom: 10px;
-
-  @media ${breakPoints.tablet} {
-  }
 
   @media ${breakPoints.mobile} {
     font-size: 10px;
@@ -82,9 +69,6 @@ export const Question = styled.label`
   padding: 0px 5px;
   font-size: 14px;
 
-  @media ${breakPoints.tablet} {
-  }
-
   @media ${breakPoints.mobile} {
     font-size: 12px;
   }
@@ -94,9 +78,6 @@ export const Signup = styled.div`
   font-weight: 700;
   color: #f39c1f;
   cursor: pointer;
-
-  @media ${breakPoints.tablet} {
-  }
 
   @media ${breakPoints.mobile} {
     font-size: 12px;
