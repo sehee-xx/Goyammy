@@ -122,6 +122,11 @@ export const Zipcode = styled.input`
   background-color: #f7f8f9;
   color: #464747;
   outline: none;
+
+  @media ${breakPoints.mobile} {
+    height: 40px;
+    font-size: 14px;
+  }
 `;
 
 export const ZipcodeButton = styled.button`
@@ -134,6 +139,12 @@ export const ZipcodeButton = styled.button`
   border-radius: 10px;
   cursor: pointer;
   color: white;
+
+  @media ${breakPoints.mobile} {
+    height: 40px;
+    margin-left: 12px;
+    font-size: 12px;
+  }
 `;
 
 export const Address = styled.input`
@@ -148,6 +159,12 @@ export const Address = styled.input`
   outline-color: #f39c1f;
   ::placeholder {
     color: #a5a5a5;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 40px;
+    padding-left: 12px;
+    margin-bottom: 10px;
   }
 `;
 
