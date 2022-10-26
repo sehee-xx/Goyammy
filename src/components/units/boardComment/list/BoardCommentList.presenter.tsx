@@ -46,11 +46,11 @@ export default function BoardCommentListUI(props: IBoardCommentListUIProps) {
                         cancelText="취소"
                         okText="삭제"
                       >
-                        <S.password
+                        <S.Password
                           type="password"
                           placeholder="비밀번호를 입력해주세요"
                           onChange={props.onChangeCommentPassword}
-                        ></S.password>
+                        ></S.Password>
                       </Modal>
                     )}
                   </S.OptionWrapper>

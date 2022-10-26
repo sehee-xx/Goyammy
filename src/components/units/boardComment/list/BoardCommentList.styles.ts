@@ -14,6 +14,12 @@ export const ItemWrapper = styled.div`
 
   @media ${breakPoints.tablet} {
     padding: 40px 50px;
+    margin-top: 30px;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding: 20px 30px;
+    margin-top: 20px;
   }
 `;
 
@@ -30,6 +36,11 @@ export const Avatar = styled.img`
   @media ${breakPoints.tablet} {
     width: 30px;
     height: 30px;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 20px;
+    height: 20px;
   }
 `;
 
@@ -53,23 +64,49 @@ export const Writer = styled.div`
   @media ${breakPoints.tablet} {
     font-size: 18px;
   }
+
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
+  }
 `;
 
-export const Contents = styled.div`
-  padding-top: 10px;
-  color: #464747;
+export const Star = styled(Rate)`
+  padding-left: 20px;
+  color: #f39c1f;
+
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
+  }
 `;
 
 export const OptionWrapper = styled.div`
   display: flex;
   flex-direction: row;
   gap: 10px;
+
+  @media ${breakPoints.mobile} {
+    gap: 5px;
+  }
 `;
 
 export const EditDeleteIcon = styled.img`
   width: 16px;
   height: 16px;
   cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    width: 12px;
+    height: 12px;
+  }
+`;
+
+export const Contents = styled.div`
+  padding-top: 10px;
+  color: #464747;
+
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
+  }
 `;
 
 export const DateString = styled.div`
@@ -81,19 +118,15 @@ export const DateString = styled.div`
   @media ${breakPoints.tablet} {
     padding-left: 50px;
   }
+
+  @media ${breakPoints.mobile} {
+    padding-left: 40px;
+    font-size: 10px;
+    padding-top: 10px;
+  }
 `;
 
-export const PasswordInput = styled.input`
-  width: 100%;
-  margin-top: 10px;
-`;
-
-export const Star = styled(Rate)`
-  padding-left: 20px;
-  color: orange;
-`;
-
-export const password = styled.input`
+export const Password = styled.input`
   background-color: #f7f8f9;
   ::placeholder {
     color: #a5a5a5;
