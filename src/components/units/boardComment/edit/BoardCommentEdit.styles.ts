@@ -37,6 +37,7 @@ export const CancelIcon = styled.img`
 `;
 
 export const WriterInfo = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -44,7 +45,8 @@ export const WriterInfo = styled.div`
 `;
 
 export const Writer = styled.input`
-  width: 180px;
+  width: 100%;
+  max-width: 180px;
   height: 50px;
   padding-left: 20px;
   color: #464747;

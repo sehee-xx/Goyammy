@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Rate } from "antd";
+import { breakPoints } from "../../../commons/breakPoints/breakPoints";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -11,6 +12,10 @@ export const Wrapper = styled.div`
   background-color: #fff;
   border-radius: 10px;
   padding: 60px 102px;
+
+  @media ${breakPoints.tablet} {
+    padding: 40px 50px;
+  }
 `;
 
 export const Header = styled.div`
@@ -27,6 +32,7 @@ export const TopText = styled.div`
 `;
 
 export const WriterInfo = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -34,7 +40,8 @@ export const WriterInfo = styled.div`
 `;
 
 export const Writer = styled.input`
-  width: 180px;
+  width: 100%;
+  max-width: 180px;
   height: 50px;
   padding-left: 20px;
   background-color: #f7f8f9;
