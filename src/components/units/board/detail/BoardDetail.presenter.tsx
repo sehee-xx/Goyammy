@@ -18,7 +18,6 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
             <Tooltip title={props.data?.fetchBoard?.youtubeUrl}>
               <S.LinkLocation src="/images/link.png"></S.LinkLocation>
             </Tooltip>
-
             <Tooltip title={props.data?.fetchBoard?.boardAddress?.address}>
               <S.LinkLocation
                 onClick={props.onClickLocation}
@@ -46,14 +45,15 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
               />
             ))}
           </S.StyledSlider>
-
-          {props.data?.fetchBoard.youtubeUrl && (
-            <S.Video
-              url={props.data?.fetchBoard.youtubeUrl}
-              width="100%"
-              height="600px"
-            />
-          )}
+          <S.VideoWrapper>
+            {props.data?.fetchBoard.youtubeUrl && (
+              <S.Video
+                url={props.data?.fetchBoard.youtubeUrl}
+                width="100%"
+                height="100%"
+              />
+            )}
+          </S.VideoWrapper>
         </S.Body>
         <S.Footer>
           <S.LikeDisLike>
