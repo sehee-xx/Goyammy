@@ -16,11 +16,11 @@ export const Wrapper = styled.form`
   background-color: white;
 
   @media ${breakPoints.tablet} {
-    padding: 40px 60px;
+    padding: 40px 50px;
   }
 
   @media ${breakPoints.mobile} {
-    padding: 30px 30px;
+    padding: 20px 30px;
   }
 `;
 
