@@ -10,6 +10,14 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 100px;
+
+  @media ${breakPoints.tablet} {
+    margin-bottom: 60px;
+  }
+
+  @media ${breakPoints.mobile} {
+    margin-bottom: 40px;
+  }
 `;
 
 export const Main = styled.div`
@@ -25,6 +33,10 @@ export const Main = styled.div`
   @media ${breakPoints.tablet} {
     padding: 40px 50px;
   }
+
+  @media ${breakPoints.mobile} {
+    padding: 20px 30px;
+  }
 `;
 
 export const Header = styled.div`
@@ -36,10 +48,19 @@ export const Header = styled.div`
   align-self: flex-start;
   border-bottom: 2px solid #f39c1f;
   padding-bottom: 10px;
+
+  @media ${breakPoints.mobile} {
+    border-bottom: 1px solid #f39c1f;
+    padding-bottom: 6px;
+  }
 `;
 
 export const ProfileImage = styled.img`
   width: 40px;
+
+  @media ${breakPoints.mobile} {
+    width: 30px;
+  }
 `;
 
 export const HeaderText = styled.div`
@@ -57,6 +78,10 @@ export const Writer = styled.div`
   @media ${breakPoints.tablet} {
     font-size: 18px;
   }
+
+  @media ${breakPoints.mobile} {
+    font-size: 14px;
+  }
 `;
 
 export const Date = styled.div`
@@ -65,6 +90,10 @@ export const Date = styled.div`
 
   @media ${breakPoints.tablet} {
     font-size: 10px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 6px;
   }
 `;
 
@@ -78,6 +107,10 @@ export const Info = styled.div`
   @media ${breakPoints.tablet} {
     gap: 5px;
   }
+
+  @media ${breakPoints.mobile} {
+    gap: 3px;
+  }
 `;
 
 export const LinkLocation = styled.img`
@@ -86,6 +119,10 @@ export const LinkLocation = styled.img`
 
   @media ${breakPoints.tablet} {
     height: 25px;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 20px;
   }
 `;
 
@@ -98,6 +135,10 @@ export const Body = styled.div`
   @media ${breakPoints.tablet} {
     padding-top: 40px;
   }
+
+  @media ${breakPoints.mobile} {
+    padding-top: 20px;
+  }
 `;
 
 export const Title = styled.div`
@@ -107,8 +148,13 @@ export const Title = styled.div`
   color: #464747;
 
   @media ${breakPoints.tablet} {
-    font-size: 30px;
+    font-size: 28px;
     padding-bottom: 40px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 22px;
+    padding-bottom: 20px;
   }
 `;
 
@@ -120,6 +166,11 @@ export const Contents = styled.div`
   @media ${breakPoints.tablet} {
     font-size: 14px;
     padding-bottom: 40px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 14px;
+    padding-bottom: 20px;
   }
 `;
 
@@ -143,6 +194,10 @@ export const Image = styled.img`
 
   @media ${breakPoints.tablet} {
     height: 600px;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 400px;
   }
 `;
 
@@ -168,6 +223,14 @@ export const Right = styled.div`
 
 export const Arrow = styled.img`
   height: 25px;
+
+  @media ${breakPoints.tablet} {
+    height: 20px;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 15px;
+  }
 `;
 
 export const VideoWrapper = styled.div`
@@ -177,6 +240,10 @@ export const VideoWrapper = styled.div`
   @media ${breakPoints.tablet} {
     height: 400px;
   }
+
+  @media ${breakPoints.mobile} {
+    height: 250px;
+  }
 `;
 
 export const Video = styled(ReactPlayer)`
@@ -185,6 +252,10 @@ export const Video = styled(ReactPlayer)`
 
   @media ${breakPoints.tablet} {
     padding-top: 40px;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding-top: 30px;
   }
 `;
 
@@ -196,6 +267,10 @@ export const Footer = styled.div`
 
   @media ${breakPoints.tablet} {
     padding-top: 60px;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding-top: 40px;
   }
 `;
 
@@ -211,6 +286,11 @@ export const LikeDisLike = styled.div`
     gap: 20px;
     padding-bottom: 50px;
   }
+
+  @media ${breakPoints.mobile} {
+    gap: 10px;
+    padding-bottom: 30px;
+  }
 `;
 
 export const LikeBox = styled.div`
@@ -222,12 +302,17 @@ export const LikeBox = styled.div`
 
 export const Like = styled.img`
   width: 34px;
-  height: 32px;
+  height: 34px;
   cursor: pointer;
 
   @media ${breakPoints.tablet} {
     width: 30px;
     height: 30px;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 24px;
+    height: 24px;
   }
 `;
 
@@ -238,6 +323,10 @@ export const LikeText = styled.div`
 
   @media ${breakPoints.tablet} {
     font-size: 15px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
   }
 `;
 
@@ -250,12 +339,17 @@ export const DislikeBox = styled.div`
 
 export const Dislike = styled.img`
   width: 34px;
-  height: 32px;
+  height: 34px;
   cursor: pointer;
 
   @media ${breakPoints.tablet} {
     width: 30px;
     height: 30px;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 24px;
+    height: 24px;
   }
 `;
 
@@ -266,6 +360,10 @@ export const DislikeText = styled.div`
 
   @media ${breakPoints.tablet} {
     font-size: 15px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
   }
 `;
 
@@ -295,7 +393,13 @@ export const Button = styled.button`
   }
 
   @media ${breakPoints.tablet} {
-    max-width: 120px;
+    max-width: 100px;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 40px;
+    font-size: 10px;
+    max-width: 80px;
   }
 `;
 
