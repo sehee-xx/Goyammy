@@ -18,7 +18,7 @@ export default function ItemListUI(props: IItemsListUIProps) {
                       src={
                         props.visitedItems[index]?.images[0]
                           ? `https://storage.googleapis.com/${props.visitedItems[index]?.images[0]}`
-                          : `/images/listdefault.jpeg`
+                          : `/images/noImage.jpeg`
                       }
                     />
                     <S.Column>
@@ -66,7 +66,7 @@ export default function ItemListUI(props: IItemsListUIProps) {
                       src={
                         el.images[0]
                           ? `https://storage.googleapis.com/${el.images[0]}`
-                          : "/images/listdefault.jpeg"
+                          : "/images/noImage.jpeg"
                       }
                     />
                     <S.ItemInfo>
