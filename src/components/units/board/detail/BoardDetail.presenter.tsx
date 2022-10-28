@@ -45,15 +45,15 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
               />
             ))}
           </S.StyledSlider>
-          <S.VideoWrapper>
-            {props.data?.fetchBoard.youtubeUrl && (
+          {props.data?.fetchBoard.youtubeUrl && (
+            <S.VideoWrapper>
               <S.Video
                 url={props.data?.fetchBoard.youtubeUrl}
                 width="100%"
                 height="100%"
               />
-            )}
-          </S.VideoWrapper>
+            </S.VideoWrapper>
+          )}
         </S.Body>
         <S.Footer>
           <S.LikeDisLike>
