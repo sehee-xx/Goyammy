@@ -52,6 +52,10 @@ export default function ItemDetail() {
     .slice(0, 10)
     .replace(/-/gi, ".");
 
+  const price = data?.fetchUseditem.price
+    .toString()
+    .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+
   const onClickGoToList = () => {
     router.push("/markets");
   };
@@ -61,7 +65,7 @@ export default function ItemDetail() {
       variables: { useditemId: router.query.useditemId },
     });
     Modal.success({
-      content: "😼 상품이 삭제되었습니다 😼",
+      content: "상품이 삭제되었습니다.",
       onOk() {
         router.push("/markets");
       },
@@ -90,19 +94,20 @@ export default function ItemDetail() {
         variables: { useritemId: router.query.useditemId },
       });
       Modal.success({
-        content: "😻 결제 성공! 😻",
+        content: "결제를 완료했습니다.",
         onOk() {
           refetch();
         },
       });
     } catch (error: any) {
-      Modal.error({ content: "😹 결제 실패 😹" });
+      Modal.error({ content: "결제를 실패했습니다." });
     }
   };
   return (
     <ItemDetailUI
       data={data}
       createDate={createDate}
+      price={price}
       userData={userData}
       isPicked={isPicked}
       setting={settings}
