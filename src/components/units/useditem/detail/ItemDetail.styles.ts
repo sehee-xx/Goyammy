@@ -28,7 +28,7 @@ export const Header = styled.div`
   align-items: center;
   justify-content: center;
   align-self: flex-start;
-  border-bottom: 2px solid #cd863f;
+  border-bottom: 2px solid #f39c1f;
   padding-bottom: 10px;
 `;
 
@@ -54,17 +54,24 @@ export const Date = styled.div`
   color: #464747;
 `;
 
-export const Info = styled.div`
+export const PickBox = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
 `;
 
-export const LinkLocation = styled.img`
-  height: 30px;
+export const Pick = styled.img`
   cursor: pointer;
+  height: 40px;
+`;
+
+export const PickCount = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 500;
 `;
 
 export const Body = styled.div`
@@ -72,6 +79,13 @@ export const Body = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 50px;
+`;
+
+export const RowBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 50px;
 `;
 
 export const ImageWrapper = styled.div`
@@ -98,59 +112,6 @@ export const Image = styled.img`
   height: 500px;
 `;
 
-export const ItemInfo = styled.div`
-  width: 100%;
-`;
-
-export const ColumnBox = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const RowBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-right: 20px;
-`;
-
-export const Remark = styled.div`
-  font-size: 16px;
-  color: #a5a5a5;
-`;
-
-export const Name = styled.div`
-  font-size: 36px;
-  font-weight: 700;
-  color: #464747;
-`;
-
-export const Pick = styled.img`
-  cursor: pointer;
-  height: 40px;
-`;
-
-export const PickCount = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  font-weight: 500;
-`;
-
-export const Price = styled.div`
-  font-size: 50px;
-  font-weight: 600;
-  color: #f39c1f;
-  padding-bottom: 20px;
-`;
-
-export const Contents = styled.div`
-  font-size: 16px;
-  padding-bottom: 50px;
-  color: #464747;
-`;
-
 export const Left = styled.div`
   width: 25px;
   height: 25px;
@@ -171,6 +132,50 @@ export const Right = styled.div`
   line-height: 30px;
 `;
 
+export const ItemInfo = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export const RightTopBox = styled.div``;
+
+export const RightBottomBox = styled.div``;
+
+export const Remark = styled.div`
+  font-size: 16px;
+  color: #a5a5a5;
+`;
+
+export const Name = styled.div`
+  font-size: 34px;
+  font-weight: 700;
+  padding-bottom: 30px;
+  color: #464747;
+`;
+
+export const PriceBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+`;
+
+export const Price = styled.div`
+  font-size: 36px;
+  font-weight: 700;
+  color: #f39c1f;
+  /* padding-bottom: 40px; */
+`;
+
+export const Won = styled.label`
+  font-size: 28px;
+  font-weight: 500;
+  color: #f39c1f;
+  /* padding-bottom: 40px; */
+`;
+
 export const TagBox = styled.div`
   width: 100%;
   display: flex;
@@ -181,43 +186,85 @@ export const TagBox = styled.div`
 `;
 
 export const Tag = styled.div`
-  font-size: 18px;
+  font-size: 14px;
   color: white;
   background-color: #f39c1f;
   padding: 5px 15px;
   border-radius: 20px;
 `;
 
-export const Map = styled.div`
+export const LocationBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+`;
+
+export const LocationIcon = styled.img`
+  height: 30px;
+  cursor: pointer;
+`;
+
+export const Location = styled.div`
+  font-size: 18px;
+  color: #464747;
+`;
+
+export const ButtonBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 50px;
+  gap: 10px;
+`;
+
+export const BuyButton = styled.button`
   width: 100%;
-  height: 400px;
-  background-color: navajowhite;
-  margin-bottom: 50px;
+  height: 70px;
+  font-size: 20px;
+  font-weight: 400;
+  border: none;
+  border-radius: 10px;
+  background-color: #f39c1f;
+  color: #f7f8f9;
+  cursor: pointer;
+  :hover {
+    background-color: #f48c1f;
+    color: #f7f8f9;
+  }
+`;
+
+export const Contents = styled.div`
+  font-size: 16px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: #464747;
+`;
+
+export const BottomButton = styled.button`
+  width: 100%;
+  max-width: 160px;
+  height: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  background-color: #a5a5a5;
+  color: #464747;
+  cursor: pointer;
+  :hover {
+    background-color: #f39c1f;
+    color: white;
+  }
 `;
 
 export const Footer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   padding-top: 50px;
-  padding-bottom: 80px;
-`;
-
-export const Button = styled.button`
-  width: 179px;
-  height: 52px;
-  font-size: 16px;
-  font-weight: 500;
-  border: none;
-  border-radius: 30px;
-  background-color: #ffdab9;
-  margin-right: 24px;
-  text-align: center;
-  color: #8b4513;
-  cursor: pointer;
-  :hover {
-    background-color: orange;
-    color: white;
-  }
+  gap: 30px;
 `;
