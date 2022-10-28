@@ -60,6 +60,10 @@ export const TodayRemarks = styled.label`
   font-size: 12px;
   font-weight: 500;
   color: #cd863f;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
 
 export const TodayPrice = styled.label`
@@ -149,6 +153,10 @@ export const Remarks = styled.label`
   font-weight: 500;
   padding-top: 10px;
   color: #cd863f;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
 export const Tags = styled.label`
   font-size: 15px;
