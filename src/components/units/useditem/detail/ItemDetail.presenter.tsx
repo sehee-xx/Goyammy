@@ -2,7 +2,6 @@ import DOMPurify from "dompurify";
 import * as S from "./ItemDetail.styles";
 import { IItemDetailProps } from "./ItemDetail.types";
 import { v4 as uuidv4 } from "uuid";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import KakaoMapDetail from "../../../commons/kakao-map/detail";
@@ -21,10 +20,13 @@ export default function ItemDetailUI(props: IItemDetailProps) {
             <S.Writer>{props.data?.fetchUseditem.seller.name}</S.Writer>
             <S.Date>{props.createDate}</S.Date>
           </S.HeaderText>
-          <S.Info>
-            <S.LinkLocation src="/images/link.png"></S.LinkLocation>
-            <S.LinkLocation src="/images/location.png"></S.LinkLocation>
-          </S.Info>
+          <S.PickBox>
+            <S.Pick
+              src={props.isPicked ? "/images/Pick.png" : "/images/unPick.png"}
+              onClick={props.onClickPick}
+            ></S.Pick>
+            <S.PickCount>{props.data?.fetchUseditem.pickedCount}</S.PickCount>
+          </S.PickBox>
         </S.Header>
         <S.Body>
           <S.RowBox>
@@ -40,60 +42,85 @@ export default function ItemDetailUI(props: IItemDetailProps) {
                 </S.StyledSlider>
               </S.ImageWrapper>
             ) : (
-              <></>
+              <S.Image src="/images/noImage.jpeg" />
             )}
             <S.ItemInfo>
-              <S.Remark>{props.data?.fetchUseditem.remarks}</S.Remark>
-              <S.Name>{props.data?.fetchUseditem.name} </S.Name>
-              <S.Price>₩ {props.data?.fetchUseditem.price}</S.Price>
-              {typeof window !== "undefined" ? (
-                <S.Contents
-                  dangerouslySetInnerHTML={{
-                    __html: DOMPurify.sanitize(
-                      props.data?.fetchUseditem.contents
-                    ),
-                  }}
-                />
-              ) : (
-                <S.Contents />
-              )}
-              <S.ColumnBox>
-                <S.Pick
-                  src={
-                    props.isPicked ? "/images/Pick.png" : "/images/unPick.png"
-                  }
-                  onClick={props.onClickPick}
-                ></S.Pick>
-                <S.PickCount>
-                  {props.data?.fetchUseditem.pickedCount}
-                </S.PickCount>
-              </S.ColumnBox>
+              <S.RightTopBox>
+                <S.Remark>{props.data?.fetchUseditem.remarks}</S.Remark>
+                <S.Name>{props.data?.fetchUseditem.name} </S.Name>
+                <S.PriceBox>
+                  <S.Price>{props.price}</S.Price>
+                  <S.Won>원</S.Won>
+                </S.PriceBox>
+                <S.TagBox>
+                  {props.data?.fetchUseditem.tags.map((el: string) => {
+                    return <S.Tag key={uuidv4()}>#{el}</S.Tag>;
+                  })}
+                </S.TagBox>
+                {props.data?.fetchUseditem?.useditemAddress && (
+                  <S.LocationBox>
+                    <S.LocationIcon src="/images/place.png" />
+                    <S.Location>
+                      {props.data?.fetchUseditem?.useditemAddress?.address}
+                    </S.Location>
+                    <S.Location>
+                      {
+                        props.data?.fetchUseditem?.useditemAddress
+                          ?.addressDetail
+                      }
+                    </S.Location>
+                  </S.LocationBox>
+                )}
+              </S.RightTopBox>
+              <S.RightBottomBox>
+                {props.data?.fetchUseditem.seller.name ===
+                  props.userData?.fetchUserLoggedIn.name || (
+                  <S.ButtonBox>
+                    <S.BuyButton onClick={props.onClickBuy}>
+                      구매하기
+                    </S.BuyButton>
+                  </S.ButtonBox>
+                )}
+              </S.RightBottomBox>
             </S.ItemInfo>
           </S.RowBox>
+          {typeof window !== "undefined" ? (
+            <S.Contents
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(props.data?.fetchUseditem.contents),
+              }}
+            />
+          ) : (
+            <S.Contents />
+          )}
+          {props.data?.fetchUseditem?.useditemAddress && (
+            <KakaoMapDetail
+              lat={props.data?.fetchUseditem?.useditemAddress?.lat || 37.4847}
+              lng={props.data?.fetchUseditem?.useditemAddress?.lng || 126.9027}
+            />
+          )}
 
-          <S.TagBox>
-            {props.data?.fetchUseditem.tags.map((el: string) => {
-              return <S.Tag key={uuidv4()}>#{el}</S.Tag>;
-            })}
-          </S.TagBox>
-          <KakaoMapDetail
-            lat={props.data?.fetchUseditem?.useditemAddress?.lat || 37.4847}
-            lng={props.data?.fetchUseditem?.useditemAddress?.lng || 126.9027}
-          />
+          {props.data?.fetchUseditem.seller.name ===
+          props.userData?.fetchUserLoggedIn.name ? (
+            <S.Footer>
+              <S.BottomButton onClick={props.onClickGoToList}>
+                목록으로
+              </S.BottomButton>
+              <S.BottomButton onClick={props.onClickUpdateButton}>
+                수정하기
+              </S.BottomButton>
+              <S.BottomButton onClick={props.onClickDeleteButton}>
+                삭제하기
+              </S.BottomButton>
+            </S.Footer>
+          ) : (
+            <S.Footer>
+              <S.BottomButton onClick={props.onClickGoToList}>
+                목록으로
+              </S.BottomButton>
+            </S.Footer>
+          )}
         </S.Body>
-        {props.data?.fetchUseditem.seller.name ===
-        props.userData?.fetchUserLoggedIn.name ? (
-          <S.Footer>
-            <S.Button onClick={props.onClickGoToList}>목록으로</S.Button>
-            <S.Button onClick={props.onClickUpdateButton}>수정하기</S.Button>
-            <S.Button onClick={props.onClickDeleteButton}>삭제하기</S.Button>
-          </S.Footer>
-        ) : (
-          <S.Footer>
-            <S.Button onClick={props.onClickGoToList}>목록으로</S.Button>
-            <S.Button onClick={props.onClickBuy}>구매하기</S.Button>
-          </S.Footer>
-        )}
       </S.Main>
     </S.Wrapper>
   );
