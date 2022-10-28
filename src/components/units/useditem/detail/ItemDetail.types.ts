@@ -1,6 +1,7 @@
 export interface IItemDetailProps {
   data?: any;
   createDate: string;
+  price: string;
   userData?: any;
   isPicked: boolean;
   setting: {
