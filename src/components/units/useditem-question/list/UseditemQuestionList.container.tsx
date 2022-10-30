@@ -22,8 +22,6 @@ export default function UseditemQuestionList() {
   const [commentQnAId, setCommentQnAId] = useState("");
 
   const [deleteUseditemQuestion] = useMutation(DELETE_USEDITEM_QUESTION);
-
-  // infinite scroll 함수
   const loadFunc = () => {
     if (!data) return;
 
@@ -64,11 +62,11 @@ export default function UseditemQuestionList() {
         ],
       });
       Modal.success({
-        title: "😸 댓글이 삭제되었습니다! 😸",
+        title: "댓글이 삭제되었습니다.",
       });
     } catch (error: any) {
       Modal.error({
-        title: "😿 댓글을 삭제할 수 없습니다 😿",
+        title: "댓글을 삭제할 수 없습니다.",
         content: error.message,
       });
     }
