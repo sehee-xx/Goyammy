@@ -1,5 +1,6 @@
 // 마켓 상세 페이지
 import styled from "@emotion/styled";
+import { useAuth } from "../../../src/components/commons/hooks/useAuth";
 import { PageAdd } from "../../../src/components/units/board/detail/BoardDetail.styles";
 import UseditemQuestionList from "../../../src/components/units/useditem-question/list/UseditemQuestionList.container";
 import UseditemQuestionWrite from "../../../src/components/units/useditem-question/write/UseditemQuestionWrite.container";
@@ -19,6 +20,7 @@ const Comment = styled.div`
 `;
 
 export default function DetailPage() {
+  useAuth();
   return (
     <PageAdd>
       <ItemDetail />
