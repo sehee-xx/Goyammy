@@ -1,5 +1,5 @@
 import { useMutation } from "@apollo/client";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import UseditemAnswerWriteUI from "./UseditemAnswerEdit.presenter";
 import { Modal } from "antd";
 import { IUseditemAnswerEditProps } from "./UseditemAnswerEdit.types";
@@ -14,6 +14,10 @@ export default function UseditemAnswerEdit(props: IUseditemAnswerEditProps) {
 
   const onChangeContents = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setContents(event.target.value);
+  };
+
+  const onClickCancel = () => {
+    props.setCommentEditId("");
   };
 
   const onClickUpdate = async () => {
@@ -34,24 +38,25 @@ export default function UseditemAnswerEdit(props: IUseditemAnswerEditProps) {
       });
       props.setCommentEditId("");
       Modal.success({
-        content: "😽 답글이 수정되었습니다! 😽",
+        content: "답글이 수정되었습니다.",
         onOk() {
           setContents("");
         },
       });
     } catch (error: any) {
       Modal.error({
-        title: "😹 답글 수정에 실패했습니다 😹",
+        title: "답글 수정에 실패했습니다.",
         content: error.message,
       });
     }
   };
   return (
     <UseditemAnswerWriteUI
-      onChangeContents={onChangeContents}
-      onClickUpdate={onClickUpdate}
       editContents={contents}
       el={props.el}
+      onChangeContents={onChangeContents}
+      onClickUpdate={onClickUpdate}
+      onClickCancel={onClickCancel}
     />
   );
 }
