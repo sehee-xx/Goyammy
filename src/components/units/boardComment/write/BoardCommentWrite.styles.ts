@@ -34,10 +34,6 @@ export const TopText = styled.div`
   padding-bottom: 20px;
   color: #464747;
 
-  @media ${breakPoints.tablet} {
-    font-size: 28px;
-  }
-
   @media ${breakPoints.mobile} {
     font-size: 22px;
   }
