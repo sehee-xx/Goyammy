@@ -30,7 +30,7 @@ export default function BoardListUI(props: IBoardListUIProps) {
               <S.ColumnHeaderBasic>날짜</S.ColumnHeaderBasic>
             </S.RowTop>
             {props.data?.fetchBoards.map((el: any) => (
-              <S.Row key={el._id}>
+              <S.Row key={uuidv4()}>
                 <S.ColumnBasic>
                   {String(el._id).slice(-4).toUpperCase()}
                 </S.ColumnBasic>
@@ -39,13 +39,16 @@ export default function BoardListUI(props: IBoardListUIProps) {
                   onClick={props.onClickMoveToBoardDetail}
                 >
                   {el.title
-                  .replaceAll(props.keyword, `@#$%${props.keyword}@#$%`)
-                  .split("@#$%")
-                  .map((el: any) => (
-                    <S.TextToken key={uuidv4()} isMatched={props.keyword === el}>
-                      {el}
-                    </S.TextToken>
-                  ))}
+                    .replaceAll(props.keyword, `@#$%${props.keyword}@#$%`)
+                    .split("@#$%")
+                    .map((el: any) => (
+                      <S.TextToken
+                        key={uuidv4()}
+                        isMatched={props.keyword === el}
+                      >
+                        {el}
+                      </S.TextToken>
+                    ))}
                 </S.ColumnTitle>
                 <S.ColumnBasic>{el.writer}</S.ColumnBasic>
                 <S.ColumnBasic>

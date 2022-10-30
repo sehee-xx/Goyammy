@@ -1,5 +1,6 @@
 import { Page } from "./Paginations01.styles";
 import { IPaginations01UIProps } from "./Paginations01.types";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Paginations01UI(props: IPaginations01UIProps) {
   return (
@@ -9,7 +10,7 @@ export default function Paginations01UI(props: IPaginations01UIProps) {
         (_, index) =>
           props.startPage + index <= props.lastPage && (
             <Page
-              key={props.startPage + index}
+              key={uuidv4()}
               onClick={props.onClickPage}
               id={String(props.startPage + index)}
               isActive={props.startPage + index === props.activedPage}
