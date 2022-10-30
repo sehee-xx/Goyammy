@@ -1,7 +1,6 @@
 import { useMutation, useQuery } from "@apollo/client";
 import React, { useState } from "react";
 import { Modal } from "antd";
-import { useRouter } from "next/router";
 import UseditemAnswerListUI from "./UseditemAnswerList.presenter";
 import {
   DELETE_USEDITEM_QUESTION_ANSWER,
@@ -11,7 +10,6 @@ import {
 import { IUseditemAnswerListProps } from "./UseditemAnswerList.types";
 
 export default function UseditemAnswerList(props: IUseditemAnswerListProps) {
-  const router = useRouter();
   const { data, fetchMore } = useQuery(FETCH_USEDITEM_QUESTION_ANSWERS, {
     variables: { useditemQuestionId: props.useditemQuestionId },
   });
@@ -22,7 +20,6 @@ export default function UseditemAnswerList(props: IUseditemAnswerListProps) {
 
   const [deleteUseditemQuestion] = useMutation(DELETE_USEDITEM_QUESTION_ANSWER);
 
-  // infinite scroll 함수
   const loadFunc = () => {
     if (!data) return;
 
@@ -65,11 +62,11 @@ export default function UseditemAnswerList(props: IUseditemAnswerListProps) {
         ],
       });
       Modal.success({
-        title: "😸 답글이 삭제되었습니다! 😸",
+        title: "답글이 삭제되었습니다.",
       });
     } catch (error: any) {
       Modal.error({
-        title: "😿 답글을 삭제할 수 없습니다 😿",
+        title: "답글을 삭제할 수 없습니다.",
         content: error.message,
       });
     }
