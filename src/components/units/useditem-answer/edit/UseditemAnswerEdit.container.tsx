@@ -12,6 +12,10 @@ export default function UseditemAnswerEdit(props: IUseditemAnswerEditProps) {
     UPDATE_USEDITEM_QUESTION_ANSWER
   );
 
+  useEffect(() => {
+    setContents(props.el.contents);
+  }, [props.el.contents]);
+
   const onChangeContents = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setContents(event.target.value);
   };
