@@ -1,5 +1,5 @@
 import { useMutation } from "@apollo/client";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import UseditemQuestionWriteUI from "./UseditemQuestionEdit.presenter";
 import { UPDATE_USEDITEM_QUESTION } from "./UseditemQuestionEdit.queries";
 import { Modal } from "antd";
@@ -11,6 +11,10 @@ export default function UseditemQuestionEdit(
   const [contents, setContents] = useState("");
 
   const [updateUseditemQuestion] = useMutation(UPDATE_USEDITEM_QUESTION);
+
+  useEffect(() => {
+    setContents(props.el.contents);
+  }, [props.el.contents]);
 
   const onChangeContents = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setContents(event.target.value);
