@@ -1,5 +1,5 @@
 import { useMutation } from "@apollo/client";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import BoardCommentWriteUI from "./BoardCommentEdit.presenter";
 import { UPDATE_BOARD_COMMENT } from "./BoardCommentEdit.queries";
 import { Modal } from "antd";
@@ -11,6 +11,10 @@ export default function BoardCommentEdit(props: IBoardCommentEditProps) {
   const [star, setStar] = useState(0);
 
   const [updateBoardComment] = useMutation(UPDATE_BOARD_COMMENT);
+
+  useEffect(() => {
+    setContents(props.el.contents);
+  }, [props.el.contents]);
 
   const onChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
