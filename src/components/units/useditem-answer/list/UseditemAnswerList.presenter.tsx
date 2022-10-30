@@ -28,7 +28,7 @@ export default function UseditemAnswerListUI(
                   </S.MainWrapper>
                   {el.user._id === props.userData?.fetchUserLoggedIn._id ? (
                     <S.OptionWrapper>
-                      <S.UpdateIcon
+                      <S.EditIcon
                         src="/images/graypencil.png/"
                         id={el._id}
                         onClick={props.onClickEditIcon}
