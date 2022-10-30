@@ -1,9 +1,10 @@
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
 
 export interface IUseditemAnswerWriteUIProps {
+  contents: string;
   onChangeContents: (event: ChangeEvent<HTMLTextAreaElement>) => void;
   onClickWrite: () => void;
-  contents: string;
+  onClickCancel: () => void;
 }
 
 export interface IUseditemAnswerWriteProps {
