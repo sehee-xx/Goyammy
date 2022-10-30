@@ -8,6 +8,8 @@ export const Wrapper = styled.div`
   justify-content: center;
 `;
 
+export const CatBox = styled.div``;
+
 export const CatImg = styled.img`
   width: 33.33%;
   height: 420px;
