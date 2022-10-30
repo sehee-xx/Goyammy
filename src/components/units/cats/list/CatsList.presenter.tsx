@@ -1,17 +1,15 @@
-import { CatImg, Wrapper } from "./CatsList.styles";
+import { CatBox, CatImg, Wrapper } from "./CatsList.styles";
 import { ICatsUIProps } from "./CatsList.types";
+import { v4 as uuidv4 } from "uuid";
 
 export default function CatsUI(props: ICatsUIProps) {
   return (
     <Wrapper>
-      <div>
+      <CatBox>
         {props.imgUrls.map((el, index) => (
-          <>
-            <CatImg key={el} src={el} />
-            {(index + 1) % 3 === 0 && <br />}
-          </>
+          <CatImg key={uuidv4()} src={el} />
         ))}
-      </div>
+      </CatBox>
     </Wrapper>
   );
 }
