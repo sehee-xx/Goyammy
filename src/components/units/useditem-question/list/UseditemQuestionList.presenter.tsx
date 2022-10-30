@@ -19,7 +19,7 @@ export default function UseditemQuestionListUI(
         {props.data?.fetchUseditemQuestions.map((el: any) => (
           <S.ItemWrapper key={el._id} id={el.name}>
             {el._id !== props.commentEditId && (
-              <S.Box>
+              <div>
                 <S.FlexWrapper>
                   <S.Avatar src="/images/profile.png" />
                   <S.MainWrapper>
@@ -30,17 +30,17 @@ export default function UseditemQuestionListUI(
                   </S.MainWrapper>
                   {el.user._id === props.userData?.fetchUserLoggedIn._id ? (
                     <S.OptionWrapper>
-                      <S.UpdateIcon
+                      <S.EditIcon
                         src="/images/graypencil.png/"
                         id={el._id}
                         onClick={props.onClickEditIcon}
                       />
+                      <S.QnA id={el._id} onClick={props.onClickQnA} />
                       <S.DeleteIcon
                         src="/images/grayX.png/"
                         id={el._id}
                         onClick={props.onClickDelete}
                       />
-                      <S.QnA id={el._id} onClick={props.onClickQnA} />
                     </S.OptionWrapper>
                   ) : (
                     <S.OptionWrapper>
@@ -51,7 +51,7 @@ export default function UseditemQuestionListUI(
                 <S.DateString>
                   {el.createdAt.slice(0, 10).replace(/-/gi, ".")}
                 </S.DateString>
-              </S.Box>
+              </div>
             )}
             {el._id === props.commentEditId && (
               <UseditemQuestionEdit
