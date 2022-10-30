@@ -16,6 +16,10 @@ export default function UseditemQuestionEdit(
     setContents(event.target.value);
   };
 
+  const onClickCancel = () => {
+    props.setCommentEditId("");
+  };
+
   const onClickUpdate = async () => {
     try {
       if (!contents) {
@@ -33,7 +37,7 @@ export default function UseditemQuestionEdit(
         },
       });
       Modal.success({
-        content: "😽 댓글이 수정되었습니다! 😽",
+        content: "댓글이 수정되었습니다.",
         onOk() {
           setContents("");
           props.setCommentEditId("");
@@ -41,17 +45,18 @@ export default function UseditemQuestionEdit(
       });
     } catch (error: any) {
       Modal.error({
-        title: "😹 댓글 수정에 실패했습니다 😹",
+        title: "댓글 수정에 실패했습니다.",
         content: error.message,
       });
     }
   };
   return (
     <UseditemQuestionWriteUI
-      onChangeContents={onChangeContents}
-      onClickUpdate={onClickUpdate}
       editContents={contents}
       el={props.el}
+      onChangeContents={onChangeContents}
+      onClickUpdate={onClickUpdate}
+      onClickCancel={onClickCancel}
     />
   );
 }
