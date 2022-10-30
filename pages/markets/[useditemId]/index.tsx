@@ -8,11 +8,6 @@ import ItemDetail from "../../../src/components/units/useditem/detail/ItemDetail
 
 const Comment = styled.div`
   width: 100%;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-  background-color: white;
-  padding-bottom: 80px;
-  padding: 0px 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
