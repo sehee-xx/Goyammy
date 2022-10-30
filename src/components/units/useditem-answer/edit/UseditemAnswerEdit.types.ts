@@ -1,10 +1,11 @@
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
 
 export interface IUseditemAnswerWriteUIProps {
-  onChangeContents: (event: ChangeEvent<HTMLTextAreaElement>) => void;
-  onClickUpdate: () => void;
   editContents: string;
   el: any;
+  onChangeContents: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+  onClickUpdate: () => void;
+  onClickCancel: () => void;
 }
 
 export interface IUseditemAnswerEditProps {
