@@ -1,5 +1,4 @@
 import { useMutation } from "@apollo/client";
-import { useRouter } from "next/router";
 import { ChangeEvent, useState } from "react";
 import UseditemAnswerWriteUI from "./UseditemAnswerWrite.presenter";
 import {
@@ -10,7 +9,6 @@ import { Modal } from "antd";
 import { IUseditemAnswerWriteProps } from "./UseditemAnswerWrite.types";
 
 export default function UseditemAnswerWrite(props: IUseditemAnswerWriteProps) {
-  const router = useRouter();
   const [contents, setContents] = useState("");
 
   const [createUseditemQuestionAnswer] = useMutation(
@@ -21,11 +19,15 @@ export default function UseditemAnswerWrite(props: IUseditemAnswerWriteProps) {
     setContents(event.target.value);
   };
 
+  const onClickCancel = () => {
+    props.setCommentQnAId("");
+  };
+
   const onClickWrite = async () => {
     try {
       if (!contents) {
         Modal.error({
-          title: "😺 빈칸을 채워주세요 😺",
+          title: "내용을 입력해주세요.",
         });
         return;
       }
@@ -60,9 +62,10 @@ export default function UseditemAnswerWrite(props: IUseditemAnswerWriteProps) {
 
   return (
     <UseditemAnswerWriteUI
+      contents={contents}
       onChangeContents={onChangeContents}
       onClickWrite={onClickWrite}
-      contents={contents}
+      onClickCancel={onClickCancel}
     />
   );
 }
