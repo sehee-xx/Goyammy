@@ -49,5 +49,5 @@ export default function KakaoMapDetail(props: any) {
       });
     };
   }, [props.lat, props.lng]);
-  return <div id="map" style={{ width: "100%", height: "600px" }}></div>;
+  return <div id="map" style={{ width: "100%", height: "100%" }}></div>;
 }
