@@ -93,13 +93,16 @@ export default function ItemDetailUI(props: IItemDetailProps) {
           ) : (
             <S.Contents />
           )}
-          {props.data?.fetchUseditem?.useditemAddress && (
-            <KakaoMapDetail
-              lat={props.data?.fetchUseditem?.useditemAddress?.lat || 37.4847}
-              lng={props.data?.fetchUseditem?.useditemAddress?.lng || 126.9027}
-            />
-          )}
-
+          <S.MapWrapper>
+            {props.data?.fetchUseditem?.useditemAddress && (
+              <KakaoMapDetail
+                lat={props.data?.fetchUseditem?.useditemAddress?.lat || 37.4847}
+                lng={
+                  props.data?.fetchUseditem?.useditemAddress?.lng || 126.9027
+                }
+              />
+            )}
+          </S.MapWrapper>
           {props.data?.fetchUseditem.seller.name ===
           props.userData?.fetchUserLoggedIn.name ? (
             <S.Footer>
