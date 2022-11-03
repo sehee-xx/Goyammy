@@ -46,17 +46,17 @@ export default function ItemDetailUI(props: IItemDetailProps) {
             )}
             <S.ItemInfo>
               <S.RightTopBox>
-                <S.Remark>{props.data?.fetchUseditem.remarks}</S.Remark>
                 <S.Name>{props.data?.fetchUseditem.name} </S.Name>
-                <S.PriceBox>
-                  <S.Price>{props.price}</S.Price>
-                  <S.Won>원</S.Won>
-                </S.PriceBox>
+                <S.Remark>{props.data?.fetchUseditem.remarks}</S.Remark>
                 <S.TagBox>
                   {props.data?.fetchUseditem.tags.map((el: string) => {
                     return <S.Tag key={uuidv4()}>#{el}</S.Tag>;
                   })}
                 </S.TagBox>
+                <S.PriceBox>
+                  <S.Price>{props.price}</S.Price>
+                  <S.Won>원</S.Won>
+                </S.PriceBox>
                 {props.data?.fetchUseditem?.useditemAddress && (
                   <S.LocationBox>
                     <S.LocationIcon src="/images/place.png" />

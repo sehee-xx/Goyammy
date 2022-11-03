@@ -143,16 +143,34 @@ export const RightTopBox = styled.div``;
 
 export const RightBottomBox = styled.div``;
 
-export const Remark = styled.div`
-  font-size: 16px;
-  color: #a5a5a5;
-`;
-
 export const Name = styled.div`
   font-size: 34px;
   font-weight: 700;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   color: #464747;
+`;
+
+export const Remark = styled.div`
+  font-size: 16px;
+  color: #a5a5a5;
+  padding-bottom: 15px;
+`;
+
+export const TagBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+`;
+
+export const Tag = styled.div`
+  font-size: 14px;
+  color: white;
+  background-color: #f39c1f;
+  padding: 5px 15px;
+  border-radius: 20px;
 `;
 
 export const PriceBox = styled.div`
@@ -166,31 +184,14 @@ export const Price = styled.div`
   font-size: 36px;
   font-weight: 700;
   color: #f39c1f;
-  /* padding-bottom: 40px; */
+  padding-bottom: 30px;
 `;
 
 export const Won = styled.label`
   font-size: 28px;
   font-weight: 500;
   color: #f39c1f;
-  /* padding-bottom: 40px; */
-`;
-
-export const TagBox = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 50px;
-`;
-
-export const Tag = styled.div`
-  font-size: 14px;
-  color: white;
-  background-color: #f39c1f;
-  padding: 5px 15px;
-  border-radius: 20px;
+  padding-bottom: 30px;
 `;
 
 export const LocationBox = styled.div`
