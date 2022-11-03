@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/breakPoints/breakPoints";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -10,6 +11,14 @@ export const Wrapper = styled.div`
   background-color: #fff;
   border-radius: 10px;
   padding: 60px 102px;
+
+  @media ${breakPoints.tablet} {
+    padding: 40px 50px;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding: 20px 30px;
+  }
 `;
 
 export const Header = styled.div`
@@ -23,6 +32,10 @@ export const TopText = styled.div`
   font-weight: 600;
   padding-bottom: 20px;
   color: #464747;
+
+  @media ${breakPoints.mobile} {
+    font-size: 22px;
+  }
 `;
 
 export const CommentInput = styled.textarea`
@@ -40,6 +53,15 @@ export const CommentInput = styled.textarea`
     color: #a5a5a5;
   }
   outline-color: #f39c1f;
+
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
+    height: 100px;
+    margin-right: 12px;
+    ::placeholder {
+      font-size: 10px;
+    }
+  }
 `;
 
 export const CommentBottom = styled.div`
@@ -54,6 +76,14 @@ export const CommentLimit = styled.div`
   font-size: 18px;
   font-weight: 500;
   color: #464747;
+
+  @media ${breakPoints.tablet} {
+    font-size: 14px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
+  }
 `;
 
 export const CommentButton = styled.button`
@@ -70,5 +100,11 @@ export const CommentButton = styled.button`
   :hover {
     background-color: #f39c1f;
     color: white;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 80px;
+    height: 40px;
+    font-size: 10px;
   }
 `;
