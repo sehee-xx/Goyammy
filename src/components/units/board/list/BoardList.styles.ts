@@ -71,12 +71,12 @@ export const Row = styled(RowTop)`
   }
 `;
 
-export const ColumnHeaderTitle = styled.div`
+export const ColumnHeaderWriter = styled.div`
   width: 25%;
   text-align: center;
 `;
 
-export const ColumnHeaderWriter = styled.div`
+export const ColumnHeaderTitle = styled.div`
   width: 50%;
   text-align: center;
 `;
@@ -87,22 +87,22 @@ export const ColumnHeaderDate = styled.div`
 `;
 
 export const ColumnWriter = styled.div`
-  width: 50%;
-  text-align: center;
-`;
-
-export const ColumnDate = styled.div`
   width: 25%;
   text-align: center;
 `;
 
 export const ColumnTitle = styled.div`
-  width: 25%;
+  width: 50%;
   text-align: center;
   cursor: pointer;
   :hover {
     color: #f39c1f;
   }
+`;
+
+export const ColumnDate = styled.div`
+  width: 25%;
+  text-align: center;
 `;
 
 export const TextToken = styled.span`
