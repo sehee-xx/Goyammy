@@ -20,3 +20,7 @@ export interface IPaginations01UIProps {
   onClickPrevPage: () => void;
   onClickNextPage: () => void;
 }
+
+export interface IPageProps {
+  isActive?: boolean;
+}
