@@ -5,20 +5,26 @@ export const SearchBar = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  padding-bottom: 40px;
+  justify-content: right;
+  gap: 10px;
 `;
+
+export const SearchIcon = styled.img`
+  width: 30px;
+`;
+
 export const Search = styled.input`
-  width: 776px;
-  height: 52px;
-  background-color: #faf0e6;
-  color: black;
+  width: 100%;
+  max-width: 250px;
+  height: 50px;
+  background-color: #f7f8f9;
   border: none;
-  outline-color: #cd863f;
-  color: #8b4513;
+  outline-color: #f39c1f;
+  color: #f39c1f;
   ::placeholder {
-    color: #8b4513;
+    color: #464747;
   }
   border-radius: 10px;
-  padding: 0px 30px;
+  padding-left: 20px;
+  font-size: 14px;
 `;
