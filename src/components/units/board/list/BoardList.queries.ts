@@ -10,6 +10,7 @@ export const FETCH_BOARDS = gql`
     }
   }
 `;
+
 export const DELETE_BOARD = gql`
   mutation deleteBoard($number: Int) {
     deleteBoard(number: $number) {
@@ -17,8 +18,18 @@ export const DELETE_BOARD = gql`
     }
   }
 `;
+
 export const FETCH_BOARDS_COUNT = gql`
   query fetchBoardsCount($search: String) {
     fetchBoardsCount(search: $search)
+  }
+`;
+
+export const FETCH_BOARDS_OF_THE_BEST = gql`
+  query fetchBoardsOfTheBest {
+    fetchBoardsOfTheBest {
+      _id
+      images
+    }
   }
 `;

@@ -4,6 +4,7 @@ import {
   FETCH_BOARDS,
   DELETE_BOARD,
   FETCH_BOARDS_COUNT,
+  FETCH_BOARDS_OF_THE_BEST,
 } from "./BoardList.queries";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -12,7 +13,11 @@ export default function BoardList() {
   const [deleteBoard] = useMutation(DELETE_BOARD);
   const [keyword, setKeyword] = useState("");
   const { data, refetch } = useQuery(FETCH_BOARDS);
-  const { data: dataBoardsCount, refetch: refetchBoardsCount } = useQuery(FETCH_BOARDS_COUNT);
+  const { data: dataBoardsBest, refetch: refetchBoardsBest } = useQuery(
+    FETCH_BOARDS_OF_THE_BEST
+  );
+  const { data: dataBoardsCount, refetch: refetchBoardsCount } =
+    useQuery(FETCH_BOARDS_COUNT);
   const router = useRouter();
 
   const onClickDelete = (event: any) => {
@@ -26,24 +31,32 @@ export default function BoardList() {
     router.push(`/boards/${event.currentTarget.id}`);
   };
 
+  const onClickMoveToBest = (event: any) => {
+    router.push(`/boards/${event.currentTarget.id}`);
+  };
+
   const onClickWriteBoard = () => {
     router.push(`/boards/new`);
   };
 
   function onChangeKeyword(value: string) {
     setKeyword(value);
-  };
+  }
+  console.log(dataBoardsBest);
 
   return (
     <BoardListUI
       data={data}
+      dataBoardsBest={dataBoardsBest}
+      count={dataBoardsCount?.fetchBoardsCount}
+      keyword={keyword}
       onClickDelete={onClickDelete}
       onClickWriteBoard={onClickWriteBoard}
       onClickMoveToBoardDetail={onClickMoveToBoardDetail}
+      onClickMoveToBest={onClickMoveToBest}
       refetch={refetch}
       refetchBoardsCount={refetchBoardsCount}
-      count={dataBoardsCount?.fetchBoardsCount}
-      keyword={keyword}
+      refetchBoardsBest={refetchBoardsBest}
       onChangeKeyword={onChangeKeyword}
     />
   );

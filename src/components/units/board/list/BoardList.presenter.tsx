@@ -10,10 +10,13 @@ export default function BoardListUI(props: IBoardListUIProps) {
       <S.HeaderText>베스트 게시글</S.HeaderText>
       <S.Body>
         <S.BestList>
-          <S.BestImg src="/images/cat2.jpeg/"></S.BestImg>
-          <S.BestImg src="/images/cat1.jpeg/"></S.BestImg>
-          <S.BestImg src="/images/cat3.jpeg/"></S.BestImg>
-          <S.BestImg src="/images/cat4.png/"></S.BestImg>
+          {new Array(4).fill(1).map((_, index) => (
+            <S.BestImg
+              id={props.dataBoardsBest?.fetchBoardsOfTheBest[index]._id}
+              onClick={props.onClickMoveToBest}
+              src={`https://storage.googleapis.com/${props.dataBoardsBest?.fetchBoardsOfTheBest[index].images[0]}`}
+            ></S.BestImg>
+          ))}
         </S.BestList>
         <Searchbars01
           refetch={props.refetch}
@@ -23,12 +26,13 @@ export default function BoardListUI(props: IBoardListUIProps) {
         <S.Table>
           <S.TableTop />
           <S.RowTop>
-            <S.ColumnHeaderTitle>제목</S.ColumnHeaderTitle>
             <S.ColumnHeaderWriter>작성자</S.ColumnHeaderWriter>
+            <S.ColumnHeaderTitle>제목</S.ColumnHeaderTitle>
             <S.ColumnHeaderDate>날짜</S.ColumnHeaderDate>
           </S.RowTop>
           {props.data?.fetchBoards.map((el: any) => (
             <S.Row key={uuidv4()}>
+              <S.ColumnWriter>{el.writer}</S.ColumnWriter>
               <S.ColumnTitle
                 id={el._id}
                 onClick={props.onClickMoveToBoardDetail}
@@ -45,7 +49,6 @@ export default function BoardListUI(props: IBoardListUIProps) {
                     </S.TextToken>
                   ))}
               </S.ColumnTitle>
-              <S.ColumnWriter>{el.writer}</S.ColumnWriter>
               <S.ColumnDate>
                 {el.createdAt.slice(0, 10).replace(/-/gi, ".")}
               </S.ColumnDate>
