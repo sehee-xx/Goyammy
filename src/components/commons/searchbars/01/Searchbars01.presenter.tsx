@@ -6,7 +6,7 @@ export default function Searchbars01UI(props: ISearchbars01UIProps) {
     <SearchBar>
       <SearchIcon src="images/search.png" />
       <Search
-        placeholder="검색어를 입력해 주세요."
+        placeholder="제목을 검색해 주세요."
         onChange={props.onChangeSearchbar}
       />
     </SearchBar>
