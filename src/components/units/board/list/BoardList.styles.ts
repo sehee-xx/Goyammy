@@ -31,7 +31,6 @@ export const Body = styled.div`
 
 export const BestList = styled.div`
   width: 100%;
-  max-width: 1007px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -39,7 +38,7 @@ export const BestList = styled.div`
 `;
 
 export const BestImg = styled.img`
-  max-width: 230px;
+  width: 23.5%;
   aspect-ratio: 1;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -74,16 +73,19 @@ export const Row = styled(RowTop)`
 export const ColumnHeaderWriter = styled.div`
   width: 25%;
   text-align: center;
+  background-color: #f7f8f9;
 `;
 
 export const ColumnHeaderTitle = styled.div`
   width: 50%;
   text-align: center;
+  background-color: #f7f8f9;
 `;
 
 export const ColumnHeaderDate = styled.div`
   width: 25%;
   text-align: center;
+  background-color: #f7f8f9;
 `;
 
 export const ColumnWriter = styled.div`
