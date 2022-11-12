@@ -21,10 +21,7 @@ export default function ItemDetailUI(props: IItemDetailProps) {
             <S.Date>{props.createDate}</S.Date>
           </S.HeaderText>
           <S.PickBox>
-            <S.Pick
-              src={props.isPicked ? "/images/Pick.png" : "/images/unPick.png"}
-              onClick={props.onClickPick}
-            ></S.Pick>
+            <S.Pick src="/images/pick.png" onClick={props.onClickPick}></S.Pick>
             <S.PickCount>{props.data?.fetchUseditem.pickedCount}</S.PickCount>
           </S.PickBox>
         </S.Header>
@@ -57,7 +54,7 @@ export default function ItemDetailUI(props: IItemDetailProps) {
                   <S.Price>{props.price}</S.Price>
                   <S.Won>원</S.Won>
                 </S.PriceBox>
-                {props.data?.fetchUseditem?.useditemAddress && (
+                {props.data?.fetchUseditem?.useditemAddress.address && (
                   <S.LocationBox>
                     <S.LocationIcon src="/images/place.png" />
                     <S.Location>
