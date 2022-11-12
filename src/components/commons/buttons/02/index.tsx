@@ -22,10 +22,17 @@ const Button = styled.button`
   }
   color: white;
 
+  @media ${breakPoints.tablet} {
+    width: 140px;
+    height: 55px;
+    font-size: 16px;
+    margin-top: 80px;
+  }
+
   @media ${breakPoints.mobile} {
-    width: 120px;
-    height: 50px;
-    font-size: 14px;
+    width: 100px;
+    height: 40px;
+    font-size: 12px;
     margin-top: 50px;
   }
 `;
