@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/breakPoints/breakPoints";
 import { ITextTokenProps } from "./BoardList.types";
 
 export const Wrapper = styled.div`
@@ -12,6 +13,14 @@ export const Wrapper = styled.div`
   align-items: center;
   background-color: white;
   padding: 80px 120px;
+
+  @media ${breakPoints.tablet} {
+    padding: 40px 50px;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding: 20px 30px;
+  }
 `;
 
 export const HeaderText = styled.div`
@@ -19,6 +28,14 @@ export const HeaderText = styled.div`
   font-weight: 700;
   padding-bottom: 40px;
   color: #464747;
+
+  @media ${breakPoints.tablet} {
+    font-size: 30px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 20px;
+  }
 `;
 
 export const Body = styled.div`
@@ -35,6 +52,14 @@ export const BestList = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding-bottom: 60px;
+
+  @media ${breakPoints.tablet} {
+    padding-bottom: 40px;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding-bottom: 30px;
+  }
 `;
 
 export const BestImg = styled.img`
@@ -49,6 +74,16 @@ export const Table = styled.div`
   padding-bottom: 40px;
   color: #464747;
   font-size: 16px;
+
+  @media ${breakPoints.tablet} {
+    padding-bottom: 30px;
+    font-size: 14px;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding-bottom: 20px;
+    font-size: 10px;
+  }
 `;
 
 export const TableTop = styled.div`
@@ -61,6 +96,16 @@ export const RowTop = styled.div`
   height: 52px;
   line-height: 52px;
   border-bottom: 1.5px solid #a5a5a5;
+
+  @media ${breakPoints.tablet} {
+    height: 40px;
+    line-height: 40px;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 30px;
+    line-height: 30px;
+  }
 `;
 
 export const Row = styled(RowTop)`
@@ -135,5 +180,19 @@ export const SignupButton = styled.button`
   :hover {
     background-color: #f39c1f;
     color: white;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 140px;
+    height: 55px;
+    font-size: 16px;
+    margin-top: 80px;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 100px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 50px;
   }
 `;
