@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../breakPoints/breakPoints";
 
 export const SearchBar = styled.div`
   width: 100%;
@@ -11,6 +12,14 @@ export const SearchBar = styled.div`
 
 export const SearchIcon = styled.img`
   width: 30px;
+
+  @media ${breakPoints.tablet} {
+    width: 25px;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 20px;
+  }
 `;
 
 export const Search = styled.input`
@@ -27,4 +36,22 @@ export const Search = styled.input`
   border-radius: 10px;
   padding-left: 20px;
   font-size: 14px;
+
+  @media ${breakPoints.tablet} {
+    max-width: 200px;
+    height: 40px;
+    padding-left: 18px;
+    ::placeholder {
+      font-size: 14px;
+    }
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 160px;
+    height: 30px;
+    padding-left: 16px;
+    ::placeholder {
+      font-size: 12px;
+    }
+  }
 `;
