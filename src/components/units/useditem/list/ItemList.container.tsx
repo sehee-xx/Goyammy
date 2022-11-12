@@ -9,7 +9,6 @@ export default function ItemList() {
   const { data, fetchMore } = useQuery(FETCH_USEDITEMS, {
     variables: { useditemId: router.query.useditemId },
   });
-
   const [visitedItems, setVisitedItems] = useState([]);
 
   useEffect(() => {
@@ -17,7 +16,6 @@ export default function ItemList() {
     setVisitedItems(visited);
   }, []);
 
-  // infinite scroll 함수
   const loadFunc = () => {
     if (!data) return;
 
