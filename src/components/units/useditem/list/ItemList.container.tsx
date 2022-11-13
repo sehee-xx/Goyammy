@@ -1,13 +1,14 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ItemListUI from "./ItemList.presenter";
 import { FETCH_USEDITEMS } from "./ItemList.queries";
 
 export default function ItemList() {
   const router = useRouter();
+  const [isSoldout, setIsSoldout] = useState("판매중");
   const { data, fetchMore } = useQuery(FETCH_USEDITEMS, {
-    variables: { useditemId: router.query.useditemId },
+    variables: { isSoldout: isSoldout === "판매중" ? false : true },
   });
   const [visitedItems, setVisitedItems] = useState([]);
 
@@ -52,13 +53,19 @@ export default function ItemList() {
     router.push(`/markets/${el._id}`);
   };
 
+  const onChangeIsSoldout = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setIsSoldout(event.target.value);
+  };
+
   return (
     <ItemListUI
       data={data}
       visitedItems={visitedItems}
+      isSoldout={isSoldout}
       onClickMoveToNew={onClickMoveToNew}
       onClickMoveToDetail={onClickMoveToDetail}
       loadFunc={loadFunc}
+      onChangeIsSoldout={onChangeIsSoldout}
     />
   );
 }
