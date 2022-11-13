@@ -96,7 +96,7 @@ export default function ItemDetail() {
       Modal.success({
         content: "결제를 완료했습니다.",
         onOk() {
-          refetch();
+          router.push("/markets");
         },
       });
     } catch (error: any) {
