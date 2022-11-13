@@ -89,6 +89,26 @@ export const Column = styled.div`
   padding: 10px 15px;
 `;
 
+export const MiddleBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 15px;
+`;
+
+export const IsSoldoutSelect = styled.select`
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #464747;
+  text-align: center;
+`;
+
 export const Body = styled.div`
   width: 100%;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);

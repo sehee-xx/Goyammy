@@ -11,7 +11,7 @@ export default function ItemListUI(props: IItemsListUIProps) {
         {props.visitedItems.length ? (
           <S.BestList>
             {new Array(4).fill(1).map((_, index) => (
-              <S.BestItem key={uuidv4()}>
+              <S.BestItem key={uuidv4()} onClick={props.onClickMoveToDetail}>
                 <S.BestImg
                   src={
                     props.visitedItems[index]?.images[0]
@@ -40,6 +40,16 @@ export default function ItemListUI(props: IItemsListUIProps) {
           <S.BestList></S.BestList>
         )}
       </div>
+      <S.MiddleBox>
+        <S.IsSoldoutSelect onChange={props.onChangeIsSoldout}>
+          <option key="판매중" value="판매중">
+            판매중
+          </option>
+          <option key="판매완료" value="판매완료">
+            판매완료
+          </option>
+        </S.IsSoldoutSelect>
+      </S.MiddleBox>
       <S.Body>
         <div style={{ height: 1000, overflowY: "auto", overflowX: "hidden" }}>
           <InfiniteScroll
