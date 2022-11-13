@@ -54,7 +54,7 @@ export default function ItemDetailUI(props: IItemDetailProps) {
                   <S.Price>{props.price}</S.Price>
                   <S.Won>원</S.Won>
                 </S.PriceBox>
-                {props.data?.fetchUseditem?.useditemAddress.address && (
+                {props.data?.fetchUseditem?.useditemAddress?.address && (
                   <S.LocationBox>
                     <S.LocationIcon src="/images/place.png" />
                     <S.Location>
@@ -90,16 +90,16 @@ export default function ItemDetailUI(props: IItemDetailProps) {
           ) : (
             <S.Contents />
           )}
-          <S.MapWrapper>
-            {props.data?.fetchUseditem?.useditemAddress && (
+          {props.data?.fetchUseditem?.useditemAddress?.address && (
+            <S.MapWrapper>
               <KakaoMapDetail
                 lat={props.data?.fetchUseditem?.useditemAddress?.lat || 37.4847}
                 lng={
                   props.data?.fetchUseditem?.useditemAddress?.lng || 126.9027
                 }
               />
-            )}
-          </S.MapWrapper>
+            </S.MapWrapper>
+          )}
           {props.data?.fetchUseditem.seller.name ===
           props.userData?.fetchUserLoggedIn.name ? (
             <S.Footer>
