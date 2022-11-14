@@ -42,7 +42,6 @@ export default function BoardList() {
   function onChangeKeyword(value: string) {
     setKeyword(value);
   }
-  console.log(dataBoardsBest);
 
   return (
     <BoardListUI
