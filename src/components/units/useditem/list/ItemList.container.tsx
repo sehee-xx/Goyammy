@@ -1,6 +1,8 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
+import { visitedState } from "../../../../commons/store";
 import ItemListUI from "./ItemList.presenter";
 import { FETCH_USEDITEMS } from "./ItemList.queries";
 
@@ -10,7 +12,7 @@ export default function ItemList() {
   const { data, fetchMore } = useQuery(FETCH_USEDITEMS, {
     variables: { isSoldout: isSoldout === "판매중" ? false : true },
   });
-  const [visitedItems, setVisitedItems] = useState([]);
+  const [visitedItems, setVisitedItems] = useRecoilState(visitedState);
 
   useEffect(() => {
     const visited = JSON.parse(sessionStorage.getItem("visited") || "[]");
