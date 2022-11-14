@@ -4,7 +4,10 @@ import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { visitedState } from "../../../../commons/store";
 import ItemListUI from "./ItemList.presenter";
-import { FETCH_USEDITEMS } from "./ItemList.queries";
+import {
+  FETCH_USEDITEMS,
+  FETCH_USEDITEMS_OF_THE_BEST,
+} from "./ItemList.queries";
 
 export default function ItemList() {
   const router = useRouter();
@@ -13,6 +16,9 @@ export default function ItemList() {
     variables: { isSoldout: isSoldout === "판매중" ? false : true },
   });
   const [visitedItems, setVisitedItems] = useRecoilState(visitedState);
+  const { data: dataUseditemsBest, refetch: refetchUseditemsBest } = useQuery(
+    FETCH_USEDITEMS_OF_THE_BEST
+  );
 
   useEffect(() => {
     const visited = JSON.parse(sessionStorage.getItem("visited") || "[]");
@@ -64,9 +70,11 @@ export default function ItemList() {
     <ItemListUI
       data={data}
       visitedItems={visitedItems}
+      dataUseditemsBest={dataUseditemsBest}
       isSoldout={isSoldout}
       onClickMoveToNew={onClickMoveToNew}
       onClickMoveToDetail={onClickMoveToDetail}
+      refetchUseditemsBest={refetchUseditemsBest}
       loadFunc={loadFunc}
       onChangeIsSoldout={onChangeIsSoldout}
     />
