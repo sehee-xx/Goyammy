@@ -34,6 +34,7 @@ export const BestItem = styled.div`
   aspect-ratio: 1;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  cursor: pointer;
 `;
 
 export const BestImg = styled.img`
