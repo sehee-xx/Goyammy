@@ -11,7 +11,10 @@ export default function ItemListUI(props: IItemsListUIProps) {
         {props.visitedItems.length ? (
           <S.BestList>
             {new Array(4).fill(1).map((_, index) => (
-              <S.BestItem key={uuidv4()} onClick={props.onClickMoveToDetail}>
+              <S.BestItem
+                key={uuidv4()}
+                onClick={props.onClickMoveToDetail(props.visitedItems[index])}
+              >
                 <S.BestImg
                   src={
                     props.visitedItems[index]?.images[0]

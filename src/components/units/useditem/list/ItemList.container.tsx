@@ -13,7 +13,7 @@ export default function ItemList() {
   const [visitedItems, setVisitedItems] = useState([]);
 
   useEffect(() => {
-    const visited = JSON.parse(localStorage.getItem("visited") || "[]");
+    const visited = JSON.parse(sessionStorage.getItem("visited") || "[]");
     setVisitedItems(visited);
   }, []);
 
@@ -42,14 +42,15 @@ export default function ItemList() {
   };
 
   const onClickMoveToDetail = (el: any) => () => {
-    const visited = JSON.parse(localStorage.getItem("visited") || "[]");
-
-    const temp = visited.filter((visitedEl: any) => visitedEl._id === el._id);
-    if (temp.length !== 1) {
-      const { __typename, ...newEl } = el;
-      visited.push(newEl);
-      localStorage.setItem("visited", JSON.stringify(visited));
+    const visited = JSON.parse(sessionStorage.getItem("visited") || "[]");
+    const { __typename, ...newEl } = el;
+    const result = visited.filter((visited: any) => visited._id !== newEl._id);
+    result.unshift(newEl);
+    if (result.length > 3) {
+      result.pop();
     }
+    setVisitedItems(result);
+    sessionStorage.setItem("visited", JSON.stringify(result));
     router.push(`/markets/${el._id}`);
   };
 
