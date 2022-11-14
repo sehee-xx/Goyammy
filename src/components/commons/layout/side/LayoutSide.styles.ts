@@ -28,4 +28,5 @@ export const TodayItem = styled.img`
   height: 85px;
   margin-bottom: 10px;
   border-radius: 10px;
+  cursor: pointer;
 `;
