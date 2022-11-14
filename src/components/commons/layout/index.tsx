@@ -5,8 +5,10 @@ import styled from "@emotion/styled";
 import { ReactNode } from "react";
 import { useRouter } from "next/router";
 import { breakPoints } from "../breakPoints/breakPoints";
+import LayoutSide from "./side/LayoutSide.container";
 
-const HIDDEN_HEADERS = ["/login", "/signup"];
+const HIDDEN_BANNERS = ["/login", "/signup"];
+const HIDDEN_SIDES = ["/login", "/signup", "/boards", "/cats"];
 
 const Body = styled.div`
   width: 100%;
@@ -32,12 +34,14 @@ interface ILayoutProps {
 
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
-  const isHiddenHeader = HIDDEN_HEADERS.includes(router.asPath);
+  const isHiddenBanner = HIDDEN_BANNERS.includes(router.asPath);
+  const isHiddenSide = HIDDEN_SIDES.includes(router.asPath);
   return (
     <>
       <LayoutHeader />
-      {!isHiddenHeader && <LayoutBanner />}
+      {!isHiddenBanner && <LayoutBanner />}
       <LayoutNavigation />
+      {!isHiddenSide && <LayoutSide />}
       <Body>{props.children}</Body>
     </>
   );
