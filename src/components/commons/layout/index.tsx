@@ -7,8 +7,8 @@ import { useRouter } from "next/router";
 import { breakPoints } from "../breakPoints/breakPoints";
 import LayoutSide from "./side/LayoutSide.container";
 
-const HIDDEN_BANNERS = ["/login", "/signup"];
-const HIDDEN_SIDES = ["/login", "/signup", "/boards", "/cats"];
+const HIDDEN_BANNERS = ["login", "signup"];
+const HIDDEN_SIDES = ["", "login", "signup", "boards", "cats", "mypages"];
 
 const Body = styled.div`
   width: 100%;
@@ -34,8 +34,8 @@ interface ILayoutProps {
 
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
-  const isHiddenBanner = HIDDEN_BANNERS.includes(router.asPath);
-  const isHiddenSide = HIDDEN_SIDES.includes(router.asPath);
+  const isHiddenBanner = HIDDEN_BANNERS.includes(router.asPath.split("/")[1]);
+  const isHiddenSide = HIDDEN_SIDES.includes(router.asPath.split("/")[1]);
   return (
     <>
       <LayoutHeader />
