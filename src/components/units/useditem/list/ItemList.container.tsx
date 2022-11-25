@@ -15,6 +15,7 @@ export default function ItemList() {
   const { data, fetchMore, refetch } = useQuery(FETCH_USEDITEMS, {
     variables: { isSoldout: isSoldout === "판매중" ? false : true },
   });
+  // const [date, setDate] = useState([]);
   const [visitedItems, setVisitedItems] = useRecoilState(visitedState);
   const { data: dataUseditemsBest, refetch: refetchUseditemsBest } = useQuery(
     FETCH_USEDITEMS_OF_THE_BEST
@@ -65,13 +66,15 @@ export default function ItemList() {
   const onChangeIsSoldout = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setIsSoldout(event.target.value);
   };
-
+  // console.log(date.range[0]._d);
+  // console.log(date.range[1]._d);
   return (
     <ItemListUI
       data={data}
       visitedItems={visitedItems}
       dataUseditemsBest={dataUseditemsBest}
       isSoldout={isSoldout}
+      // setDate={setDate}
       onClickMoveToNew={onClickMoveToNew}
       onClickMoveToDetail={onClickMoveToDetail}
       refetchUseditemsBest={refetchUseditemsBest}

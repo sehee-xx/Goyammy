@@ -1,4 +1,8 @@
 import styled from "@emotion/styled";
+import React from "react";
+import { DatePicker } from "antd";
+
+const { RangePicker } = DatePicker;
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -95,6 +99,7 @@ export const MiddleBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding-bottom: 15px;
 `;
 
@@ -108,6 +113,24 @@ export const IsSoldoutSelect = styled.select`
   color: #fff;
   background-color: #464747;
   text-align: center;
+`;
+
+export const Search = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+`;
+
+export const TermSearch = styled(RangePicker)`
+  width: 100%;
+  height: 40px;
+  color: #464747;
+  ::placeholder {
+    color: #464747;
+  }
+  border-radius: 10px;
+  border: 2px solid #f1f3f4;
 `;
 
 export const Body = styled.div`

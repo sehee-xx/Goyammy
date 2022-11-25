@@ -58,7 +58,14 @@ export default function ItemListUI(props: IItemsListUIProps) {
             판매완료
           </option>
         </S.IsSoldoutSelect>
-        <Searchbars02 refetch={props.refetch} />
+        <S.Search>
+          <S.TermSearch
+            placeholder={["검색 시작일", "검색 종료일"]}
+            // format={"YYYY-MM-DD"}
+            // onChange={(value, dateString) => props.setDate({ range: value })}
+          ></S.TermSearch>
+          <Searchbars02 refetch={props.refetch} />
+        </S.Search>
       </S.MiddleBox>
       <S.Body>
         <div style={{ height: 1000, overflowY: "auto", overflowX: "hidden" }}>
