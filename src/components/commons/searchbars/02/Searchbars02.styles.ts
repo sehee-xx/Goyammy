@@ -25,7 +25,7 @@ export const SearchIcon = styled.img`
 export const Search = styled.input`
   width: 100%;
   max-width: 250px;
-  height: 50px;
+  height: 40px;
   background-color: #f7f8f9;
   border: none;
   outline-color: #f39c1f;
@@ -35,7 +35,7 @@ export const Search = styled.input`
   }
   border-radius: 10px;
   padding-left: 20px;
-  font-size: 14px;
+  font-size: 13px;
 
   @media ${breakPoints.tablet} {
     max-width: 200px;
