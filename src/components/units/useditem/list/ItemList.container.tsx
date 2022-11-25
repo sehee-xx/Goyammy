@@ -12,7 +12,7 @@ import {
 export default function ItemList() {
   const router = useRouter();
   const [isSoldout, setIsSoldout] = useState("판매중");
-  const { data, fetchMore } = useQuery(FETCH_USEDITEMS, {
+  const { data, fetchMore, refetch } = useQuery(FETCH_USEDITEMS, {
     variables: { isSoldout: isSoldout === "판매중" ? false : true },
   });
   const [visitedItems, setVisitedItems] = useRecoilState(visitedState);
@@ -75,6 +75,7 @@ export default function ItemList() {
       onClickMoveToNew={onClickMoveToNew}
       onClickMoveToDetail={onClickMoveToDetail}
       refetchUseditemsBest={refetchUseditemsBest}
+      refetch={refetch}
       loadFunc={loadFunc}
       onChangeIsSoldout={onChangeIsSoldout}
     />

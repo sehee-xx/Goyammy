@@ -113,6 +113,14 @@ export const IsSoldoutSelect = styled.select`
 export const Body = styled.div`
   width: 100%;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  background-color: #f7f8f9;
+`;
+
+export const SearchFail = styled.div`
+  text-align: center;
+  padding-top: 100px;
+  color: #a5a5a5;
+  font-size: 20px;
 `;
 
 export const Item = styled.div`

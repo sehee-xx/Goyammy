@@ -10,6 +10,9 @@ export interface IItemsListUIProps {
   refetchUseditemsBest: (
     variables: Partial<OperationVariables>
   ) => Promise<ApolloQueryResult<any>>;
+  refetch(
+    variables?: Partial<OperationVariables> | undefined
+  ): Promise<ApolloQueryResult<any>>;
   loadFunc: () => void;
   onChangeIsSoldout: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }

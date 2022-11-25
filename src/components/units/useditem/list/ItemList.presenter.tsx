@@ -2,6 +2,7 @@ import * as S from "./ItemList.styles";
 import { v4 as uuidv4 } from "uuid";
 import { IItemsListUIProps } from "./ItemList.types";
 import InfiniteScroll from "react-infinite-scroller";
+import Searchbars02 from "../../../commons/searchbars/02/Searchbars02.container";
 
 export default function ItemListUI(props: IItemsListUIProps) {
   return (
@@ -57,6 +58,7 @@ export default function ItemListUI(props: IItemsListUIProps) {
             판매완료
           </option>
         </S.IsSoldoutSelect>
+        <Searchbars02 refetch={props.refetch} />
       </S.MiddleBox>
       <S.Body>
         <div style={{ height: 1000, overflowY: "auto", overflowX: "hidden" }}>
@@ -66,7 +68,7 @@ export default function ItemListUI(props: IItemsListUIProps) {
             hasMore={true}
             useWindow={false}
           >
-            {props.data?.fetchUseditems ? (
+            {props.data?.fetchUseditems[0] ? (
               props.data?.fetchUseditems.map((el: any) => (
                 <S.Item
                   key={uuidv4()}
@@ -112,7 +114,7 @@ export default function ItemListUI(props: IItemsListUIProps) {
                 </S.Item>
               ))
             ) : (
-              <></>
+              <S.SearchFail>검색 결과가 없습니다.</S.SearchFail>
             )}
           </InfiniteScroll>
         </div>
