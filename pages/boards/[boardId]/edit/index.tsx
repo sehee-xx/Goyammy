@@ -1,4 +1,4 @@
-// 보드 수정 페이지
+// BOARD EDIT
 import BoardWrite from "../../../../src/components/units/board/write/BoardWrite.container";
 import { useQuery, gql } from "@apollo/client";
 import { useRouter } from "next/router";

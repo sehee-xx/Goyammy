@@ -1,4 +1,4 @@
-// 마이페이지
+// MYPAGE
 import { useAuth } from "../../src/components/commons/hooks/useAuth";
 import ItemMyPage from "../../src/components/units/mypage/ItemMypage.container";
 

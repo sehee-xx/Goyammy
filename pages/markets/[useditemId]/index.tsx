@@ -1,4 +1,4 @@
-// 마켓 상세 페이지
+// MARKET DETAIL
 import styled from "@emotion/styled";
 import { useAuth } from "../../../src/components/commons/hooks/useAuth";
 import { PageAdd } from "../../../src/components/units/board/detail/BoardDetail.styles";

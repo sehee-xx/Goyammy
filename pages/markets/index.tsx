@@ -1,4 +1,4 @@
-// 마켓 목록 페이지
+// MARKET DETAIL
 import ItemList from "../../src/components/units/useditem/list/ItemList.container";
 
 export default function ListPage() {

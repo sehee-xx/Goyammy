@@ -1,4 +1,4 @@
-// 마켓 수정 페이지
+// MARKET EDIT
 import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import ItemWrite from "../../../../src/components/units/useditem/write/ItemWrite.container";
