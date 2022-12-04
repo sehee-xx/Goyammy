@@ -61,7 +61,7 @@ export default function ItemListUI(props: IItemsListUIProps) {
         <Searchbars02 refetch={props.refetch} />
       </S.MiddleBox>
       <S.Body>
-        <div style={{ height: 1000, overflowY: "auto", overflowX: "hidden" }}>
+        <S.ItemScroll>
           <InfiniteScroll
             pageStart={0}
             loadMore={props.loadFunc}
@@ -121,7 +121,7 @@ export default function ItemListUI(props: IItemsListUIProps) {
               <S.SearchFail>검색 결과가 없습니다.</S.SearchFail>
             )}
           </InfiniteScroll>
-        </div>
+        </S.ItemScroll>
       </S.Body>
       <S.Footer>
         <S.Button onClick={props.onClickMoveToNew}>등록</S.Button>
