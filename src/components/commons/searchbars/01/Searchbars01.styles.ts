@@ -8,6 +8,10 @@ export const SearchBar = styled.div`
   align-items: center;
   justify-content: right;
   gap: 10px;
+
+  @media ${breakPoints.tablet} {
+    padding-bottom: 15px;
+  }
 `;
 
 export const SearchIcon = styled.img`
@@ -19,6 +23,7 @@ export const SearchIcon = styled.img`
 
   @media ${breakPoints.mobile} {
     width: 20px;
+    gap: 8px;
   }
 `;
 
@@ -47,9 +52,10 @@ export const Search = styled.input`
   }
 
   @media ${breakPoints.mobile} {
-    width: 160px;
+    width: 120px;
     height: 30px;
     padding-left: 16px;
+    font-size: 11px;
     ::placeholder {
       font-size: 10px;
     }
