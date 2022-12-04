@@ -7,7 +7,7 @@ import Searchbars02 from "../../../commons/searchbars/02/Searchbars02.container"
 export default function ItemListUI(props: IItemsListUIProps) {
   return (
     <S.Wrapper>
-      <S.Title>베스트 상품</S.Title>
+      <S.HeaderText>베스트 상품</S.HeaderText>
       <S.BestList>
         {new Array(4).fill(1).map((_, index) => (
           <S.BestItem
@@ -25,7 +25,7 @@ export default function ItemListUI(props: IItemsListUIProps) {
                   : `/images/noImage.jpeg`
               }
             />
-            <S.Column>
+            <S.BestInfo>
               <S.BestName>
                 {props.dataUseditemsBest?.fetchUseditemsOfTheBest[index]?.name}
               </S.BestName>
@@ -45,7 +45,7 @@ export default function ItemListUI(props: IItemsListUIProps) {
                 </S.BestPrice>
                 <S.BestWon>원</S.BestWon>
               </S.BestPriceBox>
-            </S.Column>
+            </S.BestInfo>
           </S.BestItem>
         ))}
       </S.BestList>
@@ -96,10 +96,14 @@ export default function ItemListUI(props: IItemsListUIProps) {
                         })}
                       </S.TagBox>
                       <S.ItemBottomInfo>
-                        <S.ProfileImg src="/images/profile.png" />
-                        <S.Seller>{el.seller.name}</S.Seller>
-                        <S.Pick src="/images/pick.png" />
-                        <S.PickCount>{el.pickedCount}</S.PickCount>
+                        <S.SellerBox>
+                          <S.SellerProfileImg src="/images/profile.png" />
+                          <S.Seller>{el.seller.name}</S.Seller>
+                        </S.SellerBox>
+                        <S.PickBox>
+                          <S.Pick src="/images/pick.png" />
+                          <S.PickCount>{el.pickedCount}</S.PickCount>
+                        </S.PickBox>
                       </S.ItemBottomInfo>
                     </S.ItemInfo>
                     <S.PriceBox>
