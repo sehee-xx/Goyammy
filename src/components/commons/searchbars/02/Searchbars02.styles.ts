@@ -19,6 +19,7 @@ export const SearchIcon = styled.img`
 
   @media ${breakPoints.mobile} {
     width: 20px;
+    gap: 8px;
   }
 `;
 
@@ -47,9 +48,10 @@ export const Search = styled.input`
   }
 
   @media ${breakPoints.mobile} {
-    width: 160px;
+    width: 130px;
     height: 30px;
     padding-left: 16px;
+    font-size: 11px;
     ::placeholder {
       font-size: 10px;
     }
