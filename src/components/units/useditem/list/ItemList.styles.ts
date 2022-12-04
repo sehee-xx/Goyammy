@@ -115,24 +115,6 @@ export const IsSoldoutSelect = styled.select`
   text-align: center;
 `;
 
-export const Search = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-`;
-
-export const TermSearch = styled(RangePicker)`
-  width: 100%;
-  height: 40px;
-  color: #464747;
-  ::placeholder {
-    color: #464747;
-  }
-  border-radius: 10px;
-  border: 2px solid #f1f3f4;
-`;
-
 export const Body = styled.div`
   width: 100%;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
