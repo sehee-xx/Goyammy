@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../breakPoints/breakPoints";
 
 export const Wrapper = styled.div`
   width: 155px;
@@ -15,6 +16,10 @@ export const Wrapper = styled.div`
   border-radius: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
   color: #464747;
+
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
 `;
 
 export const Today = styled.div`
