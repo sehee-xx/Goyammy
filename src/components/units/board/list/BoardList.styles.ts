@@ -88,6 +88,10 @@ export const Table = styled.div`
 
 export const TableTop = styled.div`
   margin-top: 20px;
+
+  @media ${breakPoints.tablet} {
+    margin-top: 0px;
+  }
 `;
 
 export const RowTop = styled.div`
