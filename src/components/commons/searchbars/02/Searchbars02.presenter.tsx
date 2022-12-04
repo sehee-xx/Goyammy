@@ -8,7 +8,7 @@ export default function Searchbars02UI(props: ISearchbars02UIProps) {
         placeholder="상품명을 검색해 주세요."
         onChange={props.onChangeName}
       />
-      <SearchIcon src="images/search.png" onClick={props.onClickSearch} />
+      <SearchIcon src="images/click.png" onClick={props.onClickSearch} />
     </SearchBar>
   );
 }
