@@ -71,6 +71,10 @@ export const BestImg = styled.img`
   @media ${breakPoints.tablet} {
     height: 140px;
   }
+
+  @media ${breakPoints.mobile} {
+    height: 80px;
+  }
 `;
 
 export const BestInfo = styled.div`
@@ -81,6 +85,11 @@ export const BestInfo = styled.div`
   @media ${breakPoints.tablet} {
     height: 120px;
     justify-content: space-between;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 70px;
+    padding: 5px 10px;
   }
 `;
 
@@ -95,6 +104,10 @@ export const BestName = styled.label`
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 10px;
   }
 `;
 
@@ -118,17 +131,25 @@ export const BestPriceBox = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  padding-top: 20px;
+
+  @media ${breakPoints.mobile} {
+    padding-top: 0px;
+  }
 `;
 
 export const BestPrice = styled.label`
   font-size: 16px;
   font-weight: 700;
   text-align: right;
-  padding-top: 20px;
   color: #f39c1f;
 
   @media ${breakPoints.tablet} {
     font-size: 14px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 10px;
   }
 `;
 
@@ -136,8 +157,11 @@ export const BestWon = styled.div`
   font-size: 12px;
   font-weight: 700;
   text-align: right;
-  padding-top: 20px;
   color: #f39c1f;
+
+  @media ${breakPoints.mobile} {
+    font-size: 10px;
+  }
 `;
 
 export const MiddleBox = styled.div`
@@ -159,12 +183,32 @@ export const IsSoldoutSelect = styled.select`
   color: #fff;
   background-color: #464747;
   text-align: center;
+
+  @media ${breakPoints.mobile} {
+    width: 100px;
+    height: 30px;
+    font-size: 10px;
+  }
 `;
 
 export const Body = styled.div`
   width: 100%;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
   background-color: #f7f8f9;
+`;
+
+export const ItemScroll = styled.div`
+  height: 1000px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @media ${breakPoints.tablet} {
+    height: 800px;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 600px;
+  }
 `;
 
 export const SearchFail = styled.div`
@@ -175,6 +219,11 @@ export const SearchFail = styled.div`
 
   @media ${breakPoints.tablet} {
     font-size: 18px;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding-top: 50px;
+    font-size: 12px;
   }
 `;
 
@@ -188,6 +237,10 @@ export const Item = styled.div`
 
   @media ${breakPoints.tablet} {
     padding: 20px 20px;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding: 15px 15px;
   }
 `;
 
@@ -205,6 +258,10 @@ export const ItemImg = styled.img`
   @media ${breakPoints.tablet} {
     max-width: 160px;
   }
+
+  @media ${breakPoints.mobile} {
+    max-width: 100px;
+  }
 `;
 
 export const ItemInfo = styled.div`
@@ -213,6 +270,11 @@ export const ItemInfo = styled.div`
   flex-direction: column;
   padding: 0px 30px;
   gap: 20px;
+
+  @media ${breakPoints.mobile} {
+    padding: 0px 15px;
+    gap: 10px;
+  }
 `;
 
 export const ItemTopInfo = styled.div``;
@@ -224,6 +286,10 @@ export const Name = styled.label`
 
   @media ${breakPoints.tablet} {
     font-size: 20px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 14px;
   }
 `;
 
@@ -238,6 +304,10 @@ export const Remarks = styled.label`
 
   @media ${breakPoints.tablet} {
     font-size: 14px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 8px;
   }
 `;
 
@@ -257,6 +327,10 @@ export const Tags = styled.div`
   color: #fff;
   padding: 2px 10px;
   border-radius: 30px;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const ItemBottomInfo = styled.div`
@@ -277,6 +351,10 @@ export const SellerProfileImg = styled.img`
   @media ${breakPoints.tablet} {
     width: 25px;
   }
+
+  @media ${breakPoints.mobile} {
+    width: 20px;
+  }
 `;
 
 export const Seller = styled.label`
@@ -286,6 +364,10 @@ export const Seller = styled.label`
 
   @media ${breakPoints.tablet} {
     font-size: 12px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 8px;
   }
 `;
 
@@ -303,6 +385,11 @@ export const Pick = styled.img`
     width: 25px;
     margin-left: 15px;
   }
+
+  @media ${breakPoints.mobile} {
+    width: 20px;
+    margin-left: 10px;
+  }
 `;
 
 export const PickCount = styled.label`
@@ -313,6 +400,11 @@ export const PickCount = styled.label`
   @media ${breakPoints.tablet} {
     font-size: 12px;
     padding-left: 5px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 8px;
+    padding-left: 4px;
   }
 `;
 
@@ -330,6 +422,10 @@ export const Price = styled.div`
   @media ${breakPoints.tablet} {
     font-size: 26px;
   }
+
+  @media ${breakPoints.mobile} {
+    font-size: 16px;
+  }
 `;
 
 export const Won = styled.div`
@@ -338,8 +434,13 @@ export const Won = styled.div`
   color: #f39c1f;
 
   @media ${breakPoints.tablet} {
-    font-size: 16px;
+    font-size: 18px;
     padding-left: 4px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
+    padding-left: 2px;
   }
 `;
 
@@ -372,5 +473,12 @@ export const Button = styled.button`
     height: 55px;
     font-size: 16px;
     margin-top: 80px;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 100px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 50px;
   }
 `;
