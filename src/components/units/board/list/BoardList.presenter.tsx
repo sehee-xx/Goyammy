@@ -59,7 +59,7 @@ export default function BoardListUI(props: IBoardListUIProps) {
       </S.Body>
       <S.Footer>
         <Paginations01 refetch={props.refetch} count={props.count} />
-        <S.SignupButton onClick={props.onClickWriteBoard}>등록</S.SignupButton>
+        <S.WriteButton onClick={props.onClickWriteBoard}>등록</S.WriteButton>
       </S.Footer>
     </S.Wrapper>
   );

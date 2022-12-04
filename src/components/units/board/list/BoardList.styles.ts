@@ -166,7 +166,7 @@ export const Footer = styled.div`
   align-items: center;
 `;
 
-export const SignupButton = styled.button`
+export const WriteButton = styled.button`
   width: 180px;
   height: 60px;
   border: none;
