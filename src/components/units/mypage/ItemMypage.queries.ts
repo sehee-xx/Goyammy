@@ -22,3 +22,28 @@ export const CREATE_POINTTRANSACTION_OF_LOADING = gql`
     }
   }
 `;
+
+export const FETCH_USEDITEMS_IPICKED = gql`
+  query fetchUseditemsIPicked($search: String, $page: Int) {
+    fetchUseditemsIPicked(search: $search, page: $page) {
+      _id
+      name
+      remarks
+      contents
+      price
+      tags
+      images
+      pickedCount
+      useditemAddress {
+        address
+        addressDetail
+        lat
+        lng
+      }
+      seller {
+        name
+        picture
+      }
+    }
+  }
+`;
