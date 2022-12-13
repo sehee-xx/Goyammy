@@ -404,7 +404,7 @@ export const BuyButton = styled.button`
 `;
 
 export const Contents = styled.div`
-  font-size: 16px;
+  font-size: 18px;
   padding-top: 50px;
   padding-bottom: 50px;
   color: #464747;
