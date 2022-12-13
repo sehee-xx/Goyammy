@@ -1,6 +1,9 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { Modal } from "antd";
+import Router, { useRouter } from "next/router";
 import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { visitedState } from "../../../commons/store";
 import ItemMypageUI from "./ItemMypage.presenter";
 import {
   CREATE_POINTTRANSACTION_OF_LOADING,
@@ -13,10 +16,17 @@ declare const window: typeof globalThis & {
 };
 
 export default function ItemMyPage() {
+  const router = useRouter();
   const [price, setPrice] = useState("100");
   const [buySell, setBuySell] = useState("구매");
+  const [visitedItems, setVisitedItems] = useRecoilState(visitedState);
   const { data: userData, refetch } = useQuery(FETCH_USER_LOGGED_IN);
-  const { data: pickedData } = useQuery(FETCH_USEDITEMS_IPICKED);
+  const { data: pickedData, fetchMore } = useQuery(FETCH_USEDITEMS_IPICKED, {
+    variables: {
+      search: "",
+    },
+  });
+
   const [createPointTransactionOfLoading] = useMutation(
     CREATE_POINTTRANSACTION_OF_LOADING
   );
@@ -62,13 +72,51 @@ export default function ItemMyPage() {
       }
     );
   };
-  console.log(pickedData);
+
+  const loadFunc = () => {
+    if (!pickedData) return;
+
+    fetchMore({
+      variables: {
+        page: Math.ceil(pickedData.fetchUseditemsIPicked.length / 10) + 1,
+      },
+      updateQuery: (prev, { fetchMoreResult }) => {
+        if (!fetchMoreResult.fetchUseditemsIPicked)
+          return {
+            fetchUseditemsIPicked: [...prev.fetchUseditemsIPicked],
+          };
+        return {
+          fetchUseditemsIPicked: [
+            ...prev.fetchUseditemsIPicked,
+            ...fetchMoreResult.fetchUseditemsIPicked,
+          ],
+        };
+      },
+    });
+  };
+
+  const onClickMoveToDetail = (el: any) => () => {
+    const visited = JSON.parse(sessionStorage.getItem("visited") || "[]");
+    const { __typename, ...newEl } = el;
+    const result = visited.filter((visited: any) => visited._id !== newEl._id);
+    result.unshift(newEl);
+    if (result.length > 3) {
+      result.pop();
+    }
+    setVisitedItems(result);
+    sessionStorage.setItem("visited", JSON.stringify(result));
+    router.push(`/markets/${el._id}`);
+  };
+
   return (
     <ItemMypageUI
       onChangePrice={onChangePrice}
       onChangeBuySell={onChangeBuySell}
       requestPay={requestPay}
+      loadFunc={loadFunc}
+      onClickMoveToDetail={onClickMoveToDetail}
       userData={userData}
+      pickedData={pickedData}
       buySell={buySell}
     />
   );

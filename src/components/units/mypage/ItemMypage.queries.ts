@@ -28,22 +28,8 @@ export const FETCH_USEDITEMS_IPICKED = gql`
     fetchUseditemsIPicked(search: $search, page: $page) {
       _id
       name
-      remarks
-      contents
       price
-      tags
       images
-      pickedCount
-      useditemAddress {
-        address
-        addressDetail
-        lat
-        lng
-      }
-      seller {
-        name
-        picture
-      }
     }
   }
 `;

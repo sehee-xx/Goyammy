@@ -1,7 +1,7 @@
 import * as S from "./ItemMypage.styles";
 import Head from "next/head";
 import { IItemMypageUIProps } from "./ItemMypage.types";
-import InfiniteScroll from "react-infinite-scroller";
+import { v4 as uuidv4 } from "uuid";
 
 export default function ItemMypageUI(props: IItemMypageUIProps) {
   return (
@@ -47,6 +47,41 @@ export default function ItemMypageUI(props: IItemMypageUIProps) {
             <S.PickImg src="images/pick.png" />
             <S.Title>찜한 상품</S.Title>
           </S.PickHeader>
+          <S.ItemScroll
+            pageStart={0}
+            loadMore={props.loadFunc}
+            hasMore={true}
+            useWindow={false}
+          >
+            {props.pickedData?.fetchUseditemsIPicked[0] ? (
+              props.pickedData?.fetchUseditemsIPicked.map((el: any) => (
+                <S.PickItemBox
+                  key={uuidv4()}
+                  id={el._id}
+                  onClick={props.onClickMoveToDetail(el)}
+                >
+                  <S.PickItemImg
+                    src={
+                      el.images[0]
+                        ? `https://storage.googleapis.com/${el.images[0]}`
+                        : "/images/noImage.jpeg"
+                    }
+                  />
+                  <S.PickItemInfo>
+                    <S.PickItemName>{el.name}</S.PickItemName>
+                    <S.PickItemPrice>
+                      {el.price
+                        .toString()
+                        .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}
+                      원
+                    </S.PickItemPrice>
+                  </S.PickItemInfo>
+                </S.PickItemBox>
+              ))
+            ) : (
+              <S.PickEmpty>찜한 상품이 없습니다.</S.PickEmpty>
+            )}
+          </S.ItemScroll>
         </S.PickBox>
       </S.Body>
       <S.Footer>

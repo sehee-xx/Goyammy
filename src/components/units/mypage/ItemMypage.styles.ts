@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import InfiniteScroll from "react-infinite-scroller";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -94,8 +95,9 @@ export const Button = styled.button`
 `;
 
 export const PickBox = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 300px;
   border-radius: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
   font-size: 30px;
@@ -105,7 +107,6 @@ export const PickBox = styled.div`
 export const PickHeader = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
 `;
 
 export const PickImg = styled.img`
@@ -119,6 +120,63 @@ export const Title = styled.div`
   font-weight: 500;
   color: #464747;
   padding-right: 20px;
+`;
+
+export const ItemScroll = styled(InfiniteScroll)`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1000px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 20px 20px;
+  gap: 50px;
+`;
+
+export const PickItemBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  min-width: 150px;
+  height: 220px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+`;
+
+export const PickItemImg = styled.img`
+  width: 100%;
+  max-width: 150px;
+  aspect-ratio: 1;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+`;
+
+export const PickItemInfo = styled.div`
+  padding: 10px 10px;
+`;
+
+export const PickItemName = styled.div`
+  font-size: 16px;
+  font-weight: 600;
+  color: #464747;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+`;
+
+export const PickItemPrice = styled.div`
+  font-size: 14px;
+  font-weight: 500;
+  color: #f39c1f;
+`;
+
+export const PickEmpty = styled.div`
+  text-align: center;
+  color: #a5a5a5;
+  font-size: 16px;
 `;
 
 export const Footer = styled.div`
@@ -155,10 +213,4 @@ export const BuySellSelect = styled.select`
   border-radius: 10px;
   background-color: black;
   color: white;
-`;
-
-export const ItemScroll = styled.div`
-  height: 500px;
-  overflow-y: auto;
-  overflow-x: hidden;
 `;
