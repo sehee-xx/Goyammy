@@ -33,3 +33,43 @@ export const FETCH_USEDITEMS_IPICKED = gql`
     }
   }
 `;
+
+export const FETCH_USEDITEMS_IBOUGHT = gql`
+  query fetchUseditemsIBought($search: String, $page: Int) {
+    fetchUseditemsIBought(search: $search, page: $page) {
+      _id
+      name
+      price
+      seller {
+        name
+      }
+      soldAt
+    }
+  }
+`;
+
+export const FETCH_USEDITEMS_COUNT_IBOUGHT = gql`
+  query fetchUseditemsCountIBought {
+    fetchUseditemsCountIBought
+  }
+`;
+
+export const FETCH_USEDITEMS_ISOLD = gql`
+  query fetchUseditemsISold($search: String, $page: Int) {
+    fetchUseditemsISold(search: $search, page: $page) {
+      _id
+      name
+      price
+      buyer {
+        name
+      }
+      soldAt
+    }
+  }
+`;
+
+export const FETCH_USEDITEMS_COUNT_ISOLD = gql`
+  query fetchUseditemsCountISold {
+    fetchUseditemsCountISold
+  }
+`;

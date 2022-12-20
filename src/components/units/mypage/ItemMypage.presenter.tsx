@@ -2,6 +2,8 @@ import * as S from "./ItemMypage.styles";
 import Head from "next/head";
 import { IItemMypageUIProps } from "./ItemMypage.types";
 import { v4 as uuidv4 } from "uuid";
+import Paginations02 from "../../commons/paginations/02/Paginations02.container";
+import Paginations03 from "../../commons/paginations/03/Paginations03.container";
 
 export default function ItemMypageUI(props: IItemMypageUIProps) {
   return (
@@ -94,6 +96,74 @@ export default function ItemMypageUI(props: IItemMypageUIProps) {
               <option value="판매">판매</option>
             </S.BuySellSelect>
           </S.BuySellHeader>
+          {(props.buySell === "구매" && !props.boughtCount) ||
+          (props.buySell === "판매" && !props.soldData) ? (
+            <S.NoItems>{props.buySell}한 상품이 없습니다.</S.NoItems>
+          ) : (
+            <S.Table>
+              <S.TableTop>
+                <S.RowTop>
+                  <S.ColumnHeader>상품명</S.ColumnHeader>
+                  <S.ColumnHeader>가격</S.ColumnHeader>
+                  {props.buySell === "구매" ? (
+                    <S.ColumnHeader>판매자</S.ColumnHeader>
+                  ) : (
+                    <S.ColumnHeader>구매자</S.ColumnHeader>
+                  )}
+                  <S.ColumnHeader>{props.buySell}한 날짜</S.ColumnHeader>
+                </S.RowTop>
+                {props.buySell === "구매"
+                  ? props.boughtData?.fetchUseditemsIBought.map((el: any) => (
+                      <S.Row key={uuidv4()}>
+                        <S.ColumnContents>{el.name}</S.ColumnContents>
+                        <S.ColumnContents>
+                          {el.price
+                            .toString()
+                            .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}
+                          원
+                        </S.ColumnContents>
+                        <S.ColumnContents>{el.seller.name}</S.ColumnContents>
+                        <S.ColumnContents>
+                          {el.soldAt.slice(0, 10).replace(/-/gi, ".")}
+                        </S.ColumnContents>
+                      </S.Row>
+                    ))
+                  : props.soldData?.fetchUseditemsISold.map((el: any) => (
+                      <S.Row key={uuidv4()}>
+                        <S.ColumnContents>{el.name}</S.ColumnContents>
+                        <S.ColumnContents>
+                          {el.price
+                            .toString()
+                            .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}
+                          원
+                        </S.ColumnContents>
+                        <S.ColumnContents>
+                          {!el.buyer ? "판매중" : el.buyer.name}
+                        </S.ColumnContents>
+                        <S.ColumnContents>
+                          {!el.soldAt
+                            ? "판매중"
+                            : el.soldAt.slice(0, 10).replace(/-/gi, ".")}
+                        </S.ColumnContents>
+                      </S.Row>
+                    ))}
+              </S.TableTop>
+              <S.TableBottom></S.TableBottom>
+              <S.PaginationBox>
+                {props.buySell === "구매" ? (
+                  <Paginations02
+                    refetch={props.refetchUseditemsIBought}
+                    count={props.boughtCount}
+                  />
+                ) : (
+                  <Paginations03
+                    refetch={props.refetchUseditemsISold}
+                    count={props.soldCount}
+                  />
+                )}
+              </S.PaginationBox>
+            </S.Table>
+          )}
         </S.BuySellBox>
       </S.Footer>
     </S.Wrapper>

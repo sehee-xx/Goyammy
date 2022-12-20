@@ -1,13 +1,17 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { Modal } from "antd";
-import Router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { visitedState } from "../../../commons/store";
 import ItemMypageUI from "./ItemMypage.presenter";
 import {
   CREATE_POINTTRANSACTION_OF_LOADING,
+  FETCH_USEDITEMS_COUNT_IBOUGHT,
+  FETCH_USEDITEMS_COUNT_ISOLD,
+  FETCH_USEDITEMS_IBOUGHT,
   FETCH_USEDITEMS_IPICKED,
+  FETCH_USEDITEMS_ISOLD,
   FETCH_USER_LOGGED_IN,
 } from "./ItemMypage.queries";
 
@@ -19,13 +23,44 @@ export default function ItemMyPage() {
   const router = useRouter();
   const [price, setPrice] = useState("100");
   const [buySell, setBuySell] = useState("구매");
-  const [visitedItems, setVisitedItems] = useRecoilState(visitedState);
+  const [, setVisitedItems] = useRecoilState(visitedState);
   const { data: userData, refetch } = useQuery(FETCH_USER_LOGGED_IN);
+
   const { data: pickedData, fetchMore } = useQuery(FETCH_USEDITEMS_IPICKED, {
     variables: {
       search: "",
     },
   });
+
+  const { data: boughtData, refetch: refetchUseditemsIBought } = useQuery(
+    FETCH_USEDITEMS_IBOUGHT,
+    {
+      variables: {
+        search: "",
+      },
+    }
+  );
+
+  const { data: soldData, refetch: refetchUseditemsISold } = useQuery(
+    FETCH_USEDITEMS_ISOLD,
+    {
+      variables: {
+        search: "",
+      },
+    }
+  );
+
+  const { data: boughtCountData, refetch: refetchUseditemsCountIBought } =
+    useQuery(FETCH_USEDITEMS_COUNT_IBOUGHT);
+
+  const { data: soldCountData, refetch: refetchUseditemsCountISold } = useQuery(
+    FETCH_USEDITEMS_COUNT_ISOLD
+  );
+
+  // console.log(boughtData);
+  // console.log(boughtCountData);
+  console.log(soldData);
+  // console.log(soldCountData);
 
   const [createPointTransactionOfLoading] = useMutation(
     CREATE_POINTTRANSACTION_OF_LOADING
@@ -115,9 +150,15 @@ export default function ItemMyPage() {
       requestPay={requestPay}
       loadFunc={loadFunc}
       onClickMoveToDetail={onClickMoveToDetail}
+      refetchUseditemsIBought={refetchUseditemsIBought}
+      refetchUseditemsISold={refetchUseditemsISold}
       userData={userData}
       pickedData={pickedData}
       buySell={buySell}
+      boughtData={boughtData}
+      boughtCount={boughtCountData?.fetchUseditemsCountIBought}
+      soldData={soldData}
+      soldCount={soldCountData?.fetchUseditemsCountISold}
     />
   );
 }

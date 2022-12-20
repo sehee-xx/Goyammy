@@ -101,7 +101,7 @@ export const PickBox = styled.div`
   border-radius: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
   font-size: 30px;
-  padding: 20px 30px;
+  padding: 30px 30px;
 `;
 
 export const PickHeader = styled.div`
@@ -174,7 +174,6 @@ export const PickItemPrice = styled.div`
 `;
 
 export const PickEmpty = styled.div`
-  text-align: center;
   color: #a5a5a5;
   font-size: 16px;
 `;
@@ -189,13 +188,14 @@ export const BuySellBox = styled.div`
   width: 100%;
   border-radius: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
-  padding: 20px 30px;
+  padding: 30px 40px;
 `;
 
 export const BuySellHeader = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-bottom: 10px;
 `;
 
 export const ItemImg = styled.img`
@@ -213,4 +213,58 @@ export const BuySellSelect = styled.select`
   border-radius: 10px;
   background-color: black;
   color: white;
+`;
+
+export const NoItems = styled.div`
+  color: #a5a5a5;
+  font-size: 16px;
+  padding: 10px 0px 20px 10px;
+`;
+
+export const Table = styled.div`
+  width: 100%;
+  color: #464747;
+  font-size: 16px;
+`;
+
+export const TableTop = styled.div`
+  margin-top: 20px;
+`;
+
+export const RowTop = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 52px;
+  line-height: 52px;
+  border-bottom: 1.5px solid #a5a5a5;
+`;
+
+export const ColumnHeader = styled.div`
+  width: 25%;
+  text-align: center;
+  background-color: #f7f8f9;
+`;
+
+export const Row = styled(RowTop)`
+  :hover {
+    color: #f39c1f;
+    font-weight: 900;
+  }
+`;
+
+export const ColumnContents = styled.div`
+  width: 25%;
+  text-align: center;
+  :hover {
+    color: #f39c1f;
+  }
+`;
+
+export const TableBottom = styled.div``;
+
+export const PaginationBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 20px;
 `;
