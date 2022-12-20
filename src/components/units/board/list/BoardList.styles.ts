@@ -114,7 +114,7 @@ export const RowTop = styled.div`
 
 export const Row = styled(RowTop)`
   :hover {
-    color: orange;
+    color: #f39c1f;
     font-weight: 900;
   }
 `;
@@ -151,14 +151,14 @@ export const ColumnTitle = styled.div`
   }
 `;
 
-export const ColumnDate = styled.div`
-  width: 25%;
-  text-align: center;
-`;
-
 export const TextToken = styled.span`
   color: ${(props: ITextTokenProps) => (props.isMatched ? "#f39c1f" : "")};
   font-weight: ${(props: ITextTokenProps) => (props.isMatched ? "bold" : "")};
+`;
+
+export const ColumnDate = styled.div`
+  width: 25%;
+  text-align: center;
 `;
 
 export const TableBottom = styled.div``;
