@@ -34,6 +34,7 @@ export default function LayoutHeader() {
       onOk() {
         setAccessToken("");
         logoutUser();
+        router.push("/");
       },
     });
   };
