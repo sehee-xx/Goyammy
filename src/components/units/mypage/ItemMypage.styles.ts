@@ -15,6 +15,10 @@ export const Wrapper = styled.div`
   @media ${breakPoints.tablet} {
     padding: 40px 50px;
   }
+
+  @media ${breakPoints.mobile} {
+    padding: 20px 30px;
+  }
 `;
 
 export const Header = styled.div`
@@ -33,6 +37,11 @@ export const UserProfile = styled.img`
     width: 40px;
     height: 40px;
   }
+
+  @media ${breakPoints.mobile} {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 export const UserName = styled.div`
@@ -44,6 +53,10 @@ export const UserName = styled.div`
   @media ${breakPoints.tablet} {
     font-size: 30px;
   }
+
+  @media ${breakPoints.mobile} {
+    font-size: 20px;
+  }
 `;
 
 export const Body = styled.div`
@@ -52,6 +65,10 @@ export const Body = styled.div`
 
   @media ${breakPoints.tablet} {
     margin-bottom: 30px;
+  }
+
+  @media ${breakPoints.mobile} {
+    margin-bottom: 20px;
   }
 `;
 
@@ -67,6 +84,11 @@ export const PointBox = styled.div`
   @media ${breakPoints.tablet} {
     padding: 10px 20px;
     margin-bottom: 30px;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding: 4px 10px;
+    margin-bottom: 20px;
   }
 `;
 
@@ -84,6 +106,11 @@ export const PointImg = styled.img`
     width: 30px;
     height: 30px;
   }
+
+  @media ${breakPoints.mobile} {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 export const UserPoint = styled.div`
@@ -94,6 +121,11 @@ export const UserPoint = styled.div`
 
   @media ${breakPoints.tablet} {
     font-size: 25px;
+    padding-left: 7px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 18px;
     padding-left: 7px;
   }
 `;
@@ -116,6 +148,11 @@ export const PointSelect = styled.select`
     font-size: 14px;
     width: 100px;
   }
+
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
+    width: 80px;
+  }
 `;
 
 export const Button = styled.button`
@@ -136,6 +173,13 @@ export const Button = styled.button`
     height: 40px;
     font-size: 14px;
   }
+
+  @media ${breakPoints.mobile} {
+    width: 80px;
+    height: 35px;
+    font-size: 12px;
+    margin-left: 10px;
+  }
 `;
 
 export const PickBox = styled.div`
@@ -148,6 +192,10 @@ export const PickBox = styled.div`
 
   @media ${breakPoints.tablet} {
     padding: 20px 20px;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding: 15px 15px;
   }
 `;
 
@@ -165,6 +213,11 @@ export const PickImg = styled.img`
     width: 25px;
     height: 25px;
   }
+
+  @media ${breakPoints.mobile} {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 export const Title = styled.div`
@@ -174,6 +227,10 @@ export const Title = styled.div`
 
   @media ${breakPoints.tablet} {
     font-size: 18px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 14px;
   }
 `;
 
@@ -192,6 +249,12 @@ export const ItemScroll = styled(InfiniteScroll)`
     max-width: 588px;
     gap: 30px;
   }
+
+  @media ${breakPoints.mobile} {
+    padding: 10px 10px;
+    max-width: 350px;
+    gap: 15px;
+  }
 `;
 
 export const PickItemBox = styled.div`
@@ -209,6 +272,11 @@ export const PickItemBox = styled.div`
     min-width: 120px;
     height: 180px;
   }
+
+  @media ${breakPoints.mobile} {
+    min-width: 90px;
+    height: 136px;
+  }
 `;
 
 export const PickItemImg = styled.img`
@@ -221,10 +289,18 @@ export const PickItemImg = styled.img`
   @media ${breakPoints.tablet} {
     max-width: 120px;
   }
+
+  @media ${breakPoints.mobile} {
+    max-width: 90px;
+  }
 `;
 
 export const PickItemInfo = styled.div`
   padding: 10px 10px;
+
+  @media ${breakPoints.mobile} {
+    padding: 8px 8px;
+  }
 `;
 
 export const PickItemName = styled.div`
@@ -239,6 +315,10 @@ export const PickItemName = styled.div`
   @media ${breakPoints.tablet} {
     font-size: 14px;
   }
+
+  @media ${breakPoints.mobile} {
+    font-size: 10px;
+  }
 `;
 
 export const PickItemPrice = styled.div`
@@ -249,6 +329,10 @@ export const PickItemPrice = styled.div`
   @media ${breakPoints.tablet} {
     font-size: 12px;
   }
+
+  @media ${breakPoints.mobile} {
+    font-size: 10px;
+  }
 `;
 
 export const PickEmpty = styled.div`
@@ -257,6 +341,10 @@ export const PickEmpty = styled.div`
 
   @media ${breakPoints.tablet} {
     font-size: 14px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
   }
 `;
 
@@ -270,6 +358,10 @@ export const BuySellBox = styled.div`
 
   @media ${breakPoints.tablet} {
     padding: 20px 30px;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding: 15px 25px;
   }
 `;
 
@@ -290,6 +382,11 @@ export const ItemImg = styled.img`
     height: 25px;
     margin-right: 7px;
   }
+
+  @media ${breakPoints.mobile} {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 export const BuySellSelect = styled.select`
@@ -308,6 +405,12 @@ export const BuySellSelect = styled.select`
     height: 35px;
     font-size: 14px;
   }
+
+  @media ${breakPoints.mobile} {
+    width: 60px;
+    height: 25px;
+    font-size: 10px;
+  }
 `;
 
 export const NoItems = styled.div`
@@ -317,6 +420,10 @@ export const NoItems = styled.div`
 
   @media ${breakPoints.tablet} {
     font-size: 14px;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
   }
 `;
 
@@ -328,6 +435,10 @@ export const Table = styled.div`
   @media ${breakPoints.tablet} {
     font-size: 14px;
   }
+
+  @media ${breakPoints.mobile} {
+    font-size: 10px;
+  }
 `;
 
 export const TableTop = styled.div`
@@ -335,6 +446,10 @@ export const TableTop = styled.div`
 
   @media ${breakPoints.tablet} {
     margin-top: 10px;
+  }
+
+  @media ${breakPoints.mobile} {
+    margin-top: 0px;
   }
 `;
 
@@ -348,6 +463,11 @@ export const RowTop = styled.div`
   @media ${breakPoints.tablet} {
     height: 40px;
     line-height: 40px;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 30px;
+    line-height: 30px;
   }
 `;
 
@@ -369,6 +489,12 @@ export const Row = styled(RowTop)`
       font-weight: 800;
     }
   }
+
+  @media ${breakPoints.mobile} {
+    :hover {
+      font-weight: 700;
+    }
+  }
 `;
 
 export const ColumnContents = styled.div`
@@ -386,4 +512,8 @@ export const PaginationBox = styled.div`
   flex-direction: row;
   justify-content: center;
   padding-top: 20px;
+
+  @media ${breakPoints.tablet} {
+    padding-top: 10px;
+  }
 `;
