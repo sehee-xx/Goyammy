@@ -97,7 +97,7 @@ export default function ItemMypageUI(props: IItemMypageUIProps) {
             </S.BuySellSelect>
           </S.BuySellHeader>
           {(props.buySell === "구매" && !props.boughtCount) ||
-          (props.buySell === "판매" && !props.soldData) ? (
+          (props.buySell === "판매" && !props.soldCount) ? (
             <S.NoItems>{props.buySell}한 상품이 없습니다.</S.NoItems>
           ) : (
             <S.Table>
