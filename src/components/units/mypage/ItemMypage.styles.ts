@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import InfiniteScroll from "react-infinite-scroller";
+import { breakPoints } from "../../commons/breakPoints/breakPoints";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -8,8 +9,12 @@ export const Wrapper = styled.div`
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
-  padding: 80px 102px 0px 102px;
+  padding: 80px 102px 80px 102px;
   border-radius: 10px;
+
+  @media ${breakPoints.tablet} {
+    padding: 40px 50px;
+  }
 `;
 
 export const Header = styled.div`
@@ -23,6 +28,11 @@ export const Header = styled.div`
 export const UserProfile = styled.img`
   width: 50px;
   height: 50px;
+
+  @media ${breakPoints.tablet} {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 export const UserName = styled.div`
@@ -30,11 +40,19 @@ export const UserName = styled.div`
   font-weight: 600;
   color: #464747;
   padding-left: 10px;
+
+  @media ${breakPoints.tablet} {
+    font-size: 30px;
+  }
 `;
 
 export const Body = styled.div`
   width: 100%;
   margin-bottom: 50px;
+
+  @media ${breakPoints.tablet} {
+    margin-bottom: 30px;
+  }
 `;
 
 export const PointBox = styled.div`
@@ -45,6 +63,11 @@ export const PointBox = styled.div`
   justify-content: space-between;
   padding: 20px 30px;
   margin-bottom: 50px;
+
+  @media ${breakPoints.tablet} {
+    padding: 10px 20px;
+    margin-bottom: 30px;
+  }
 `;
 
 export const UserPointBox = styled.div`
@@ -56,6 +79,11 @@ export const UserPointBox = styled.div`
 export const PointImg = styled.img`
   width: 40px;
   height: 40px;
+
+  @media ${breakPoints.tablet} {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 export const UserPoint = styled.div`
@@ -63,6 +91,11 @@ export const UserPoint = styled.div`
   font-weight: 500;
   color: #464747;
   padding-left: 5px;
+
+  @media ${breakPoints.tablet} {
+    font-size: 25px;
+    padding-left: 7px;
+  }
 `;
 
 export const PointChargeBox = styled.div`
@@ -78,6 +111,11 @@ export const PointSelect = styled.select`
   font-size: 18px;
   border: none;
   border-radius: 10px;
+
+  @media ${breakPoints.tablet} {
+    font-size: 14px;
+    width: 100px;
+  }
 `;
 
 export const Button = styled.button`
@@ -92,6 +130,12 @@ export const Button = styled.button`
   text-align: center;
   margin-left: 20px;
   cursor: pointer;
+
+  @media ${breakPoints.tablet} {
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+  }
 `;
 
 export const PickBox = styled.div`
@@ -100,8 +144,11 @@ export const PickBox = styled.div`
   width: 100%;
   border-radius: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
-  font-size: 30px;
   padding: 30px 30px;
+
+  @media ${breakPoints.tablet} {
+    padding: 20px 20px;
+  }
 `;
 
 export const PickHeader = styled.div`
@@ -113,13 +160,21 @@ export const PickImg = styled.img`
   width: 30px;
   height: 30px;
   margin-right: 5px;
+
+  @media ${breakPoints.tablet} {
+    width: 25px;
+    height: 25px;
+  }
 `;
 
 export const Title = styled.div`
   font-size: 22px;
   font-weight: 500;
   color: #464747;
-  padding-right: 20px;
+
+  @media ${breakPoints.tablet} {
+    font-size: 18px;
+  }
 `;
 
 export const ItemScroll = styled(InfiniteScroll)`
@@ -131,6 +186,12 @@ export const ItemScroll = styled(InfiniteScroll)`
   overflow-y: hidden;
   padding: 20px 20px;
   gap: 50px;
+
+  @media ${breakPoints.tablet} {
+    padding: 15px 15px;
+    max-width: 588px;
+    gap: 30px;
+  }
 `;
 
 export const PickItemBox = styled.div`
@@ -143,6 +204,11 @@ export const PickItemBox = styled.div`
   background-color: #fff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+
+  @media ${breakPoints.tablet} {
+    min-width: 120px;
+    height: 180px;
+  }
 `;
 
 export const PickItemImg = styled.img`
@@ -151,6 +217,10 @@ export const PickItemImg = styled.img`
   aspect-ratio: 1;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+
+  @media ${breakPoints.tablet} {
+    max-width: 120px;
+  }
 `;
 
 export const PickItemInfo = styled.div`
@@ -165,21 +235,29 @@ export const PickItemName = styled.div`
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
+
+  @media ${breakPoints.tablet} {
+    font-size: 14px;
+  }
 `;
 
 export const PickItemPrice = styled.div`
   font-size: 14px;
   font-weight: 500;
   color: #f39c1f;
+
+  @media ${breakPoints.tablet} {
+    font-size: 12px;
+  }
 `;
 
 export const PickEmpty = styled.div`
   color: #a5a5a5;
   font-size: 16px;
-`;
 
-export const Footer = styled.div`
-  margin-bottom: 80px;
+  @media ${breakPoints.tablet} {
+    font-size: 14px;
+  }
 `;
 
 export const BuySellBox = styled.div`
@@ -189,6 +267,10 @@ export const BuySellBox = styled.div`
   border-radius: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
   padding: 30px 40px;
+
+  @media ${breakPoints.tablet} {
+    padding: 20px 30px;
+  }
 `;
 
 export const BuySellHeader = styled.div`
@@ -202,6 +284,12 @@ export const ItemImg = styled.img`
   width: 30px;
   height: 30px;
   margin-right: 10px;
+
+  @media ${breakPoints.tablet} {
+    width: 25px;
+    height: 25px;
+    margin-right: 7px;
+  }
 `;
 
 export const BuySellSelect = styled.select`
@@ -213,22 +301,41 @@ export const BuySellSelect = styled.select`
   border-radius: 10px;
   background-color: black;
   color: white;
+  margin-left: 20px;
+
+  @media ${breakPoints.tablet} {
+    width: 80px;
+    height: 35px;
+    font-size: 14px;
+  }
 `;
 
 export const NoItems = styled.div`
   color: #a5a5a5;
   font-size: 16px;
   padding: 10px 0px 20px 10px;
+
+  @media ${breakPoints.tablet} {
+    font-size: 14px;
+  }
 `;
 
 export const Table = styled.div`
   width: 100%;
   color: #464747;
   font-size: 16px;
+
+  @media ${breakPoints.tablet} {
+    font-size: 14px;
+  }
 `;
 
 export const TableTop = styled.div`
   margin-top: 20px;
+
+  @media ${breakPoints.tablet} {
+    margin-top: 10px;
+  }
 `;
 
 export const RowTop = styled.div`
@@ -237,18 +344,30 @@ export const RowTop = styled.div`
   height: 52px;
   line-height: 52px;
   border-bottom: 1.5px solid #a5a5a5;
+
+  @media ${breakPoints.tablet} {
+    height: 40px;
+    line-height: 40px;
+  }
 `;
 
 export const ColumnHeader = styled.div`
   width: 25%;
   text-align: center;
   background-color: #f7f8f9;
+  font-weight: 600;
 `;
 
 export const Row = styled(RowTop)`
   :hover {
     color: #f39c1f;
     font-weight: 900;
+  }
+
+  @media ${breakPoints.tablet} {
+    :hover {
+      font-weight: 800;
+    }
   }
 `;
 
