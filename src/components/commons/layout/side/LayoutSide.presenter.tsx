@@ -10,7 +10,7 @@ export default function LayoutSideUI(props: ILayoutSideProps) {
         <div key={uuidv4()}>
           <S.TodayItem
             src={
-              props.visited[index]?.images[0]
+              props.visited[index]?.images
                 ? `https://storage.googleapis.com/${props.visited[index]?.images[0]}`
                 : "/images/noImage.jpeg"
             }
