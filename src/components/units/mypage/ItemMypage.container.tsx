@@ -57,11 +57,6 @@ export default function ItemMyPage() {
     FETCH_USEDITEMS_COUNT_ISOLD
   );
 
-  // console.log(boughtData);
-  // console.log(boughtCountData);
-  console.log(soldData);
-  // console.log(soldCountData);
-
   const [createPointTransactionOfLoading] = useMutation(
     CREATE_POINTTRANSACTION_OF_LOADING
   );
