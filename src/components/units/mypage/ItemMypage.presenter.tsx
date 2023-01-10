@@ -113,7 +113,10 @@ export default function ItemMypageUI(props: IItemMypageUIProps) {
               </S.RowTop>
               {props.buySell === "구매"
                 ? props.boughtData?.fetchUseditemsIBought.map((el: any) => (
-                    <S.Row key={uuidv4()}>
+                    <S.Row
+                      key={uuidv4()}
+                      onClick={props.onClickMoveToDetail(el)}
+                    >
                       <S.ColumnContents>{el.name}</S.ColumnContents>
                       <S.ColumnContents>
                         {el.price
@@ -128,7 +131,10 @@ export default function ItemMypageUI(props: IItemMypageUIProps) {
                     </S.Row>
                   ))
                 : props.soldData?.fetchUseditemsISold.map((el: any) => (
-                    <S.Row key={uuidv4()}>
+                    <S.Row
+                      key={uuidv4()}
+                      onClick={props.onClickMoveToDetail(el)}
+                    >
                       <S.ColumnContents>{el.name}</S.ColumnContents>
                       <S.ColumnContents>
                         {el.price
