@@ -369,7 +369,6 @@ export const BuySellHeader = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-bottom: 10px;
 `;
 
 export const ItemImg = styled.img`
@@ -416,14 +415,16 @@ export const BuySellSelect = styled.select`
 export const NoItems = styled.div`
   color: #a5a5a5;
   font-size: 16px;
-  padding: 10px 0px 20px 10px;
+  padding: 20px 10px;
 
   @media ${breakPoints.tablet} {
     font-size: 14px;
+    padding: 15px 5px;
   }
 
   @media ${breakPoints.mobile} {
     font-size: 12px;
+    padding: 10px 0px;
   }
 `;
 
@@ -431,6 +432,7 @@ export const Table = styled.div`
   width: 100%;
   color: #464747;
   font-size: 16px;
+  margin-top: 10px;
 
   @media ${breakPoints.tablet} {
     font-size: 14px;
