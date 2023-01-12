@@ -50,12 +50,9 @@ export default function ItemMyPage() {
     }
   );
 
-  const { data: boughtCountData, refetch: refetchUseditemsCountIBought } =
-    useQuery(FETCH_USEDITEMS_COUNT_IBOUGHT);
+  const { data: boughtCountData } = useQuery(FETCH_USEDITEMS_COUNT_IBOUGHT);
 
-  const { data: soldCountData, refetch: refetchUseditemsCountISold } = useQuery(
-    FETCH_USEDITEMS_COUNT_ISOLD
-  );
+  const { data: soldCountData } = useQuery(FETCH_USEDITEMS_COUNT_ISOLD);
 
   const [createPointTransactionOfLoading] = useMutation(
     CREATE_POINTTRANSACTION_OF_LOADING
