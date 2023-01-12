@@ -22,10 +22,10 @@ const Body = styled.div`
   @media ${breakPoints.tablet} {
     padding: 20px 20px 20px 20px;
   }
+`;
 
-  @media ${breakPoints.mobile} {
-    padding: 20px 20px 20px 20px;
-  }
+const StartPoint = styled.div`
+  position: absolute;
 `;
 
 interface ILayoutProps {
@@ -41,8 +41,10 @@ export default function Layout(props: ILayoutProps) {
       <LayoutHeader />
       {!isHiddenBanner && <LayoutBanner />}
       <LayoutNavigation />
-      {!isHiddenSide && <LayoutSide />}
-      <Body>{props.children}</Body>
+      <Body>
+        {props.children}
+        <StartPoint>{!isHiddenSide && <LayoutSide />}</StartPoint>
+      </Body>
     </>
   );
 }

@@ -8,9 +8,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 528px;
-  left: 1600px;
+  position: relative;
+  left: 730px;
   background-color: white;
   border: none;
   border-radius: 10px;
