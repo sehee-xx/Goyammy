@@ -35,6 +35,7 @@ export const HeaderText = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 20px;
+    padding-bottom: 20px;
   }
 `;
 
@@ -58,7 +59,7 @@ export const BestList = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    padding-bottom: 30px;
+    padding-bottom: 20px;
   }
 `;
 
