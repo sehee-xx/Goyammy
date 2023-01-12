@@ -9,6 +9,15 @@ export default function LayoutSide() {
   const [visited, setVisited] = useRecoilState(visitedState);
 
   const onClickMoveToVisited = (el: any) => {
+    const visited = JSON.parse(sessionStorage.getItem("visited") || "[]");
+    const { __typename, ...newEl } = el;
+    const result = visited.filter((visited: any) => visited._id !== newEl._id);
+    result.unshift(newEl);
+    if (result.length > 3) {
+      result.pop();
+    }
+    setVisited(result);
+    sessionStorage.setItem("visited", JSON.stringify(result));
     router.push(`/markets/${el._id}`);
   };
 
