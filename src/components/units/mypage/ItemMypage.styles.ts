@@ -297,8 +297,14 @@ export const PickItemImg = styled.img`
 
 export const PickItemInfo = styled.div`
   padding: 10px 10px;
+  max-width: 150px;
+
+  @media ${breakPoints.tablet} {
+    max-width: 120px;
+  }
 
   @media ${breakPoints.mobile} {
+    max-width: 90px;
     padding: 8px 8px;
   }
 `;
