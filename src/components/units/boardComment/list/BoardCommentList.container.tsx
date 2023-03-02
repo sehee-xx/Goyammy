@@ -89,15 +89,15 @@ export default function BoardCommentList() {
   return (
     <BoardCommentListUI
       data={data}
-      onClickDelete={onClickDelete}
       isModalVisible={isModalVisible}
+      commentDeleteId={commentDeleteId}
+      commentEditId={commentEditId}
+      onClickDelete={onClickDelete}
       onToggleModal={onToggleModal}
       onChangeCommentPassword={onChangeCommentPassword}
       onClickDeleteIcon={onClickDeleteIcon}
       loadFunc={loadFunc}
       onClickEditIcon={onClickEditIcon}
-      commentDeleteId={commentDeleteId}
-      commentEditId={commentEditId}
       setCommentEditId={setCommentEditId}
     />
   );

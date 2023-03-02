@@ -71,15 +71,15 @@ export default function BoardCommentWrite() {
 
   return (
     <BoardCommentWriteUI
+      contents={contents}
+      writer={writer}
+      password={password}
+      star={star}
       onChangeWriter={onChangeWriter}
       onChangePassword={onChangePassword}
       onChangeContents={onChangeContents}
       onClickWrite={onClickWrite}
-      contents={contents}
       setStar={setStar}
-      writer={writer}
-      password={password}
-      star={star}
     />
   );
 }

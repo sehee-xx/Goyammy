@@ -137,13 +137,6 @@ export default function ItemMyPage() {
 
   return (
     <ItemMypageUI
-      onChangePrice={onChangePrice}
-      onChangeBuySell={onChangeBuySell}
-      requestPay={requestPay}
-      loadFunc={loadFunc}
-      onClickMoveToDetail={onClickMoveToDetail}
-      refetchUseditemsIBought={refetchUseditemsIBought}
-      refetchUseditemsISold={refetchUseditemsISold}
       userData={userData}
       pickedData={pickedData}
       buySell={buySell}
@@ -151,6 +144,13 @@ export default function ItemMyPage() {
       boughtCount={boughtCountData?.fetchUseditemsCountIBought}
       soldData={soldData}
       soldCount={soldCountData?.fetchUseditemsCountISold}
+      onChangePrice={onChangePrice}
+      onChangeBuySell={onChangeBuySell}
+      requestPay={requestPay}
+      loadFunc={loadFunc}
+      onClickMoveToDetail={onClickMoveToDetail}
+      refetchUseditemsIBought={refetchUseditemsIBought}
+      refetchUseditemsISold={refetchUseditemsISold}
     />
   );
 }

@@ -69,9 +69,9 @@ export default function Signup() {
 
   return (
     <SignupUI
+      formState={formState}
       register={register}
       handleSubmit={handleSubmit}
-      formState={formState}
       onClickSignup={onClickSignup}
       onClickMoveToLogin={onClickMoveToLogin}
     />
