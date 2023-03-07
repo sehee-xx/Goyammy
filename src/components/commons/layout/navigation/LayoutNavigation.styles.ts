@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
 `;
 
 export const MenuItem = styled.div`
-  margin: 0px 60px;
+  margin: 0px 70px;
   font-size: 18px;
   cursor: pointer;
   color: ${(props: { isValid: boolean }) =>
