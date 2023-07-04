@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
 `;
 
 export const MenuItem = styled.div`
-  margin: 0px 70px;
+  margin: 0px 170px;
   font-size: 18px;
   cursor: pointer;
   color: ${(props: { isValid: boolean }) =>
@@ -34,13 +34,13 @@ export const MenuItem = styled.div`
   }
 
   @media ${breakPoints.tablet} {
-    margin: 0px;
+    margin: 0px 100px;
     font-size: 14px;
     font-weight: 500;
   }
 
   @media ${breakPoints.mobile} {
-    margin: 0px;
+    margin: 0px 40px;
     font-size: 10px;
     font-weight: 500;
   }

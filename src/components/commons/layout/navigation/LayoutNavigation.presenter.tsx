@@ -5,11 +5,9 @@ import { ILayoutNavigationUIProps } from "./LayoutNavigation.types";
 import { v4 as uuidv4 } from "uuid";
 
 const NAVIGATION_MENUS = [
-  { name: "CATS", page: "/cats" },
   { name: "CAFE", page: "/boards" },
   { name: "MARKET", page: "/markets" },
   { name: "MYPAGE", page: "/mypages" },
-  { name: "EVENT", page: "/boards" },
 ];
 
 export default function LayoutNavigationUI(props: ILayoutNavigationUIProps) {
