@@ -1,4 +1,6 @@
 // MAIN
-export default function Home() {
-  return <div>MAIN</div>;
+import Cats from "../src/components/units/cats/list/CatsList.container";
+
+export default function CatsPage() {
+  return <Cats />;
 }
