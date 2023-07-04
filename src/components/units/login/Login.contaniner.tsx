@@ -39,7 +39,7 @@ export default function Login() {
   const onClickLogin = async (data: any) => {
     try {
       const result = await loginUser({
-        variables: { email: data.email, password: data.password },
+        variables: { password: data.password, email: data.email },
       });
       const accessToken = result.data.loginUser.accessToken;
       setAccessToken(accessToken);
