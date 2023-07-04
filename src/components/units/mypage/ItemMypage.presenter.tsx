@@ -33,9 +33,7 @@ export default function ItemMypageUI(props: IItemMypageUIProps) {
           </S.UserPointBox>
           <S.PointChargeBox>
             <S.PointSelect onChange={props.onChangePrice}>
-              <option value="none" selected disabled>
-                포인트 선택
-              </option>
+              <option value="none">포인트 선택</option>
               <option value="100">100P</option>
               <option value="500">500P</option>
               <option value="1000">1000P</option>
