@@ -4,6 +4,7 @@ import { IItemMypageUIProps } from "./ItemMypage.types";
 import { v4 as uuidv4 } from "uuid";
 import Paginations02 from "../../commons/paginations/02/Paginations02.container";
 import Paginations03 from "../../commons/paginations/03/Paginations03.container";
+import Script from "next/script";
 
 export default function ItemMypageUI(props: IItemMypageUIProps) {
   return (
@@ -15,14 +16,14 @@ export default function ItemMypageUI(props: IItemMypageUIProps) {
       <S.Body>
         <S.PointBox>
           <Head>
-            <script
+            <Script
               type="text/javascript"
               src="https://code.jquery.com/jquery-1.12.4.min.js"
-            ></script>
-            <script
+            ></Script>
+            <Script
               type="text/javascript"
               src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"
-            ></script>
+            ></Script>
           </Head>
           <S.UserPointBox>
             <S.PointImg src="images/point.png" />
