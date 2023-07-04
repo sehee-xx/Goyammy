@@ -145,7 +145,11 @@ export const ColumnWriter = styled.div`
 
 export const ColumnTitle = styled.div`
   width: 50%;
+  padding: 0px 15px;
   text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   cursor: pointer;
   :hover {
     color: #f39c1f;
