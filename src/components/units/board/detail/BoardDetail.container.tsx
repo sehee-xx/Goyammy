@@ -84,7 +84,7 @@ export default function BoardDetail() {
   const onClickLocation = () => {
     console.log(data?.fetchBoard.boardAddress.address);
   };
-
+  console.log(data);
   return (
     <BoardDetailUI
       data={data}

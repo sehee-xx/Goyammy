@@ -15,15 +15,23 @@ export default function BoardDetailUI(props: IBoardDetailUIProps) {
             <S.Date>{props.createDate} </S.Date>
           </S.HeaderText>
           <S.Info>
-            <Tooltip title={props.data?.fetchBoard?.youtubeUrl}>
-              <S.LinkLocation src="/images/link.png"></S.LinkLocation>
-            </Tooltip>
-            <Tooltip title={props.data?.fetchBoard?.boardAddress?.address}>
-              <S.LinkLocation
-                onClick={props.onClickLocation}
-                src="/images/location.png"
-              ></S.LinkLocation>
-            </Tooltip>
+            {props.data?.fetchBoard?.youtubeUrl !== "" ? (
+              <Tooltip title={props.data?.fetchBoard?.youtubeUrl}>
+                <S.LinkLocation src="/images/link.png"></S.LinkLocation>
+              </Tooltip>
+            ) : (
+              <></>
+            )}
+            {props.data?.fetchBoard?.boardAddress?.address !== "" ? (
+              <Tooltip title={props.data?.fetchBoard?.boardAddress?.address}>
+                <S.LinkLocation
+                  onClick={props.onClickLocation}
+                  src="/images/location.png"
+                ></S.LinkLocation>
+              </Tooltip>
+            ) : (
+              <></>
+            )}
           </S.Info>
         </S.Header>
         <S.Body>
