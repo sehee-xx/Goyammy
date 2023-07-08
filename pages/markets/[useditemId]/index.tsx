@@ -2,8 +2,8 @@
 import styled from "@emotion/styled";
 import { useAuth } from "../../../src/components/commons/hooks/useAuth";
 import { PageAdd } from "../../../src/components/units/board/detail/BoardDetail.styles";
-import UseditemQuestionList from "../../../src/components/units/useditem-question/list/UseditemQuestionList.container";
-import UseditemQuestionWrite from "../../../src/components/units/useditem-question/write/UseditemQuestionWrite.container";
+import UseditemQuestionList from "../../../src/components/units/useditem-question/list/ItemQuestionList.container";
+import UseditemQuestionWrite from "../../../src/components/units/useditem-question/write/ItemQuestionWrite.container";
 import ItemDetail from "../../../src/components/units/useditem/detail/ItemDetail.container";
 
 const Comment = styled.div`
