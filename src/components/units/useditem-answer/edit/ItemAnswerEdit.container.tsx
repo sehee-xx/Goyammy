@@ -1,9 +1,9 @@
 import { useMutation } from "@apollo/client";
 import { ChangeEvent, useEffect, useState } from "react";
-import UseditemAnswerWriteUI from "./UseditemAnswerEdit.presenter";
+import UseditemAnswerWriteUI from "./ItemAnswerEdit.presenter";
 import { Modal } from "antd";
-import { IUseditemAnswerEditProps } from "./UseditemAnswerEdit.types";
-import { UPDATE_USEDITEM_QUESTION_ANSWER } from "./UseditemAnswerEdit.queries";
+import { IUseditemAnswerEditProps } from "./ItemAnswerEdit.types";
+import { UPDATE_USEDITEM_QUESTION_ANSWER } from "./ItemAnswerEdit.queries";
 
 export default function UseditemAnswerEdit(props: IUseditemAnswerEditProps) {
   const [contents, setContents] = useState("");

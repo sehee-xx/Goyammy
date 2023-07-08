@@ -1,12 +1,14 @@
-import * as S from "./UseditemAnswerEdit.styles";
-import { IUseditemAnswerWriteUIProps } from "./UseditemAnswerEdit.types";
+import * as S from "./ItemQuestionEdit.styles";
+import { IUseditemQuestionWriteUIProps } from "./ItemQuestionEdit.types";
 
-export default function UseditemAnswerUI(props: IUseditemAnswerWriteUIProps) {
+export default function UseditemQuestionUI(
+  props: IUseditemQuestionWriteUIProps
+) {
   return (
     <S.Wrapper>
       <S.Header>
         <S.Top>
-          <S.TopText>답글 수정</S.TopText>
+          <S.TopText>문의 수정</S.TopText>
           <S.CancelIcon src="/images/grayX.png" onClick={props.onClickCancel} />
         </S.Top>
         <S.WriterInfo>

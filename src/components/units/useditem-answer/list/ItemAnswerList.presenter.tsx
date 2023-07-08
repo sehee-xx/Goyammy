@@ -1,13 +1,11 @@
-import * as S from "./UseditemQuestionList.styles";
-import { IUseditemQuestionListUIProps } from "./UseditemQuestionList.types";
+import * as S from "./ItemAnswerList.styles";
+import { IUseditemAnswerListUIProps } from "./ItemAnswerList.types";
 import InfiniteScroll from "react-infinite-scroller";
-import UseditemQuestionEdit from "../edit/UseditemQuestionEdit.container";
-import UseditemAnswerWrite from "../../useditem-answer/write/UseditemAnswerWrite.container";
-import UseditemAnswerList from "../../useditem-answer/list/UseditemAnswerList.container";
+import UseditemAnswerEdit from "../edit/ItemAnswerEdit.container";
 import { v4 as uuidv4 } from "uuid";
 
-export default function UseditemQuestionListUI(
-  props: IUseditemQuestionListUIProps
+export default function UseditemAnswerListUI(
+  props: IUseditemAnswerListUIProps
 ) {
   return (
     <div>
@@ -17,8 +15,8 @@ export default function UseditemQuestionListUI(
         hasMore={true}
         useWindow={true}
       >
-        {props.data?.fetchUseditemQuestions ? (
-          props.data?.fetchUseditemQuestions.map((el: any) => (
+        {props.data?.fetchUseditemQuestionAnswers ? (
+          props.data?.fetchUseditemQuestionAnswers.map((el: any) => (
             <S.ItemWrapper key={uuidv4()} id={el.name}>
               {el._id !== props.commentEditId && (
                 <div>
@@ -37,7 +35,6 @@ export default function UseditemQuestionListUI(
                           id={el._id}
                           onClick={props.onClickEditIcon}
                         />
-                        <S.QnA id={el._id} onClick={props.onClickQnA} />
                         <S.DeleteIcon
                           src="/images/grayX.png/"
                           id={el._id}
@@ -45,9 +42,7 @@ export default function UseditemQuestionListUI(
                         />
                       </S.OptionWrapper>
                     ) : (
-                      <S.OptionWrapper>
-                        <S.QnA id={el._id} onClick={props.onClickQnA} />
-                      </S.OptionWrapper>
+                      <S.OptionWrapper></S.OptionWrapper>
                     )}
                   </S.FlexWrapper>
                   <S.DateString>
@@ -56,18 +51,11 @@ export default function UseditemQuestionListUI(
                 </div>
               )}
               {el._id === props.commentEditId && (
-                <UseditemQuestionEdit
+                <UseditemAnswerEdit
                   el={el}
                   setCommentEditId={props.setCommentEditId}
-                />
+                ></UseditemAnswerEdit>
               )}
-              {el._id === props.commentQnAId && (
-                <UseditemAnswerWrite
-                  useditemQuestionId={el._id}
-                  setCommentQnAId={props.setCommentQnAId}
-                />
-              )}
-              <UseditemAnswerList useditemQuestionId={el._id} />
             </S.ItemWrapper>
           ))
         ) : (

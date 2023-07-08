@@ -1,12 +1,12 @@
 import { useMutation } from "@apollo/client";
 import { ChangeEvent, useState } from "react";
-import UseditemAnswerWriteUI from "./UseditemAnswerWrite.presenter";
+import UseditemAnswerWriteUI from "./ItemAnswerWrite.presenter";
 import {
   CREATE_USEDITEM_QUESTION_ANSWER,
   FETCH_USEDITEM_QUESTION_ANSWERS,
-} from "./UseditemAnswerWrite.queries";
+} from "./ItemAnswerWrite.queries";
 import { Modal } from "antd";
-import { IUseditemAnswerWriteProps } from "./UseditemAnswerWrite.types";
+import { IUseditemAnswerWriteProps } from "./ItemAnswerWrite.types";
 
 export default function UseditemAnswerWrite(props: IUseditemAnswerWriteProps) {
   const [contents, setContents] = useState("");

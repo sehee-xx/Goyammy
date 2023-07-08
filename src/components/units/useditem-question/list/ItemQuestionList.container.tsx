@@ -2,12 +2,12 @@ import { useMutation, useQuery } from "@apollo/client";
 import React, { useState } from "react";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
-import UseditemQuestionListUI from "./UseditemQuestionList.presenter";
+import UseditemQuestionListUI from "./ItemQuestionList.presenter";
 import {
   DELETE_USEDITEM_QUESTION,
   FETCH_USEDITEM_QUESTIONS,
   FETCH_USER_LOGGED_IN,
-} from "./UseditemQuestionList.queries";
+} from "./ItemQuestionList.queries";
 
 export default function UseditemQuestionList() {
   const router = useRouter();

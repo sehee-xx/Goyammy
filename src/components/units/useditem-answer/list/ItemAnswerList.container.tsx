@@ -1,13 +1,13 @@
 import { useMutation, useQuery } from "@apollo/client";
 import React, { useState } from "react";
 import { Modal } from "antd";
-import UseditemAnswerListUI from "./UseditemAnswerList.presenter";
+import UseditemAnswerListUI from "./ItemAnswerList.presenter";
 import {
   DELETE_USEDITEM_QUESTION_ANSWER,
   FETCH_USEDITEM_QUESTION_ANSWERS,
   FETCH_USER_LOGGED_IN,
-} from "./UseditemAnswerList.queries";
-import { IUseditemAnswerListProps } from "./UseditemAnswerList.types";
+} from "./ItemAnswerList.queries";
+import { IUseditemAnswerListProps } from "./ItemAnswerList.types";
 
 export default function UseditemAnswerList(props: IUseditemAnswerListProps) {
   const { data, fetchMore } = useQuery(FETCH_USEDITEM_QUESTION_ANSWERS, {

@@ -1,11 +1,11 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { ChangeEvent, useState } from "react";
-import UseditemQuestionWriteUI from "./UseditemQuestionWrite.presenter";
+import UseditemQuestionWriteUI from "./ItemQuestionWrite.presenter";
 import {
   CREATE_USEDITEM_QUESTION,
   FETCH_USEDITEM_QUESTIONS,
-} from "./UseditemQuestionWrite.queries";
+} from "./ItemQuestionWrite.queries";
 import { Modal } from "antd";
 
 export default function UseditemQuestionWrite() {

@@ -1,5 +1,5 @@
-import * as S from "./UseditemAnswerWrite.styles";
-import { IUseditemAnswerWriteUIProps } from "./UseditemAnswerWrite.types";
+import * as S from "./ItemAnswerWrite.styles";
+import { IUseditemAnswerWriteUIProps } from "./ItemAnswerWrite.types";
 
 export default function UseditemAnswerWriteUI(
   props: IUseditemAnswerWriteUIProps
